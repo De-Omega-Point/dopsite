@@ -1,0 +1,106 @@
+/* Site-wide readability layer: larger working text, stronger contrast and clearer controls. */
+:root {
+  --readable-muted: #b5c0b7;
+  --readable-subtle: #94a097;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+p { text-wrap: pretty; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #9dff8a;
+  outline-offset: 3px;
+}
+
+/* Homepage */
+.site-header nav { font-size: 12px; font-weight: 600; }
+.nav-cta, .text-link { font-size: 14px; }
+.eyebrow, .kicker { font-size: 12px; line-height: 1.5; }
+.hero h1 { line-height: .91; }
+.hero-intro { max-width: 660px; color: #e0e6e1; font-size: clamp(18px,1.7vw,22px); line-height: 1.65; }
+.button { min-height: 56px; font-size: 12px; font-weight: 700; }
+.mission-copy, .systems-lede, .quantum-lede, .artifact-copy>p, .principle-list p, .contact>p { color: var(--readable-muted); font-size: 17px; line-height: 1.75; }
+.store-heading>p { color: var(--readable-muted); font-size: 17px; }
+.product-card p:not(.product-status), .project-card p { color: #abb6ad; font-size: 15px; line-height: 1.72; }
+.project-card h3, .product-card h3 { font-size: 30px; line-height: 1.15; }
+.product-card a { font-size: 14px; font-weight: 650; }
+.product-meta, .card-top, .product-status, .section-index, .coordinate-row { font-size: 10px; }
+.quantum-note { color: #a0aca2; font-size: 13px; }
+.quantum-domains span { font-size: 10px; }
+.principle-list h3 { font-size: 21px; }
+.contact .button { width: auto; }
+footer { color: #9ca69e; font-size: 10px; }
+
+/* Platform */
+.platform-header nav { font-size: 11px; font-weight: 650; }
+.platform-header-actions>a:first-child { color: #a8b3aa; font-size: 10px; }
+.platform-exit { font-size: 13px; }
+.platform-kicker, .workspace-heading>div>p, .platform-cta>p:first-child { font-size: 11px; font-weight: 650; }
+.platform-hero-copy>p:not(.platform-kicker) { max-width: 650px; color: #d2dad4; font-size: 19px; line-height: 1.72; }
+.platform-actions { font-size: 14px; }
+.platform-button { min-height: 56px; font-size: 11px; font-weight: 700; }
+.orbit-label { font-size: 10px; }
+.workspace-heading>p { color: #b2bdb4; font-size: 17px; }
+.module-grid span, .module-grid small { font-size: 10px; }
+.module-grid strong { font-size: 27px; }
+.module-grid p { color: #aeb9b0; font-size: 15px; line-height: 1.7; }
+.platform-cta>p:nth-of-type(2) { color: #b6c0b8; font-size: 17px; }
+.platform-footer { color: #9aa59c; font-size: 10px; }
+
+/* Admin */
+.admin-sidebar { width: 270px; padding-inline: 24px; }
+.admin-shell { grid-template-columns: 270px 1fr; }
+.admin-brand strong { font-size: 13px; }
+.admin-brand small, .admin-account small { font-size: 9px; }
+.admin-sidebar nav a { color: #a7b2a9; font-size: 11px; line-height: 1.5; }
+.admin-account { color: #abb5ad; font-size: 11px; }
+.admin-account strong { font-size: 13px; }
+.admin-main>header p, .panel-heading p, .admin-panel.compact p { font-size: 10px; }
+.admin-main h1 { font-size: 48px; }
+.admin-main>header>a { font-size: 13px; }
+.admin-stats span { color: #a8b2aa; font-size: 9px; }
+.admin-stats small { color: #98a39a; font-size: 11px; }
+.panel-heading>span { color: #a3aea5; font-size: 10px; }
+.product-form label { color: #b0bbb2; font-size: 10px; font-weight: 650; }
+.product-form input, .product-form textarea, .row-actions select { min-height: 46px; color: #f3f7f4; border-color: rgba(157,255,138,.35); font-size: 14px; line-height: 1.5; }
+.product-form textarea { min-height: 76px; }
+.product-form input::placeholder, .product-form textarea::placeholder { color: #7f8a82; opacity: 1; }
+.product-form button, .row-actions button { min-height: 44px; font-size: 10px; font-weight: 750; }
+.table-head { min-height: 46px; color: #a6b0a8; font-size: 9px; }
+.table-row { min-height: 84px; color: #bac4bc; font-size: 13px; line-height: 1.45; }
+.table-row>span:first-child strong { font-size: 14px; }
+.table-row>span:first-child small { color: #929d95; font-size: 11px; }
+.status { font-size: 9px; font-weight: 700; }
+.release-status, .access-card { font-size: 11px; }
+.access-card span { color: #929d95; font-size: 9px; }
+.admin-denied span { font-size: 10px; }
+.admin-denied p { color: #b7c1b9; font-size: 17px; }
+.admin-denied p strong { color: #f0f5f1; }
+.admin-denied a { font-size: 15px; }
+.denied-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 24px; }
+
+@media (max-width: 900px) {
+  .admin-shell { grid-template-columns: 1fr; }
+  .admin-sidebar { width: auto; }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 17px; }
+  .hero h1, .platform-hero h1 { line-height: .95; }
+  .hero-intro, .platform-hero-copy>p:not(.platform-kicker) { font-size: 17px; }
+  .mission-copy, .systems-lede, .quantum-lede, .artifact-copy>p, .principle-list p, .contact>p { font-size: 16px; }
+  .eyebrow, .kicker { font-size: 11px; }
+  .product-card p:not(.product-status), .project-card p, .module-grid p { font-size: 16px; }
+  .platform-header-actions>a:first-child { display: none; }
+  .table-row { font-size: 14px; }
+}

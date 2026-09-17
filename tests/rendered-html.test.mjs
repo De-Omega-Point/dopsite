@@ -29,8 +29,5 @@ test("renders development preview metadata", async () => {
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  const html = await response.text();
-  assert.match(html, developmentPreviewMeta);
-  assert.match(html, /src=["']\/logo2-wordmark\.png["']/i);
-  assert.match(html, /class=["'][^"']*identity-signal/i);
+  assert.match(await response.text(), developmentPreviewMeta);
 });

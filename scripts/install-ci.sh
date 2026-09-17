@@ -7,19 +7,19 @@ if [[ "${SITES_ENV_READY:-}" != "1" ]]; then
   exec "${script_dir}/sites-env.sh" -- "$0" "$@"
 fi
 
-command -v flock || {
+command -v flock >/dev/null || {
   echo "install-ci.sh requires Linux flock." >&2
   exit 69
 }
-command -v timeout || {
+command -v timeout >/dev/null || {
   echo "install-ci.sh requires GNU timeout." >&2
   exit 69
 }
-command -v curl || {
+command -v curl >/dev/null || {
   echo "install-ci.sh requires curl for the locked-tarball preflight." >&2
   exit 69
 }
-command -v sha256sum || {
+command -v sha256sum >/dev/null || {
   echo "install-ci.sh requires sha256sum for cache and install verification." >&2
   exit 69
 }
@@ -54,9 +54,9 @@ fi
 for process in /proc/[0-9]*; do
   pid="${process##*/}"
   [[ "${pid}" != "$$" && "${pid}" != "${PPID}" ]] || continue
-  process_cwd="$(readlink -f "${process}/cwd" || true)"
+  process_cwd="$(readlink -f "${process}/cwd" 2>/dev/null || true)"
   [[ "${process_cwd}" == "${SITES_PROJECT_ROOT}" ]] || continue
-  process_command="$(tr '\0' ' ' <"${process}/cmdline" || true)"
+  process_command="$(tr '\0' ' ' <"${process}/cmdline" 2>/dev/null || true)"
   if [[ "${process_command}" == *"npm ci"* ]]; then
     echo "Another npm ci is visible in ${SITES_PROJECT_ROOT}; refusing to overlap installs." >&2
     exit 75
@@ -67,7 +67,7 @@ lockfile_sha256="$(sha256sum "${SITES_PROJECT_ROOT}/package-lock.json" | awk '{p
 use_seeded_cache=0
 seed_cache="${SITES_NPM_CACHE_SEED:-}"
 if [[ -n "${seed_cache}" && -d "${seed_cache}" ]]; then
-  seed_lockfile_sha256="$(cat "${seed_cache}/.sites-lockfile-sha256" || true)"
+  seed_lockfile_sha256="$(cat "${seed_cache}/.sites-lockfile-sha256" 2>/dev/null || true)"
   if [[ "${seed_lockfile_sha256}" == "${lockfile_sha256}" ]]; then
     echo "[sites] restoring image-seeded npm cache"
     cp -a "${seed_cache}/." "${expected_cache}/"
@@ -89,7 +89,7 @@ if (!vinext?.resolved || !vinext?.integrity) {
 console.log(vinext.resolved);
 console.log(vinext.integrity);
 NODE
-})" || {
+} 2>/dev/null)" || {
   echo "Could not read the integrity-pinned vinext tarball from package-lock.json." >&2
   exit 65
 }
@@ -114,7 +114,7 @@ if (locked.hostname === "registry.npmjs.org") {
 }
 process.stdout.write(locked.href);
 NODE
-})" || {
+} 2>/dev/null)" || {
   echo "Could not construct the locked-tarball preflight URL." >&2
   exit 65
   }

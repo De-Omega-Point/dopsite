@@ -1,0 +1,1 @@
+CREATE INDEX `idx_visibility_leads_created_at` ON `visibility_leads` (`created_at`);

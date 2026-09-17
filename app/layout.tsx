@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./readability.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "De-Omega-Point Mission",
-  description: "Human-value-centric intelligence, emerging-technology research and responsible exploration for humanity's next horizon.",
+  title: "De-Omega-Point | Engineering Humanity Forward",
+  description: "Human-value centric intelligence and space technologies engineered for humanity's future.",
   other: {
     "codex-preview": "development",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/assets/de-omega-point-logo.png",
+    shortcut: "/assets/de-omega-point-logo.png",
   },
 };
 

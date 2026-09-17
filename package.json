@@ -1,5 +1,5 @@
 {
-  "name": "de-omega-point-mission",
+  "name": "site-creator-vinext-starter",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -39,6 +39,5 @@
     "vite": "8.0.13",
     "wrangler": "4.92.0"
   },
-  "type": "module",
-  "displayName": "De-Omega-Point Mission"
+  "type": "module"
 }
