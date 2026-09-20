@@ -85,7 +85,7 @@ svg { display: block; }
 .lead-copy > a { width: fit-content; margin-top: 1.2rem; padding: .65rem 1.2rem; display: inline-flex; gap: .65rem; align-items: center; color: white; border: 1px solid var(--green); border-radius: 999px; font: 700 .67rem var(--mono); text-decoration: none; text-transform: uppercase; transition: color .18s ease, background .18s ease; }
 .lead-copy > a svg, .story-card em svg, .report-rail > a svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .lead-copy > a:hover, .lead-copy > a:focus-visible { color: #02140d; background: var(--green); outline: none; }
-.lead-art { position: relative; min-height: 450px; display: flex; align-items: flex-end; justify-content: flex-end; padding: 2rem; overflow: hidden; background-image: linear-gradient(90deg, #031522 0%, #031522 24%, rgba(3,21,34,.78) 37%, transparent 58%), linear-gradient(0deg, rgba(3,21,34,.72), transparent 42%), url("assets/ai-safety-news-infographic.jpeg"); background-size: auto, auto, 208% auto; background-position: center, center, 66% 38%; background-repeat: no-repeat; }
+.lead-art { position: relative; min-height: 450px; display: flex; align-items: flex-end; justify-content: flex-end; padding: 2rem; overflow: hidden; background-image: linear-gradient(90deg, #031522 0%, #031522 24%, rgba(3,21,34,.78) 37%, transparent 58%), linear-gradient(0deg, rgba(3,21,34,.82), transparent 46%), url("assets/ai-safety-news-infographic.jpeg"); background-size: auto, auto, 235% auto; background-position: center, center, 64.5% 34.8%; background-repeat: no-repeat; }
 .lead-art span { display: none; }
 .outcome-rail { margin: 0; padding: 1.5rem 1.25rem; display: grid; align-content: center; gap: 1.6rem; background: rgba(2,17,27,.92); list-style: none; }
 .outcome-rail li { display: grid; grid-template-columns: 50px 1fr; gap: .85rem; align-items: center; color: #d7e4e9; font: .72rem/1.3 var(--mono); text-transform: uppercase; }
@@ -274,7 +274,7 @@ svg { display: block; }
   .lead-story { grid-template-columns: 1fr; }
   .lead-copy { min-height: 410px; padding-inline: 1.25rem; }
   .lead-copy h1 { font-size: 3.55rem; }
-  .lead-art { min-height: 390px; background-size: auto, auto, 285% auto; background-position: center, center, 64% 38%; }
+  .lead-art { min-height: 390px; background-size: auto, auto, 315% auto; background-position: center, center, 62% 34.8%; }
   .outcome-rail { grid-template-columns: 1fr 1fr; }
   .story-grid { grid-template-columns: 1fr; }
   .story-card, .story-card + .story-card, .story-card:last-child { grid-column: auto; padding: .8rem 0; border-left: 0; }
