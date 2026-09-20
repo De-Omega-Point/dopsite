@@ -1,6 +1,6 @@
 import ParticleField from "./ParticleField";
 
-const AI_SAFETY_URL = "https://dop-ai-safety-observatory.sammielee.chatgpt.site";
+const AI_SAFETY_URL = "https://de-omega-point.com/ai-safety/";
 
 const projects = [
   {
