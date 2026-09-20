@@ -1,5 +1,7 @@
 import ParticleField from "./ParticleField";
 
+const AI_SAFETY_URL = "https://dop-ai-safety-observatory.sammielee.chatgpt.site";
+
 const projects = [
   {
     index: "01",
@@ -54,13 +56,21 @@ export default function Home() {
           <span>De-Omega-Point</span>
         </a>
         <nav aria-label="Primary navigation">
+          <a href={AI_SAFETY_URL} aria-label="AI Safety Observatory, updated twice weekly">
+            AI Safety <span className="nav-live">Live</span>
+          </a>
           <a href="/ai-visibility">AI Visibility</a>
           <a href="#mission">Mission</a>
           <a href="#store">Store</a>
           <a href="#systems">Systems</a>
           <a href="#quantum">Quantum</a>
         </nav>
-        <a className="nav-cta" href="/ai-visibility">Free AI check <span aria-hidden="true">↗</span></a>
+        <div className="header-actions">
+          <a className="mobile-safety-link" href={AI_SAFETY_URL}>
+            AI Safety <span>Live</span>
+          </a>
+          <a className="nav-cta" href="/ai-visibility">Free AI check <span aria-hidden="true">↗</span></a>
+        </div>
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">

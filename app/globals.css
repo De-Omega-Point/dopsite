@@ -125,6 +125,47 @@ nav a:hover, nav a:focus-visible, .text-link:hover, .text-link:focus-visible {
   color: var(--green);
 }
 
+.nav-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 4px;
+  color: var(--green);
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+
+.nav-live::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+}
+
+.header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-safety-link {
+  display: none;
+  color: var(--white);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.mobile-safety-link span {
+  margin-left: 5px;
+  color: var(--green);
+  font-size: 8px;
+}
+
 .nav-cta {
   justify-self: end;
   padding-bottom: 5px;
@@ -1119,6 +1160,11 @@ footer p:last-child {
     display: none;
   }
 
+  .mobile-safety-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
   .hero-backdrop {
     background-position: 63% center;
   }
@@ -1188,7 +1234,7 @@ footer p:last-child {
   }
 
   .nav-cta {
-    font-size: 11px;
+    display: none;
   }
 
   .hero {
