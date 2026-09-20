@@ -56,20 +56,26 @@ export default function Home() {
           <span>De-Omega-Point</span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href={AI_SAFETY_URL} aria-label="AI Safety Observatory, updated twice weekly">
-            AI Safety <span className="nav-live">Live</span>
-          </a>
-          <a href="/ai-visibility">AI Visibility</a>
+          <span className="nav-intelligence">
+            <a href={AI_SAFETY_URL} aria-label="AI Safety Observatory, updated twice weekly">
+              AI Safety <span className="nav-live">Live</span>
+            </a>
+            <a className="nav-check-link" href="/ai-visibility">
+              Free AI check <span aria-hidden="true">↗</span>
+            </a>
+          </span>
           <a href="#mission">Mission</a>
           <a href="#store">Store</a>
           <a href="#systems">Systems</a>
           <a href="#quantum">Quantum</a>
         </nav>
         <div className="header-actions">
-          <a className="mobile-safety-link" href={AI_SAFETY_URL}>
-            AI Safety <span>Live</span>
-          </a>
-          <a className="nav-cta" href="/ai-visibility">Free AI check <span aria-hidden="true">↗</span></a>
+          <span className="mobile-intelligence-links">
+            <a className="mobile-safety-link" href={AI_SAFETY_URL}>
+              AI Safety <span>Live</span>
+            </a>
+            <a className="nav-cta" href="/ai-visibility">Free AI check <span aria-hidden="true">↗</span></a>
+          </span>
         </div>
       </header>
 
@@ -190,13 +196,41 @@ export default function Home() {
       </section>
 
       <section className="visibility-callout section-shell" aria-labelledby="visibility-title">
-        <div>
-          <p className="kicker">AI commerce / Australian SMBs</p>
-          <h2 id="visibility-title">Is AI recommending you—or your competitors?</h2>
+        <div className="commerce-copy">
+          <div className="commerce-label">
+            <span className="commerce-signal" aria-hidden="true" />
+            <strong>AI COMMERCE / AUSTRALIAN SMBS</strong>
+            <span>Free diagnostic</span>
+          </div>
+          <h2 id="visibility-title">Will AI recommend <em>your business</em>—or quietly send buyers elsewhere?</h2>
+          <p className="commerce-lede">See whether your website gives AI systems enough evidence to understand, trust and recommend you when customers are ready to buy.</p>
+          <ul className="commerce-benefits" aria-label="What the free AI commerce check includes">
+            <li><span>01</span>Live website signals</li>
+            <li><span>02</span>Competitor readiness</li>
+            <li><span>03</span>Ranked action plan</li>
+          </ul>
+          <div className="commerce-actions">
+            <a className="button primary" href="/ai-visibility">Check my AI readiness <span aria-hidden="true">↗</span></a>
+            <p>Free · About 20 seconds · No login</p>
+          </div>
         </div>
-        <div>
-          <p>Run a practical check of the signals AI systems use to understand, compare and recommend your business. See the gaps before they become lost customers.</p>
-          <a className="button primary" href="/ai-visibility">Run the free check <span aria-hidden="true">↗</span></a>
+
+        <div className="commerce-console" aria-label="The diagnostic checks four AI commerce readiness areas">
+          <div className="commerce-console-head">
+            <span>AI readiness scan</span>
+            <strong><i aria-hidden="true" /> Live signals</strong>
+          </div>
+          <div className="commerce-orbit" aria-hidden="true">
+            <span>4</span>
+            <small>core signals</small>
+          </div>
+          <ol className="commerce-scan-list">
+            <li><span>01</span><div><strong>Understanding</strong><small>Who you are and what you sell</small></div><b>Scan</b></li>
+            <li><span>02</span><div><strong>Trust</strong><small>Evidence that supports your claims</small></div><b>Scan</b></li>
+            <li><span>03</span><div><strong>Commerce</strong><small>Products, pricing and local relevance</small></div><b>Scan</b></li>
+            <li><span>04</span><div><strong>Conversion</strong><small>A clear path from answer to action</small></div><b>Scan</b></li>
+          </ol>
+          <div className="commerce-console-foot"><span>Public website signals only</span><strong>Measured, not guessed</strong></div>
         </div>
       </section>
 
