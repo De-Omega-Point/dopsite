@@ -37,8 +37,15 @@ svg { display: block; }
   radial-gradient(circle at 75% 15%, rgba(0, 126, 194, .18), transparent 30rem),
   linear-gradient(150deg, #03111c, #072538 55%, #02111b); box-shadow: 0 0 90px rgba(0,0,0,.8); }
 .news-masthead { position: relative; min-height: 205px; padding: 1.45rem 2rem; display: grid; grid-template-columns: 1.2fr 1.1fr .45fr; gap: 2rem; align-items: center; isolation: isolate; border-bottom: 1px solid var(--line); }
-.news-masthead::before { content: ""; position: absolute; inset: 0; z-index: -2; background-image: url("assets/ai-safety-news-infographic.jpeg"); background-size: 128% auto; background-position: 70% 0; filter: blur(1px) brightness(.53) saturate(1.1); transform: scale(1.02); }
-.news-masthead::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(2,13,22,.86), rgba(2,13,22,.38) 62%, rgba(2,13,22,.76)); }
+.news-masthead::before { content: ""; position: absolute; inset: 0; z-index: -2; background:
+  radial-gradient(circle at 77% -35%, rgba(47,165,255,.5), transparent 48%),
+  radial-gradient(circle at 58% 120%, rgba(19,104,158,.35), transparent 44%),
+  linear-gradient(115deg, #020c15 0%, #061f34 58%, #020d18 100%); }
+.news-masthead::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .35; background-image:
+  radial-gradient(circle at 12% 27%, rgba(255,255,255,.7) 0 1px, transparent 1.5px),
+  radial-gradient(circle at 31% 18%, rgba(255,255,255,.55) 0 1px, transparent 1.5px),
+  radial-gradient(circle at 70% 24%, rgba(255,255,255,.65) 0 1px, transparent 1.5px),
+  radial-gradient(circle at 88% 42%, rgba(255,255,255,.5) 0 1px, transparent 1.5px); }
 .brand-lockup, .footer-lockup { min-width: 0; display: flex; align-items: center; gap: 1rem; text-decoration: none; }
 .brand-lockup img { width: 108px; height: 98px; object-fit: contain; filter: drop-shadow(0 0 16px rgba(32,242,138,.3)); }
 .brand-lockup strong, .footer-lockup strong { display: block; font: 800 clamp(1.55rem, 2.9vw, 2.7rem)/.95 var(--display); letter-spacing: .035em; white-space: nowrap; }
@@ -60,13 +67,14 @@ svg { display: block; }
 .update-state i, .report-live i { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 11px rgba(32,242,138,.7); }
 
 .metric-grid { padding: 1rem; display: grid; grid-template-columns: repeat(5, 1fr); gap: .75rem; border-bottom: 1px solid rgba(69,186,214,.32); }
-.metric-card { position: relative; min-width: 0; min-height: 180px; padding: 1rem 1rem .9rem; display: grid; grid-template-columns: 42px 1fr; grid-template-rows: auto auto auto 1fr; gap: .25rem .75rem; color: white; border: 1px solid rgba(66,190,220,.48); border-radius: 10px; background: linear-gradient(150deg, rgba(4,31,46,.9), rgba(3,18,29,.88)); text-decoration: none; transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+.metric-card { position: relative; min-width: 0; min-height: 180px; padding: 1rem 1rem .9rem; display: grid; grid-template-columns: 42px minmax(0, 1fr); grid-template-rows: auto auto 1fr; gap: .65rem .75rem; color: white; border: 1px solid rgba(66,190,220,.48); border-radius: 10px; background: linear-gradient(150deg, rgba(4,31,46,.9), rgba(3,18,29,.88)); text-decoration: none; transition: transform .18s ease, border-color .18s ease, background .18s ease; }
 .metric-card:hover, .metric-card:focus-visible, .metric-card.is-active { transform: translateY(-3px); border-color: var(--green); outline: none; background: rgba(6,42,55,.98); box-shadow: 0 0 24px rgba(32,242,138,.08); }
-.metric-card > svg { grid-row: 1 / 3; width: 42px; height: 42px; color: var(--green); fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.metric-card > svg { grid-row: 1; width: 42px; height: 42px; color: var(--green); fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .metric-card > svg.red { color: var(--red); }
 .metric-name { align-self: center; font: 750 .73rem/1.3 var(--mono); letter-spacing: .02em; text-transform: uppercase; }
-.metric-card > strong { grid-column: 1 / 3; margin-top: .8rem; font: 850 clamp(2rem, 3vw, 3rem)/1 var(--display); letter-spacing: -.02em; white-space: nowrap; }
-.metric-card > em { position: absolute; right: 1rem; top: 5.3rem; color: var(--green); font: normal .72rem var(--mono); }
+.metric-reading { grid-column: 1 / 3; min-width: 0; display: flex; justify-content: space-between; gap: .65rem; align-items: baseline; }
+.metric-reading strong { min-width: 0; font: 850 clamp(1.85rem, 2.75vw, 2.8rem)/1 var(--display); letter-spacing: -.02em; white-space: nowrap; }
+.metric-reading em { flex: 0 0 auto; color: var(--green); font: normal .68rem var(--mono); white-space: nowrap; }
 .metric-card > small { grid-column: 1 / 3; align-self: end; color: #c0d0d8; font-size: .78rem; line-height: 1.35; }
 
 .lead-story { min-height: 450px; margin: 0 1rem; display: grid; grid-template-columns: minmax(360px, .95fr) minmax(380px, 1.2fr) 235px; overflow: hidden; border-bottom: 1px solid var(--line); background: #031522; }
@@ -77,7 +85,7 @@ svg { display: block; }
 .lead-copy > a { width: fit-content; margin-top: 1.2rem; padding: .65rem 1.2rem; display: inline-flex; gap: .65rem; align-items: center; color: white; border: 1px solid var(--green); border-radius: 999px; font: 700 .67rem var(--mono); text-decoration: none; text-transform: uppercase; transition: color .18s ease, background .18s ease; }
 .lead-copy > a svg, .story-card em svg, .report-rail > a svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .lead-copy > a:hover, .lead-copy > a:focus-visible { color: #02140d; background: var(--green); outline: none; }
-.lead-art { position: relative; min-height: 450px; display: flex; align-items: flex-end; justify-content: flex-end; padding: 2rem; overflow: hidden; background-image: linear-gradient(90deg, #031522 0%, transparent 25%), linear-gradient(0deg, rgba(3,21,34,.68), transparent 40%), url("assets/ai-safety-news-infographic.jpeg"); background-size: auto, auto, 208% auto; background-position: center, center, 100% 42%; background-repeat: no-repeat; }
+.lead-art { position: relative; min-height: 450px; display: flex; align-items: flex-end; justify-content: flex-end; padding: 2rem; overflow: hidden; background-image: linear-gradient(90deg, #031522 0%, transparent 22%), linear-gradient(0deg, rgba(3,21,34,.7), transparent 38%), url("assets/ai-safety-news-infographic.jpeg"); background-size: auto, auto, 208% auto; background-position: center, center, 66% 29.5%; background-repeat: no-repeat; }
 .lead-art span { color: white; font: .7rem/1.55 var(--mono); letter-spacing: .36em; text-align: right; text-transform: uppercase; }
 .outcome-rail { margin: 0; padding: 1.5rem 1.25rem; display: grid; align-content: center; gap: 1.6rem; background: rgba(2,17,27,.92); list-style: none; }
 .outcome-rail li { display: grid; grid-template-columns: 50px 1fr; gap: .85rem; align-items: center; color: #d7e4e9; font: .72rem/1.3 var(--mono); text-transform: uppercase; }
@@ -90,11 +98,11 @@ svg { display: block; }
 .story-card { min-width: 0; min-height: 280px; padding: 0 .85rem .2rem 0; display: flex; flex-direction: column; color: var(--ink); text-decoration: none; }
 .story-card + .story-card { padding-left: .85rem; border-left: 1px solid #c1d1d7; }
 .story-thumb { position: relative; height: 105px; margin-bottom: .55rem; display: block; overflow: hidden; border-radius: 4px; background-image: url("assets/ai-safety-news-infographic.jpeg"); background-size: 510% auto; background-repeat: no-repeat; filter: contrast(1.05) saturate(1.12); }
-.thumb-1 { background-position: 4% 57%; }
-.thumb-2 { background-position: 28% 57%; }
-.thumb-3 { background-position: 52% 57%; }
-.thumb-4 { background-position: 76% 57%; }
-.thumb-5 { background-position: 100% 57%; }
+.thumb-1 { background-position: 4% 53.5%; }
+.thumb-2 { background-position: 28% 53.5%; }
+.thumb-3 { background-position: 52% 53.5%; }
+.thumb-4 { background-position: 76% 53.5%; }
+.thumb-5 { background-position: 100% 53.5%; }
 .story-card > strong { font: 850 clamp(.95rem, 1.25vw, 1.25rem)/1.02 var(--display); }
 .story-card > p { margin: .55rem 0; color: #253b47; font-size: .78rem; line-height: 1.35; }
 .story-card > em { margin-top: auto; display: inline-flex; gap: .35rem; align-items: center; color: #05727a; font: normal 700 .62rem var(--mono); text-transform: uppercase; }
@@ -133,8 +141,10 @@ svg { display: block; }
 .outlook-panel cite { color: #a4bac4; font: normal .68rem var(--mono); }
 
 .front-footer { position: relative; min-height: 150px; padding: 1rem 1.5rem; display: grid; grid-template-columns: 1.25fr .9fr .35fr; gap: 1.4rem; align-items: center; isolation: isolate; border-top: 1px solid rgba(70,196,224,.35); }
-.front-footer::before { content: ""; position: absolute; inset: 0; z-index: -2; background-image: url("assets/ai-safety-news-infographic.jpeg"); background-size: 125% auto; background-position: 55% 100%; filter: brightness(.55); }
-.front-footer::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(2,13,22,.9), rgba(2,13,22,.34), rgba(2,13,22,.88)); }
+.front-footer::before { content: ""; position: absolute; inset: 0; z-index: -2; background:
+  radial-gradient(circle at 83% 115%, rgba(35,132,191,.42), transparent 31%),
+  linear-gradient(115deg, #020b13, #07243a 62%, #020b13); }
+.front-footer::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(2,13,22,.25), transparent 60%, rgba(2,13,22,.5)); }
 .footer-lockup img { width: 105px; height: 95px; object-fit: contain; }
 .footer-url { color: var(--green); font-weight: 800; }
 .footer-url span { display: block; margin-top: 1.1rem; color: #c1d3db; font: .54rem var(--mono); text-transform: uppercase; }
@@ -169,8 +179,9 @@ svg { display: block; }
 .context-box strong { font: 800 .65rem var(--mono); text-transform: uppercase; }
 .context-box p { margin: .4rem 0 0; font-size: .9rem; }
 .public-defaults { max-width: 750px; margin: 2rem 0; padding: 1.3rem 1.5rem; color: white; background: var(--navy); list-style: none; counter-reset: defaults; }
-.public-defaults li { counter-increment: defaults; padding: .7rem 0; display: grid; grid-template-columns: 2rem 1fr; gap: .6rem; border-top: 1px solid rgba(255,255,255,.14); font-size: .88rem; }
-.public-defaults li::before { content: "0" counter(defaults); color: var(--green); font: .64rem var(--mono); }
+.public-defaults li { position: relative; counter-increment: defaults; padding: .8rem 0 .8rem 2.8rem; display: block; border-top: 1px solid rgba(255,255,255,.14); font-size: .88rem; line-height: 1.5; }
+.public-defaults li::before { content: "0" counter(defaults); position: absolute; top: 1rem; left: 0; color: var(--green); font: .64rem var(--mono); }
+.public-defaults strong { margin-right: .25rem; color: var(--green); }
 .report-rail { position: sticky; top: 1.5rem; }
 .report-rail > div { padding: 1.15rem 0; border-top: 3px solid var(--ink); }
 .report-rail > div + div { margin-top: 1.5rem; }
@@ -259,11 +270,11 @@ svg { display: block; }
   .edition-strip > a { font-size: .72rem; }
   .metric-grid { grid-template-columns: 1fr; }
   .metric-card, .metric-card:last-child { grid-column: auto; min-height: 155px; }
-  .metric-card > strong { font-size: 2.5rem; }
+  .metric-reading strong { font-size: 2.5rem; }
   .lead-story { grid-template-columns: 1fr; }
   .lead-copy { min-height: 410px; padding-inline: 1.25rem; }
   .lead-copy h1 { font-size: 3.55rem; }
-  .lead-art { min-height: 390px; background-size: auto, auto, 285% auto; background-position: center, center, 95% 42%; }
+  .lead-art { min-height: 390px; background-size: auto, auto, 285% auto; background-position: center, center, 64% 29.5%; }
   .outcome-rail { grid-template-columns: 1fr 1fr; }
   .story-grid { grid-template-columns: 1fr; }
   .story-card, .story-card + .story-card, .story-card:last-child { grid-column: auto; padding: .8rem 0; border-left: 0; }
