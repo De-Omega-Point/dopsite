@@ -3,7 +3,10 @@ import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const projectRoot = process.cwd();
-const basePath = "/dopsite";
+// This repository is served from the custom domain root via CNAME. A /dopsite
+// prefix works on the github.io project URL but breaks every asset on
+// de-omega-point.com.
+const basePath = "";
 const fullApplication = "https://de-omega-point.sammielee.chatgpt.site";
 const assetsDirectory = path.join(projectRoot, "assets");
 const serverUrl = "http://127.0.0.1:3000";
@@ -82,6 +85,9 @@ try {
   const homepage = await readFile(path.join(projectRoot, "index.html"), "utf8");
   if (!homepage.includes("De-Omega-Point | Engineering Humanity Forward")) {
     throw new Error("The exported homepage is not the De-Omega-Point site.");
+  }
+  if (homepage.includes("/dopsite/assets/")) {
+    throw new Error("The custom-domain export still contains broken /dopsite asset paths.");
   }
 } catch (error) {
   if (serverLog) process.stderr.write(serverLog);
