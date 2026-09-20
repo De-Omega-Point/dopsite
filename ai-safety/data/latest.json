@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "edition": {
+    "number": 1,
+    "publishedAt": "2026-09-20T20:00:00+09:30",
+    "displayDate": "20 September 2026",
+    "deck": "Your twice-weekly brief on AI safety, governance and a more secure tomorrow",
+    "cadence": "Updated Monday + Thursday",
+    "nextUpdate": "Monday 21 September · 6:00 am ACST"
+  },
+  "metrics": [
+    {
+      "label": "Global AI risk index",
+      "value": "3.4 / 5",
+      "trend": "▲ +0.2",
+      "note": "Elevated pressure this edition"
+    },
+    {
+      "label": "Governance readiness",
+      "value": "55 / 100",
+      "trend": "▲ Improving",
+      "note": "Testing and oversight are maturing"
+    },
+    {
+      "label": "Control disclosures",
+      "value": "10",
+      "trend": "New evidence",
+      "note": "Recent disclosed test cases"
+    },
+    {
+      "label": "Evidence confidence",
+      "value": "86%",
+      "trend": "High",
+      "note": "Primary-source confidence score"
+    },
+    {
+      "label": "Cyber pressure",
+      "value": "78 / 100",
+      "trend": "▲ High",
+      "note": "Strongest signal this edition"
+    }
+  ],
+  "lead": {
+    "headline": "AI safety has entered its agent era",
+    "summary": "Frontier systems are gaining cyber skill, using more tools and staying on task longer. The key question is whether agents can act while remaining inside authorised boundaries."
+  },
+  "stories": [
+    {
+      "title": "Agents move from answers to actions",
+      "summary": "Tool use and longer tasks increase the consequences of a mistake."
+    },
+    {
+      "title": "Cyber becomes the pressure point",
+      "summary": "Frontier systems can accelerate both defence and exploitation."
+    },
+    {
+      "title": "Control failures leave the lab",
+      "summary": "Recent disclosures make system boundaries impossible to ignore."
+    },
+    {
+      "title": "Governance begins to harden",
+      "summary": "Independent evaluation and regulatory capacity are improving."
+    },
+    {
+      "title": "Public harms still look familiar",
+      "summary": "Scams, impersonation and unaccountable decisions remain immediate risks."
+    }
+  ],
+  "threat": {
+    "currentTier": 3,
+    "currentLabel": "Moderate",
+    "score": "3.4/5"
+  },
+  "outlook": {
+    "label": "Cautiously optimistic",
+    "summary": "Progress is being made, but continued vigilance, collaboration and investment are essential as AI capabilities advance.",
+    "quote": "“A safer AI future is not just possible—it is a choice we make together.”"
+  },
+  "report": {
+    "title": "AI safety has entered its agent era",
+    "standfirst": "What changed, what the evidence says and what responsible control looks like now.",
+    "intro": "The clearest AI safety story is a quieter operational shift: capable systems are being connected to credentials, software tools and networks before confidence in controlling their behaviour has caught up.",
+    "sections": [
+      {
+        "kicker": "01 · Capability + autonomy",
+        "heading": "The story has moved from answers to actions",
+        "body": "AI systems are improving at longer, multi-step work. Better tools and agent scaffolding allow a model to write code, navigate software, retry after a failure and pursue an objective with less human input. That usefulness also changes the consequences of a mistake.",
+        "stat": "≈50%",
+        "statLabel": "Success on apprentice-level cyber tasks in recent UK AISI testing"
+      },
+      {
+        "kicker": "02 · Cyber",
+        "heading": "Cyber is the pressure point",
+        "body": "Cyber capability can help defenders discover weaknesses faster, but it can also lower the time and expertise needed to cause harm. Network boundaries, credential design and consequential-action approval are now central AI safety controls.",
+        "quote": "Useful autonomy needs bounded authority."
+      },
+      {
+        "kicker": "03 · Agentic control",
+        "heading": "Recent incidents changed the conversation",
+        "body": "Recent disclosures moved the debate beyond hypothetical behaviour and into system design. Safety testing must cover the model, tools, memory, credentials, network routes, other agents and the humans supervising them.",
+        "context": "These were bounded evaluation and testing incidents. They show that controls can fail—not that autonomous attacks are widespread in the wild."
+      },
+      {
+        "kicker": "04 · Governance",
+        "heading": "Governance is beginning to harden",
+        "body": "Independent evaluation, formal reporting and regulatory capacity are improving. The direction is encouraging, but standards, reporting and enforcement still vary sharply across developers and jurisdictions."
+      },
+      {
+        "kicker": "05 · Public impact",
+        "heading": "For the public, the immediate risks look familiar",
+        "body": "The near-term concerns are recognisable: scams, convincing impersonation, privacy loss, poor information and decisions made without a clearly accountable human."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "publisher": "OpenAI",
+      "title": "Model misalignment reporting framework",
+      "date": "16 Sep 2026 ↗",
+      "url": "https://openai.com/index/model-misalignment-reporting-framework/"
+    },
+    {
+      "publisher": "Anthropic",
+      "title": "An alignment assessment of recent cybersecurity incidents",
+      "date": "9 Sep 2026 ↗",
+      "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
+    },
+    {
+      "publisher": "OpenAI",
+      "title": "Path to Astra",
+      "date": "1 Sep 2026 ↗",
+      "url": "https://openai.com/index/path-to-astra/"
+    },
+    {
+      "publisher": "UK AI Security Institute",
+      "title": "Frontier AI Trends Report",
+      "date": "Latest edition ↗",
+      "url": "https://www.aisi.gov.uk/frontier-ai-trends-report"
+    },
+    {
+      "publisher": "Google DeepMind",
+      "title": "Piloting double-blind AI evaluations",
+      "date": "27 Aug 2026 ↗",
+      "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/"
+    },
+    {
+      "publisher": "European Commission",
+      "title": "Guidelines for general-purpose AI providers",
+      "date": "Enforcement from 2 Aug 2026 ↗",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers"
+    },
+    {
+      "publisher": "Australian Government",
+      "title": "Australia’s AI Safety Institute",
+      "date": "Official overview ↗",
+      "url": "https://www.industry.gov.au/science-technology-and-innovation/technology/artificial-intelligence/ai-safety-institute"
+    }
+  ]
+}
