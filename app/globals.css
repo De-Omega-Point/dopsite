@@ -422,6 +422,175 @@ nav a:hover, nav a:focus-visible, .text-link:hover, .text-link:focus-visible {
   text-transform: uppercase;
 }
 
+.safety-entry {
+  position: relative;
+  margin-bottom: clamp(90px, 12vw, 178px);
+  display: grid;
+  grid-template-columns: minmax(360px, .86fr) minmax(0, 1.14fr);
+  overflow: hidden;
+  border: 1px solid rgba(85,255,47,.24);
+  background:
+    linear-gradient(135deg, rgba(14,47,22,.46), rgba(3,8,5,.96) 58%),
+    var(--panel);
+  box-shadow: 0 32px 100px rgba(0,0,0,.4), inset 0 1px rgba(255,255,255,.025);
+}
+
+.safety-entry::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(119,255,92,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(119,255,92,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: linear-gradient(90deg, black, transparent 72%);
+  mask-image: linear-gradient(90deg, black, transparent 72%);
+}
+
+.safety-entry-visual {
+  position: relative;
+  z-index: 1;
+  min-height: 560px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-right: 1px solid rgba(85,255,47,.18);
+  background:
+    radial-gradient(circle at 50% 48%, rgba(38,221,71,.2), transparent 48%),
+    #021107;
+  isolation: isolate;
+}
+
+.safety-entry-visual::before,
+.safety-entry-visual::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.safety-entry-visual::before {
+  width: 82%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(85,255,47,.18);
+  box-shadow: 0 0 0 38px rgba(85,255,47,.025), 0 0 70px rgba(85,255,47,.12);
+}
+
+.safety-entry-visual::after {
+  width: 54%;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(85,255,47,.2);
+}
+
+.safety-entry-visual img {
+  width: min(84%, 480px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 30px rgba(50,255,73,.2));
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.safety-entry-visual:hover img,
+.safety-entry-visual:focus-visible img {
+  transform: scale(1.035);
+  filter: drop-shadow(0 0 42px rgba(50,255,73,.34));
+}
+
+.safety-entry-visual:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: -4px;
+}
+
+.safety-entry-status,
+.safety-entry-open {
+  position: absolute;
+  z-index: 2;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.safety-entry-status {
+  top: 24px;
+  left: 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green-soft);
+}
+
+.safety-entry-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+}
+
+.safety-entry-open {
+  right: 26px;
+  bottom: 24px;
+  color: #d9e5dc;
+}
+
+.safety-entry-copy {
+  position: relative;
+  z-index: 1;
+  padding: clamp(48px, 7vw, 104px);
+  align-self: center;
+}
+
+.safety-entry-copy h2 {
+  margin: 12px 0 28px;
+  font-size: clamp(44px, 6vw, 84px);
+  font-weight: 470;
+  line-height: .94;
+  letter-spacing: -.06em;
+}
+
+.safety-entry-copy h2 span {
+  color: var(--green);
+}
+
+.safety-entry-copy > p:not(.kicker) {
+  max-width: 620px;
+  margin: 0;
+  color: #aeb8b0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.safety-entry-copy ul {
+  margin: 32px 0 38px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  border-top: 1px solid rgba(151,255,130,.16);
+  border-bottom: 1px solid rgba(151,255,130,.16);
+}
+
+.safety-entry-copy li {
+  min-height: 76px;
+  padding: 18px 16px 16px 0;
+  display: flex;
+  align-items: center;
+  color: #d2ddd5;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  line-height: 1.45;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.safety-entry-copy li + li {
+  padding-left: 16px;
+  border-left: 1px solid rgba(151,255,130,.16);
+}
+
 .mission {
   padding-block: clamp(110px, 14vw, 210px);
   display: grid;
@@ -1189,6 +1358,16 @@ footer p:last-child {
     gap: 20px;
   }
 
+  .safety-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .safety-entry-visual {
+    min-height: 460px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(85,255,47,.18);
+  }
+
   .product-grid {
     grid-template-columns: 1fr;
   }
@@ -1277,6 +1456,48 @@ footer p:last-child {
   .flagship {
     width: min(100% - 32px, 1320px);
     padding-block: 48px 70px;
+  }
+
+  .safety-entry {
+    width: calc(100% - 32px);
+    margin-bottom: 96px;
+  }
+
+  .safety-entry-visual {
+    min-height: 350px;
+  }
+
+  .safety-entry-status {
+    top: 18px;
+    left: 18px;
+  }
+
+  .safety-entry-open {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .safety-entry-copy {
+    padding: 38px 24px 30px;
+  }
+
+  .safety-entry-copy h2 {
+    font-size: 44px;
+  }
+
+  .safety-entry-copy ul {
+    grid-template-columns: 1fr;
+  }
+
+  .safety-entry-copy li {
+    min-height: 56px;
+    padding: 14px 0;
+  }
+
+  .safety-entry-copy li + li {
+    padding-left: 0;
+    border-top: 1px solid rgba(151,255,130,.16);
+    border-left: 0;
   }
 
   .button {

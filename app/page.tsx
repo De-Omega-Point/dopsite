@@ -124,6 +124,40 @@ export default function Home() {
         </figure>
       </section>
 
+      <section className="safety-entry section-shell" aria-labelledby="safety-entry-title">
+        <a
+          className="safety-entry-visual"
+          href={AI_SAFETY_URL}
+          aria-label="Open the De-Omega-Point AI Safety Observatory"
+        >
+          <span className="safety-entry-status"><i aria-hidden="true" /> Live intelligence</span>
+          <img
+            src="/assets/de-omega-point-logo.png"
+            alt="De-Omega-Point Omega and human intelligence emblem"
+            width="967"
+            height="876"
+          />
+          <span className="safety-entry-open" aria-hidden="true">Open observatory ↗</span>
+        </a>
+        <div className="safety-entry-copy">
+          <p className="kicker">AI safety / Public intelligence</p>
+          <h2 id="safety-entry-title">The signal,<br /><span>not the spectacle.</span></h2>
+          <p>
+            Follow evidence-backed AI safety threat levels, agent-control risks and
+            source-linked reporting in plain English. Every dashboard signal leads to
+            the reporting and evidence behind it.
+          </p>
+          <ul aria-label="AI Safety Observatory features">
+            <li>Clickable threat dashboard</li>
+            <li>News-style public report</li>
+            <li>Updated Monday + Thursday</li>
+          </ul>
+          <a className="button primary" href={AI_SAFETY_URL}>
+            Open AI Safety Observatory <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
       <section className="store" id="store" aria-labelledby="store-title">
         <div className="store-heading section-shell">
           <div>
