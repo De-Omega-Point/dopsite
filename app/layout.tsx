@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     "codex-preview": "development",
   },
   icons: {
-    icon: "/assets/de-omega-point-logo.png",
-    shortcut: "/assets/de-omega-point-logo.png",
+    icon: "/assets/de-omega-point-emblem-v2.png",
+    shortcut: "/assets/de-omega-point-emblem-v2.png",
   },
 };
 

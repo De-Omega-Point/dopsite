@@ -12,7 +12,7 @@ export default function PlatformPage() {
     <main className="platform-page">
       <header className="platform-header">
         <a className="platform-brand" href="/" aria-label="Return to De-Omega-Point homepage">
-          <span className="platform-mark"><img src="/assets/de-omega-point-logo.png" alt="" /></span>
+          <span className="platform-mark"><img src="/assets/de-omega-point-emblem-v2.png" alt="" /></span>
           <span><strong>De‑Omega‑Point</strong><small>Digital Platform</small></span>
         </a>
         <nav aria-label="Platform navigation">
@@ -41,7 +41,7 @@ export default function PlatformPage() {
         <div className="platform-orbit" aria-hidden="true">
           <span className="ring ring-one" />
           <span className="ring ring-two" />
-          <span className="platform-core"><img src="/assets/de-omega-point-logo.png" alt="" /></span>
+          <span className="platform-core"><img src="/assets/de-omega-point-emblem-v2.png" alt="" /></span>
           <span className="orbit-label label-one">Products</span>
           <span className="orbit-label label-two">Knowledge</span>
           <span className="orbit-label label-three">Tools</span>

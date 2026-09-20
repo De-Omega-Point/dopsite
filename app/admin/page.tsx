@@ -19,7 +19,7 @@ export default async function AdminPage() {
   return (
     <main className="admin-shell">
       <aside className="admin-sidebar">
-        <a className="admin-brand" href="/platform"><span><img src="/assets/de-omega-point-logo.png" alt="" /></span><div><strong>DE‑OMEGA</strong><small>ADMIN CONTROL</small></div></a>
+        <a className="admin-brand" href="/platform"><span><img src="/assets/de-omega-point-emblem-v2.png" alt="" /></span><div><strong>DE‑OMEGA</strong><small>ADMIN CONTROL</small></div></a>
         <nav aria-label="Admin sections"><a className="active" href="#overview">Overview</a><a href="#visibility-leads">AI Visibility</a><a href="#products">Products</a><a href="#orders">Orders</a><a href="#customers">Customers</a><a href="#releases">Releases</a><a href="#settings">Settings</a><a href="#access">Access</a></nav>
         <div className="admin-account"><small>AUTHORISED ADMIN</small><strong>{user.displayName}</strong><span>{user.email}</span><a href={chatGPTSignOutPath("/platform")}>Sign out</a></div>
       </aside>

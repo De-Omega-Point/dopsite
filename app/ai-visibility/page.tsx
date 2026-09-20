@@ -87,7 +87,7 @@ export default function AIVisibilityPage() {
     <main className="visibility-page">
       <header className="visibility-header">
         <a className="visibility-brand" href="/" aria-label="De-Omega-Point home">
-          <span><img src="/assets/de-omega-point-logo.png" alt="" /></span>
+          <span><img src="/assets/de-omega-point-emblem-v2.png" alt="" /></span>
           <strong>De‑Omega‑Point</strong>
         </a>
         <p>AI Visibility Lab <span>Beta</span></p>

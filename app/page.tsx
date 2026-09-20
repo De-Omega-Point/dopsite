@@ -51,7 +51,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top" aria-label="De-Omega-Point home">
           <span className="brand-mark" aria-hidden="true">
-            <img src="/assets/de-omega-point-logo.png" alt="" />
+            <img src="/assets/de-omega-point-emblem-v2.png" alt="" />
           </span>
           <span>De-Omega-Point</span>
         </a>
@@ -132,7 +132,7 @@ export default function Home() {
         >
           <span className="safety-entry-status"><i aria-hidden="true" /> Live intelligence</span>
           <img
-            src="/assets/de-omega-point-logo.png"
+            src="/assets/de-omega-point-emblem-v2.png"
             alt="De-Omega-Point Omega and human intelligence emblem"
             width="967"
             height="876"
@@ -175,7 +175,7 @@ export default function Home() {
             <article className="product-card" key={product.title}>
               <div className="product-meta"><span>0{index + 1}</span><span>{product.type}</span></div>
               <div className="product-glyph" aria-hidden="true">
-                <img src="/assets/de-omega-point-logo.png" alt="" />
+                <img src="/assets/de-omega-point-emblem-v2.png" alt="" />
               </div>
               <div>
                 <p className="product-status">{product.status}</p>
@@ -242,7 +242,7 @@ export default function Home() {
               </div>
               <div className="card-orbit" aria-hidden="true">
                 <span className="orbital-core">
-                  <img src="/assets/de-omega-point-logo.png" alt="" />
+                  <img src="/assets/de-omega-point-emblem-v2.png" alt="" />
                 </span>
               </div>
               <div>
@@ -345,7 +345,7 @@ export default function Home() {
 
       <section className="contact" id="contact" aria-labelledby="contact-title">
         <div className="contact-orbit" aria-hidden="true">
-          <img src="/assets/de-omega-point-logo.png" alt="" />
+          <img src="/assets/de-omega-point-emblem-v2.png" alt="" />
         </div>
         <p className="eyebrow"><span /> Transmission open</p>
         <h2 id="contact-title">The future needs<br /><em>builders.</em></h2>
@@ -361,7 +361,7 @@ export default function Home() {
       <footer>
         <a className="brand" href="#top">
           <span className="brand-mark" aria-hidden="true">
-            <img src="/assets/de-omega-point-logo.png" alt="" />
+            <img src="/assets/de-omega-point-emblem-v2.png" alt="" />
           </span>
           <span>De-Omega-Point</span>
         </a>
