@@ -64,6 +64,7 @@ export default function Home() {
               Free AI check <span aria-hidden="true">↗</span>
             </a>
           </span>
+          <a href="/lightbridge/">Lightbridge</a>
           <a href="#mission">Mission</a>
           <a href="#store">Store</a>
           <a href="#systems">Systems</a>
@@ -71,6 +72,7 @@ export default function Home() {
         </nav>
         <div className="header-actions">
           <span className="mobile-intelligence-links">
+            <a className="mobile-safety-link" href="/lightbridge/">Play Lightbridge</a>
             <a className="mobile-safety-link" href={AI_SAFETY_URL}>
               AI Safety <span>Live</span>
             </a>
