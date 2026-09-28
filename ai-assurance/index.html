@@ -45,13 +45,19 @@
     .section{padding:52px 0}.section-title{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:24px}
     .section-title h2{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1;margin:6px 0}.section-title p{max-width:520px;color:var(--muted);margin:0}
     .assessment{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:24px;align-items:start}
-    .questions{display:grid;gap:14px}.question{background:rgba(8,36,56,.85);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+    .questions{display:grid;gap:14px}.question{background:rgba(8,36,56,.85);border:1px solid var(--line);border-radius:var(--radius);padding:22px;min-width:0}
+    fieldset.question{margin:0}
+    .question legend{padding:0;width:100%}
+    .question legend .qhead{width:100%}
     .qhead{display:flex;gap:14px;align-items:flex-start}.qnum{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(110,239,196,.12);color:var(--green);font-weight:900;flex:0 0 auto}
     .question h3{margin:2px 0 6px;font-size:1.04rem}.question p{margin:0;color:var(--muted);font-size:.91rem}
     .options{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:18px}
     .option{position:relative}.option input{position:absolute;opacity:0;pointer-events:none}
     .option span{display:block;border:1px solid rgba(154,181,197,.23);border-radius:14px;padding:12px 11px;min-height:64px;background:rgba(3,19,33,.42);cursor:pointer;font-size:.88rem}
     .option input:checked+span{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:rgba(110,239,196,.08);color:white}
+    .option input:focus-visible+span{outline:3px solid var(--cyan);outline-offset:3px}
+    button:focus-visible,a:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+    button:disabled{opacity:.45;cursor:not-allowed;transform:none!important}
     .progress-card{position:sticky;top:96px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
     .progress-card strong{display:block;font-size:2.1rem;line-height:1}.bar{height:7px;background:rgba(255,255,255,.08);border-radius:99px;margin:13px 0;overflow:hidden}.bar span{height:100%;display:block;width:0;background:linear-gradient(90deg,var(--green),var(--cyan));transition:.25s}
     .progress-card p{color:var(--muted);font-size:.88rem}.progress-card .button{width:100%;justify-content:center;margin-top:8px}
@@ -60,6 +66,9 @@
     .score-ring{width:160px;height:160px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) 0deg,var(--green) var(--deg,0deg),rgba(255,255,255,.09) var(--deg,0deg));position:relative}
     .score-ring:after{content:"";position:absolute;inset:12px;background:var(--bg2);border-radius:50%}.score-ring div{position:relative;z-index:2;text-align:center}.score-ring strong{display:block;font-size:2.9rem;line-height:1}.score-ring small{color:var(--muted)}
     .posture{display:inline-block;border-radius:999px;padding:7px 11px;font-size:.78rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,201,107,.1);color:var(--amber);border:1px solid rgba(255,201,107,.3)}
+    .result-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 10px}
+    .result-meta span{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#c8dbe5;background:rgba(255,255,255,.03);font-size:.82rem;font-weight:800}
+    .result-meta b{color:white;margin-left:5px}
     .result-hero h2{font-size:2rem;margin:12px 0 8px}.result-hero p{color:#c5d7e1;margin:0}
     .dimensions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
     .dimension{background:rgba(8,36,56,.75);border:1px solid var(--line);border-radius:18px;padding:16px}.dimension span{color:var(--muted);font-size:.82rem}.dimension strong{font-size:1.35rem;display:block;margin-top:4px}
@@ -71,6 +80,7 @@
     footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted)}footer .row{display:flex;justify-content:space-between;gap:20px;align-items:center}
     @media(max-width:860px){.hero,.assessment,.result-hero,.sprint{grid-template-columns:1fr}.trust-card{order:-1}.progress-card{position:static}.dimensions,.method{grid-template-columns:1fr 1fr}.fixes{grid-template-columns:1fr}.options{grid-template-columns:1fr}.score-ring{width:140px;height:140px}.navlinks a:not(.keep){display:none}}
     @media(max-width:560px){.shell{width:min(100% - 22px,1120px)}.hero{padding-top:52px}.dimensions,.method{grid-template-columns:1fr}.nav{height:68px}.brand span{display:none}.question,.panel,.result-hero,.sprint{padding:18px}.section-title{align-items:start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none!important}}
     @media print{header,.hero,.assessment,.method,.sprint,footer,#resultActions{display:none!important}.results{display:block!important}.shell{width:100%}.result-hero,.panel,.dimension{box-shadow:none;background:white;color:black;border-color:#bbb}.result-hero p,.panel small,.dimension span{color:#444}}
   </style>
 </head>
@@ -131,9 +141,14 @@
 
     <section class="results" id="results" aria-live="polite">
       <div class="result-hero">
-        <div class="score-ring" id="scoreRing"><div><strong id="overallScore">0</strong><small>/100 readiness</small></div></div>
+        <div class="score-ring" id="scoreRing"><div><strong id="overallScore">0</strong><small>/100 assurance</small></div></div>
         <div>
           <span class="posture" id="postureBadge">Assessment</span>
+          <div class="result-meta" aria-label="Assessment summary">
+            <span>Exposure <b id="exposureLabel">—</b></span>
+            <span>Control Debt <b id="controlDebt">—</b></span>
+            <span>Critical gaps <b id="criticalCount">—</b></span>
+          </div>
           <h2 id="resultTitle">Your deployment-readiness profile</h2>
           <p id="resultSummary"></p>
         </div>
@@ -143,7 +158,7 @@
 
       <div class="fixes">
         <div class="panel">
-          <h3>Your next three fixes</h3>
+          <h3>Your next three control moves</h3>
           <ol class="fix-list" id="fixList"></ol>
         </div>
         <div class="panel">
@@ -156,7 +171,7 @@
         </div>
       </div>
 
-      <div class="sprint" id="sprint">
+      <div class="sprint" id="sprint-result">
         <div>
           <div class="eyebrow">Paid next step</div>
           <h2>DΩP Agent Assurance Sprint</h2>
@@ -179,18 +194,41 @@
     </section>
   </section>
 
+  <section class="section shell" id="sprint" aria-labelledby="sprint-title">
+    <div class="sprint">
+      <div>
+        <div class="eyebrow">Paid next step</div>
+        <h2 id="sprint-title">DΩP Agent Assurance Sprint</h2>
+        <p>For organisations that need evidence, not another questionnaire. We examine one real agent or workflow, map its permission envelope, test meaningful human authority, review observability and incident readiness, then give you a prioritised remediation plan and Assurance Receipt.</p>
+        <ul>
+          <li>60–90 minute discovery and evidence review</li>
+          <li>Permission Envelope + Human Authority assessment</li>
+          <li>Exposure versus Assurance analysis</li>
+          <li>Top remediation priorities and retest conditions</li>
+          <li>Executive summary + technical findings + Assurance Receipt</li>
+        </ul>
+        <p class="disclaimer">Independent readiness/assurance assessment. Not certification, penetration testing, legal advice or a guarantee of safety.</p>
+      </div>
+      <div>
+        <div class="price">A$2,500</div>
+        <small>founding price · one agent/workflow</small>
+        <div style="margin-top:14px"><a class="button primary" href="mailto:hello@de-omega-point.com?subject=D%CE%A9P%20Agent%20Assurance%20Sprint">Request a Sprint →</a></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section shell">
     <div class="section-title">
-      <div><div class="eyebrow">What we measure</div><h2>Six operational controls</h2></div>
-      <p>The methodology is intentionally narrower than a giant governance checklist. It focuses on whether a real agent can act beyond intended boundaries and whether humans can actually intervene.</p>
+      <div><div class="eyebrow">What we measure</div><h2>Six operational lenses</h2></div>
+      <p>The diagnostic separates what the agent can reach or change from how well the organisation controls that authority. High exposure is not automatically unsafe; weak assurance is the problem.</p>
     </div>
     <div class="method">
-      <article><b>01</b><h3>Permission control</h3><p>What the agent can actually do, not merely what the prompt says it should do.</p></article>
-      <article><b>02</b><h3>Data control</h3><p>What sensitive information it can reach, move or expose.</p></article>
-      <article><b>03</b><h3>Boundary strength</h3><p>Identity, least privilege, network and tool restrictions.</p></article>
-      <article><b>04</b><h3>Human authority</h3><p>Visibility, comprehension, time, authority and intervention.</p></article>
-      <article><b>05</b><h3>Observability</h3><p>Whether meaningful actions and control failures become visible quickly.</p></article>
-      <article><b>06</b><h3>Incident readiness</h3><p>Whether the organisation can contain, notify, learn and recover.</p></article>
+      <article><b>01</b><h3>Authority exposure</h3><p>How much real-world action the agent can take and how consequential those actions can become.</p></article>
+      <article><b>02</b><h3>Data exposure</h3><p>What sensitive, confidential or personal information the agent can reach.</p></article>
+      <article><b>03</b><h3>Boundary strength</h3><p>Identity, least privilege, network and tool restrictions that constrain the agent.</p></article>
+      <article><b>04</b><h3>Human authority</h3><p>Visibility, comprehension, time, authority, contestability and practical intervention.</p></article>
+      <article><b>05</b><h3>Observability</h3><p>Whether consequential actions, denials and tactic changes become visible quickly.</p></article>
+      <article><b>06</b><h3>Incident readiness</h3><p>Whether the organisation can detect, contain, notify, learn and recover.</p></article>
     </div>
     <p class="disclaimer">The free check is an indicative self-assessment designed to help prioritise questions. It does not independently verify your systems and should not be treated as legal, regulatory, cyber-security or certification advice.</p>
   </section>
@@ -205,18 +243,18 @@
 
 <script>
 const questions = [
-  {id:"q1",cat:"Permission control",title:"Can the agent take actions outside a private draft or sandbox?",help:"Examples: send messages, update records, publish content, call APIs or trigger workflows.",options:[["No — draft/sandbox only",2],["Some limited actions",1],["Yes — broad actions",0]],fix:"Narrow the agent's executable action set. Move from broad authority to explicit, allow-listed actions."},
-  {id:"q2",cat:"Data control",title:"Can the agent access sensitive, personal, financial, health or confidential data?",help:"Answer based on real access, not intended use.",options:[["No sensitive access",2],["Limited / masked access",1],["Yes — direct access",0]],fix:"Reduce sensitive-data access. Mask, minimise or isolate data the agent does not need for the task."},
-  {id:"q3",cat:"Permission control",title:"Can the agent spend money, approve refunds, change entitlements or create external commitments?",help:"Include purchasing, credits, bookings, contracts and irreversible customer actions.",options:[["No",2],["Only below strict limits",1],["Yes — little/no limit",0]],fix:"Put hard transaction limits and secondary approval around financial or externally binding actions."},
-  {id:"q4",cat:"Boundary strength",title:"Does the agent have its own least-privilege identity and short-lived credentials?",help:"Shared or long-lived credentials make revocation and attribution harder.",options:[["Yes",2],["Partly",1],["No / unsure",0]],fix:"Give the agent a unique least-privilege identity with scoped, revocable and preferably short-lived credentials."},
-  {id:"q5",cat:"Boundary strength",title:"Are tools, APIs and outbound destinations restricted to an explicit allow-list?",help:"A prompt telling the agent 'only use X' is not a technical boundary.",options:[["Yes — enforced",2],["Partly restricted",1],["No / open internet",0]],fix:"Create an enforced permission envelope for tools, APIs, networks and destinations. Do not rely on instructions alone."},
-  {id:"q6",cat:"Human authority",title:"Do high-impact actions require a human approval before execution?",help:"The human should understand the action and have enough time to intervene.",options:[["Yes",2],["Some actions",1],["No",0]],fix:"Require meaningful human approval for high-consequence actions, with enough context and time to make the decision."},
-  {id:"q7",cat:"Human authority",title:"Can an authorised human immediately stop the agent or revoke its access?",help:"This should work at the system level, not depend on asking the model to stop.",options:[["Yes — tested",2],["Exists, not tested",1],["No / unsure",0]],fix:"Implement and test a system-level stop/revocation mechanism independent of the model."},
-  {id:"q8",cat:"Observability",title:"Are the agent's proposed and executed actions logged with actor, target and outcome?",help:"Logs should support reconstruction of what happened.",options:[["Yes — complete",2],["Partial logs",1],["No / unsure",0]],fix:"Log proposed and executed actions, identity, target, result and policy decision in a tamper-resistant trail."},
-  {id:"q9",cat:"Observability",title:"Would repeated denials, tactic changes or scope expansion trigger an alert?",help:"Persistence after a boundary can be more important than a single failed action.",options:[["Yes — automated",2],["Manual review only",1],["No / unsure",0]],fix:"Add behavioural tripwires for repeated denials, tactic changes, privilege escalation and unexpected scope expansion."},
-  {id:"q10",cat:"Incident readiness",title:"Is there a named owner for AI-agent incidents and a tested response playbook?",help:"Someone must know who can contain, investigate and decide on notification.",options:[["Yes — tested",2],["Named but untested",1],["No / unsure",0]],fix:"Assign an incident owner and run a tabletop exercise covering containment, evidence preservation, escalation and notification."},
-  {id:"q11",cat:"Incident readiness",title:"Can you detect and notify affected parties quickly enough to limit harm?",help:"Think in hours or days, not 'we review logs eventually'.",options:[["Yes — measured SLA",2],["Informal process",1],["No / unsure",0]],fix:"Define and measure detection and notification latency. Establish an external notification path before an incident."},
-  {id:"q12",cat:"Data control",title:"Can customers or affected people understand when AI is acting and reach a human when it matters?",help:"Transparency and contestability are part of meaningful control.",options:[["Yes — clear and usable",2],["Partly",1],["No / unclear",0]],fix:"Make AI involvement clear for consequential interactions and provide a practical route to human review or contestability."}
+  {id:"q1",lens:"Authority exposure",kind:"exposure",title:"Can the agent take actions outside a private draft or sandbox?",help:"Examples: send messages, update records, publish content, call APIs or trigger workflows.",options:[["No — draft/sandbox only",0],["Some limited actions",1],["Yes — broad actions",2]],fix:"Reduce executable scope. Use explicit allow-listed actions instead of broad authority."},
+  {id:"q2",lens:"Data exposure",kind:"exposure",title:"Can the agent access sensitive, personal, financial, health or confidential data?",help:"Answer based on real access, not intended use.",options:[["No sensitive access",0],["Limited / masked access",1],["Yes — direct access",2]],fix:"Minimise sensitive-data exposure. Mask, isolate or remove data the agent does not need."},
+  {id:"q3",lens:"Authority exposure",kind:"exposure",title:"Can the agent spend money, approve refunds, change entitlements or create external commitments?",help:"Include purchasing, credits, bookings, contracts and irreversible customer actions.",options:[["No",0],["Only below strict limits",1],["Yes — little/no limit",2]],fix:"Reduce consequence. Put hard limits and secondary approval around financial or externally binding actions."},
+  {id:"q4",lens:"Boundary strength",kind:"control",critical:true,title:"Does the agent have its own least-privilege identity and short-lived credentials?",help:"Shared or long-lived credentials make revocation and attribution harder.",options:[["Yes",2],["Partly",1],["No / unsure",0]],fix:"Give the agent a unique least-privilege identity with scoped, revocable and preferably short-lived credentials."},
+  {id:"q5",lens:"Boundary strength",kind:"control",critical:true,title:"Are tools, APIs and outbound destinations restricted to an explicit allow-list?",help:"A prompt telling the agent 'only use X' is not a technical boundary.",options:[["Yes — enforced",2],["Partly restricted",1],["No / open internet",0]],fix:"Create an enforced permission envelope for tools, APIs, networks and destinations. Do not rely on instructions alone."},
+  {id:"q6",lens:"Human authority",kind:"control",title:"Do high-impact actions require a human approval before execution?",help:"The human should understand the action and have enough time to intervene.",options:[["Yes",2],["Some actions",1],["No",0]],fix:"Require meaningful human approval for high-consequence actions, with enough context and time to decide."},
+  {id:"q7",lens:"Human authority",kind:"control",critical:true,title:"Can an authorised human immediately stop the agent or revoke its access?",help:"This should work at the system level, not depend on asking the model to stop.",options:[["Yes — tested",2],["Exists, not tested",1],["No / unsure",0]],fix:"Implement and test a system-level stop/revocation mechanism independent of the model."},
+  {id:"q8",lens:"Observability",kind:"control",critical:true,title:"Are the agent's proposed and executed actions logged with actor, target and outcome?",help:"Logs should support reconstruction of what happened.",options:[["Yes — complete",2],["Partial logs",1],["No / unsure",0]],fix:"Log proposed and executed actions, identity, target, result and policy decision in a tamper-resistant trail."},
+  {id:"q9",lens:"Observability",kind:"control",title:"Would repeated denials, tactic changes or scope expansion trigger an alert?",help:"Persistence after a boundary can be more important than a single failed action.",options:[["Yes — automated",2],["Manual review only",1],["No / unsure",0]],fix:"Add behavioural tripwires for repeated denials, tactic changes, privilege escalation and unexpected scope expansion."},
+  {id:"q10",lens:"Incident readiness",kind:"control",critical:true,title:"Is there a named owner for AI-agent incidents and a tested response playbook?",help:"Someone must know who can contain, investigate and decide on notification.",options:[["Yes — tested",2],["Named but untested",1],["No / unsure",0]],fix:"Assign an incident owner and run a tabletop exercise covering containment, evidence preservation, escalation and notification."},
+  {id:"q11",lens:"Incident readiness",kind:"control",title:"Can you detect and notify affected parties quickly enough to limit harm?",help:"Think in hours or days, not 'we review logs eventually'.",options:[["Yes — measured SLA",2],["Informal process",1],["No / unsure",0]],fix:"Define and measure detection and notification latency. Establish a verified external notification path before an incident."},
+  {id:"q12",lens:"Human authority",kind:"control",title:"Can customers or affected people understand when AI is acting and reach a human when it matters?",help:"Transparency and contestability are part of meaningful control.",options:[["Yes — clear and usable",2],["Partly",1],["No / unclear",0]],fix:"Make AI involvement clear for consequential interactions and provide a practical route to human review or contestability."}
 ];
 
 const form = document.getElementById("assessmentForm");
@@ -225,19 +263,27 @@ const progressBar = document.getElementById("progressBar");
 const scoreButton = document.getElementById("scoreButton");
 const resetButton = document.getElementById("resetButton");
 const results = document.getElementById("results");
-const saved = JSON.parse(localStorage.getItem("dop-agent-check") || "{}");
+
+let saved = {};
+try {
+  const raw = localStorage.getItem("dop-agent-check");
+  saved = raw ? (JSON.parse(raw) || {}) : {};
+} catch {
+  saved = {};
+}
 
 function renderQuestions(){
-  form.innerHTML = questions.map((q,i)=>`
-    <article class="question">
-      <div class="qhead"><span class="qnum">${String(i+1).padStart(2,"0")}</span><div><h3>${q.title}</h3><p>${q.help}</p></div></div>
-      <div class="options">
-        ${q.options.map(([label,value])=>`
-          <label class="option"><input type="radio" name="${q.id}" value="${value}" ${String(saved[q.id])===String(value)?"checked":""}><span>${label}</span></label>
-        `).join("")}
-      </div>
-    </article>
-  `).join("");
+  form.innerHTML = questions.map((q,i)=>{
+    const helpId = q.id+"-help";
+    return '<fieldset class="question">'+
+      '<legend><span class="qhead"><span class="qnum">'+String(i+1).padStart(2,"0")+'</span><span><strong style="display:block;font-size:1.04rem;margin:2px 0 6px">'+q.title+'</strong></span></span></legend>'+
+      '<p id="'+helpId+'">'+q.help+'</p>'+
+      '<div class="options">'+
+      q.options.map(([label,value])=>
+        '<label class="option"><input type="radio" name="'+q.id+'" value="'+value+'" aria-describedby="'+helpId+'" '+(String(saved[q.id])===String(value)?"checked":"")+'><span>'+label+'</span></label>'
+      ).join("")+
+      '</div></fieldset>';
+  }).join("");
   form.addEventListener("change", persistAndProgress);
   persistAndProgress();
 }
@@ -251,96 +297,200 @@ function getAnswers(){
   return out;
 }
 
+function safeSave(obj){
+  try { localStorage.setItem("dop-agent-check",JSON.stringify(obj)); } catch {}
+}
+
 function persistAndProgress(){
   const a=getAnswers();
-  localStorage.setItem("dop-agent-check",JSON.stringify(a));
+  safeSave(a);
   const count=Object.keys(a).length;
   answeredCount.textContent=count;
   progressBar.style.width=(count/questions.length*100)+"%";
   scoreButton.disabled=count!==questions.length;
-  document.getElementById("progressText").textContent=count===questions.length ? "Ready. Your result is calculated locally in this browser." : (questions.length-count)+" questions remaining.";
+  document.getElementById("progressText").textContent =
+    count===questions.length
+      ? "Ready. Your result is calculated locally in this browser."
+      : (questions.length-count)+" questions remaining.";
+}
+
+function averagePercent(items, answers, invert=false){
+  if(!items.length) return 0;
+  const got=items.reduce((s,q)=>s+answers[q.id],0);
+  const raw=Math.round(got/(items.length*2)*100);
+  return invert ? 100-raw : raw;
+}
+
+function deploymentPosture(exposure, assurance, critical){
+  if(exposure>=67){
+    if(assurance<70 || critical>=2) return "Do not deploy yet";
+    if(assurance<85 || critical>=1) return "Do not expand yet";
+    return "Deploy with controls";
+  }
+  if(exposure>=34){
+    if(assurance<55 || critical>=2) return "Do not expand yet";
+    if(assurance<75 || critical>=1) return "Deploy with controls";
+    return "Deployable after verification";
+  }
+  if(assurance<45 || critical>=2) return "Do not expand yet";
+  if(assurance<70 || critical>=1) return "Deploy with controls";
+  return "Deployable after verification";
+}
+
+function exposureWord(score){
+  if(score>=67) return "High";
+  if(score>=34) return "Moderate";
+  return "Low";
+}
+
+function meaningFor(posture, exposure, assurance, critical){
+  if(posture==="Do not deploy yet"){
+    return "The system combines material exposure with insufficient assurance. Reduce authority first, close critical control gaps, then retest before live deployment.";
+  }
+  if(posture==="Do not expand yet"){
+    return "Keep the current permission envelope narrow. The immediate objective is not more autonomy; it is stronger evidence that boundaries, intervention and incident controls work.";
+  }
+  if(posture==="Deploy with controls"){
+    return "The system may be usable within a constrained permission envelope, but the listed controls should be treated as deployment conditions rather than optional improvements.";
+  }
+  return "The self-assessment shows a comparatively strong baseline. Verify the highest-consequence controls under realistic conditions before expanding authority.";
+}
+
+function buildFixes(answers, exposure){
+  const controls=questions.filter(q=>q.kind==="control").map(q=>({q,score:answers[q.id]}));
+  const candidates=[];
+  if(exposure>=67){
+    candidates.push({lens:"Exposure",text:"Reduce the permission envelope before adding more autonomy. Narrow actions, sensitive-data access or financial authority where the task does not require them.",priority:-2});
+  }
+  controls.forEach(x=>{
+    if(x.q.critical && x.score===0) candidates.push({lens:x.q.lens,text:x.q.fix,priority:-3});
+  });
+  controls.sort((a,b)=>a.score-b.score).forEach(x=>{
+    candidates.push({lens:x.q.lens,text:x.q.fix,priority:x.score});
+  });
+  candidates.sort((a,b)=>a.priority-b.priority);
+  const chosen=[]; const seen=new Set();
+  for(const c of candidates){
+    const key=c.lens+"|"+c.text;
+    if(seen.has(key)) continue;
+    if(chosen.length<3){
+      chosen.push(c); seen.add(key);
+    }
+  }
+  return chosen;
 }
 
 function scoreAssessment(){
   const a=getAnswers();
   if(Object.keys(a).length!==questions.length) return;
-  const cats={};
+
+  const exposureQs=questions.filter(q=>q.kind==="exposure");
+  const controlQs=questions.filter(q=>q.kind==="control");
+  const exposure=Math.round(exposureQs.reduce((s,q)=>s+a[q.id],0)/(exposureQs.length*2)*100);
+  const assurance=Math.round(controlQs.reduce((s,q)=>s+a[q.id],0)/(controlQs.length*2)*100);
+
+  const lensGroups={};
   questions.forEach(q=>{
-    cats[q.cat] ||= {got:0,max:0};
-    cats[q.cat].got += a[q.id];
-    cats[q.cat].max += 2;
+    lensGroups[q.lens] ||= [];
+    lensGroups[q.lens].push(q);
   });
-  const catScores={};
-  Object.keys(cats).forEach(k=>catScores[k]=Math.round(cats[k].got/cats[k].max*100));
-  const overall=Math.round(Object.values(catScores).reduce((s,v)=>s+v,0)/Object.keys(catScores).length);
+  const lensScores={};
+  Object.entries(lensGroups).forEach(([lens,items])=>{
+    lensScores[lens]=averagePercent(items,a,false);
+  });
 
-  let posture,title,summary,meaning;
-  if(overall>=85){
-    posture="Deployable · verify controls";
-    title="Strong baseline. Verify it under real operating conditions.";
-    summary="Your self-assessment shows comparatively strong control coverage. The next step is evidence: test whether the declared boundaries, approvals, logs and incident controls behave as expected.";
-    meaning="A high self-assessment is not proof of safety. Treat it as a signal to validate controls, especially the highest-consequence actions and any third-party integrations.";
-  } else if(overall>=70){
-    posture="Deploy with controls";
-    title="Useful foundation. Close the control gaps before scaling.";
-    summary="The agent appears deployable only with explicit remediation around the weaker control areas. Avoid increasing autonomy or permissions until those gaps are closed.";
-    meaning="This profile usually means the business can proceed, but should treat the listed fixes as deployment conditions rather than optional future improvements.";
-  } else if(overall>=50){
-    posture="Do not expand yet";
-    title="Material control gaps are visible.";
-    summary="The agent has meaningful capability or exposure without enough compensating control. Keep scope narrow and remediate the weakest dimensions before broader deployment.";
-    meaning="The risk is not that an incident is certain. It is that the organisation may be granting more machine authority than its controls can reliably govern.";
-  } else {
-    posture="Do not deploy yet";
-    title="Authority is outrunning assurance.";
-    summary="Your answers indicate weak operational control across several dimensions. Keep the agent sandboxed or tightly constrained until basic boundaries, human intervention and incident controls exist.";
-    meaning="This is a readiness recommendation, not a prediction of harm. The fastest route forward is to reduce authority first, then add evidence-backed controls.";
-  }
+  let critical=controlQs.filter(q=>q.critical && a[q.id]===0).length;
+  if(exposure>=67 && a.q6===0) critical += 1;
 
-  document.getElementById("overallScore").textContent=overall;
-  document.getElementById("scoreRing").style.setProperty("--deg",(overall*3.6)+"deg");
+  const debt=Math.max(0,exposure-assurance);
+  const posture=deploymentPosture(exposure,assurance,critical);
+  const fixes=buildFixes(a,exposure);
+
+  document.getElementById("overallScore").textContent=assurance;
+  document.getElementById("scoreRing").style.setProperty("--deg",(assurance*3.6)+"deg");
   document.getElementById("postureBadge").textContent=posture;
+  document.getElementById("exposureLabel").textContent=exposureWord(exposure)+" · "+exposure+"/100";
+  document.getElementById("controlDebt").textContent=debt+" pts";
+  document.getElementById("criticalCount").textContent=String(critical);
+
+  let title="";
+  let summary="";
+  if(posture==="Do not deploy yet"){
+    title="Authority is outrunning assurance.";
+    summary="This system has "+exposureWord(exposure).toLowerCase()+" exposure and an Assurance Index of "+assurance+"/100. Critical controls are missing or unverified, so the current live permission envelope is not yet defensible.";
+  } else if(posture==="Do not expand yet"){
+    title="Useful capability, but the control envelope needs work.";
+    summary="Exposure is "+exposureWord(exposure).toLowerCase()+" and assurance is "+assurance+"/100. Keep scope constrained while the weakest controls are remediated and tested.";
+  } else if(posture==="Deploy with controls"){
+    title="Usable within a constrained permission envelope.";
+    summary="The system shows "+exposureWord(exposure).toLowerCase()+" exposure with "+assurance+"/100 assurance. Proceed only with the stated controls and do not silently expand permissions.";
+  } else {
+    title="Strong self-assessed baseline. Verify it.";
+    summary="The system shows "+exposureWord(exposure).toLowerCase()+" exposure with "+assurance+"/100 assurance. The next step is to test whether the declared controls actually work under realistic conditions.";
+  }
   document.getElementById("resultTitle").textContent=title;
   document.getElementById("resultSummary").textContent=summary;
-  document.getElementById("meaningText").textContent=meaning;
+  document.getElementById("meaningText").textContent=meaningFor(posture,exposure,assurance,critical);
 
   const dims=document.getElementById("dimensions");
-  dims.innerHTML=Object.entries(catScores).map(([k,v])=>`<div class="dimension"><span>${k}</span><strong>${v}/100</strong></div>`).join("");
+  const ordered=["Authority exposure","Data exposure","Boundary strength","Human authority","Observability","Incident readiness"];
+  dims.innerHTML=ordered.map(k=>{
+    const exposureLens = k.includes("exposure");
+    const value=lensScores[k];
+    return '<div class="dimension"><span>'+k+' · '+(exposureLens?"higher = more exposure":"higher = stronger control")+'</span><strong>'+value+'/100</strong></div>';
+  }).join("");
 
-  const weak=questions
-    .map(q=>({q,score:a[q.id]}))
-    .sort((x,y)=>x.score-y.score)
-    .slice(0,3);
-  document.getElementById("fixList").innerHTML=weak.map((x,i)=>`<li><strong>${i+1}. ${x.q.cat}</strong><small>${x.q.fix}</small></li>`).join("");
+  document.getElementById("fixList").innerHTML=fixes.map((x,i)=>
+    '<li><strong>'+(i+1)+'. '+x.lens+'</strong><small>'+x.text+'</small></li>'
+  ).join("");
 
   const summaryText=[
     "DΩP Agent Exposure Check",
-    "Readiness: "+overall+"/100",
-    "Posture: "+posture,
-    ...Object.entries(catScores).map(([k,v])=>k+": "+v+"/100"),
-    "Priority fixes:",
-    ...weak.map((x,i)=>(i+1)+". "+x.q.fix),
+    "Exposure Index: "+exposure+"/100 ("+exposureWord(exposure)+")",
+    "Assurance Index: "+assurance+"/100",
+    "Control Debt: "+debt+" points",
+    "Critical gaps: "+critical,
+    "Deployment posture: "+posture,
+    ...ordered.map(k=>k+": "+lensScores[k]+"/100"),
+    "Priority control moves:",
+    ...fixes.map((x,i)=>(i+1)+". "+x.text),
     "Indicative self-assessment only; not certification or independent verification."
   ].join("\n");
+
   results.dataset.summary=summaryText;
-  document.getElementById("sprintEmail").href="mailto:hello@de-omega-point.com?subject="+encodeURIComponent("DΩP Agent Assurance Sprint")+"&body="+encodeURIComponent("Hello De-Omega-Point,\n\nI'd like to discuss an Agent Assurance Sprint.\n\nMy free-check result:\n"+summaryText+"\n\nSystem/agent name:\nOrganisation:\nBest contact:\n");
+  document.getElementById("sprintEmail").href=
+    "mailto:hello@de-omega-point.com?subject="+encodeURIComponent("DΩP Agent Assurance Sprint")+
+    "&body="+encodeURIComponent("Hello De-Omega-Point,\n\nI'd like to discuss an Agent Assurance Sprint.\n\nMy free-check result:\n"+summaryText+"\n\nSystem/agent name:\nOrganisation:\nBest contact:\n");
+
   results.classList.add("live");
   results.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
 scoreButton.addEventListener("click",scoreAssessment);
+
 resetButton.addEventListener("click",()=>{
-  localStorage.removeItem("dop-agent-check");
+  const hasAnswers=Object.keys(getAnswers()).length>0;
+  if(hasAnswers && !window.confirm("Clear all assessment answers and start again?")) return;
+  try { localStorage.removeItem("dop-agent-check"); } catch {}
   form.reset();
   results.classList.remove("live");
+  results.dataset.summary="";
   persistAndProgress();
-  window.scrollTo({top:document.getElementById("assessment").offsetTop-70,behavior:"smooth"});
+  document.getElementById("assessment").scrollIntoView({behavior:"smooth",block:"start"});
 });
+
 document.getElementById("copyButton").addEventListener("click",async()=>{
-  const text=results.dataset.summary||"";
-  try{await navigator.clipboard.writeText(text);document.getElementById("copyButton").textContent="Copied ✓";setTimeout(()=>document.getElementById("copyButton").textContent="Copy summary",1500)}
-  catch{window.prompt("Copy your assessment summary:",text)}
+  const summary=results.dataset.summary||"";
+  try{
+    await navigator.clipboard.writeText(summary);
+    const btn=document.getElementById("copyButton");
+    btn.textContent="Copied ✓";
+    setTimeout(()=>btn.textContent="Copy summary",1500);
+  }catch{
+    window.prompt("Copy your assessment summary:",summary);
+  }
 });
+
 document.getElementById("printButton").addEventListener("click",()=>window.print());
 
 renderQuestions();
