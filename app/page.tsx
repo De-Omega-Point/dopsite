@@ -1,6 +1,6 @@
 import ParticleField from "./ParticleField";
 
-const AI_SAFETY_URL = "https://de-omega-point.com/ai-safety/";
+const AI_SAFETY_URL = "https://de-omega-point.com/ai-safety/";\nconst AI_ASSURANCE_URL = "/ai-assurance/";
 
 const projects = [
   {
@@ -160,9 +160,14 @@ export default function Home() {
             <li>News-style public report</li>
             <li>Updated Monday + Thursday</li>
           </ul>
-          <a className="button primary" href={AI_SAFETY_URL}>
-            Open AI Safety Observatory <span aria-hidden="true">↗</span>
-          </a>
+          <div className="hero-actions">
+            <a className="button primary" href={AI_SAFETY_URL}>
+              Open AI Safety Observatory <span aria-hidden="true">↗</span>
+            </a>
+            <a className="button" href={AI_ASSURANCE_URL}>
+              Run Agent Exposure Check <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </section>
 
