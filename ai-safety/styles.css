@@ -117,32 +117,12 @@ svg { display: block; }
   background-size: cover;
   filter: none;
 }
-.story-thumb::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(34,215,255,.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,215,255,.09) 1px, transparent 1px),
-    radial-gradient(circle at 76% 28%, rgba(32,242,138,.42), transparent 8%),
-    radial-gradient(circle at 28% 72%, rgba(34,215,255,.24), transparent 18%),
-    linear-gradient(135deg, #031522 0%, #073049 58%, #02101a 100%);
-  background-size: 32px 32px, 32px 32px, auto, auto, auto;
-}
-.story-thumb::after {
-  content: "";
-  position: absolute;
-  inset: 16% 10%;
-  border: 1px solid rgba(77,255,157,.55);
-  border-radius: 999px 12px 999px 12px;
-  box-shadow: 0 0 24px rgba(32,242,138,.18), inset 0 0 24px rgba(34,215,255,.08);
-  transform: rotate(-8deg);
-}
-.thumb-1::after { inset: 18% 13% 20% 9%; transform: rotate(-7deg); }
-.thumb-2::after { inset: 12% 18% 26% 8%; transform: rotate(7deg); border-color: rgba(34,215,255,.7); }
-.thumb-3::after { inset: 24% 10% 14% 18%; transform: rotate(-3deg); border-radius: 12px 999px 12px 999px; }
-.thumb-4::after { inset: 15% 12%; transform: rotate(10deg); border-color: rgba(255,152,47,.72); }
-.thumb-5::after { inset: 20% 8% 16% 20%; transform: rotate(-11deg); }
+.story-thumb::before, .story-thumb::after { content: none; }
+.thumb-1 { background-image: url("assets/story-agent-authority.svg"); }
+.thumb-2 { background-image: url("assets/story-cyber-persistence.svg"); }
+.thumb-3 { background-image: url("assets/story-84-days.svg"); }
+.thumb-4 { background-image: url("assets/story-dozens.svg"); }
+.thumb-5 { background-image: url("assets/story-australia-review.svg"); }
 
 .story-card > strong { font: 850 clamp(.95rem, 1.25vw, 1.25rem)/1.02 var(--display); }
 .story-card > p { margin: .55rem 0; color: #253b47; font-size: .78rem; line-height: 1.35; }
