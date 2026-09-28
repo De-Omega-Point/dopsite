@@ -101,8 +101,49 @@ svg { display: block; }
 .story-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
 .story-card { min-width: 0; min-height: 280px; padding: 0 .85rem .2rem 0; display: flex; flex-direction: column; color: var(--ink); text-decoration: none; }
 .story-card + .story-card { padding-left: .85rem; border-left: 1px solid #c1d1d7; }
-.story-thumb { position: relative; width: 100%; aspect-ratio: 16 / 9; height: auto; min-height: 0; margin-bottom: .65rem; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(8,19,29,.12); border-radius: 7px; background-color: #031522; background-image: url("assets/ai-safety-news-infographic.jpeg"); background-size: contain; background-position: center; background-repeat: no-repeat; filter: contrast(1.03) saturate(1.08); }
-.thumb-1, .thumb-2, .thumb-3, .thumb-4, .thumb-5 { background-position: center; }
+.story-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  margin-bottom: .65rem;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(8,19,29,.16);
+  border-radius: 8px;
+  background-color: #031522;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: none;
+}
+.story-thumb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(34,215,255,.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,215,255,.09) 1px, transparent 1px),
+    radial-gradient(circle at 76% 28%, rgba(32,242,138,.42), transparent 8%),
+    radial-gradient(circle at 28% 72%, rgba(34,215,255,.24), transparent 18%),
+    linear-gradient(135deg, #031522 0%, #073049 58%, #02101a 100%);
+  background-size: 32px 32px, 32px 32px, auto, auto, auto;
+}
+.story-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 16% 10%;
+  border: 1px solid rgba(77,255,157,.55);
+  border-radius: 999px 12px 999px 12px;
+  box-shadow: 0 0 24px rgba(32,242,138,.18), inset 0 0 24px rgba(34,215,255,.08);
+  transform: rotate(-8deg);
+}
+.thumb-1::after { inset: 18% 13% 20% 9%; transform: rotate(-7deg); }
+.thumb-2::after { inset: 12% 18% 26% 8%; transform: rotate(7deg); border-color: rgba(34,215,255,.7); }
+.thumb-3::after { inset: 24% 10% 14% 18%; transform: rotate(-3deg); border-radius: 12px 999px 12px 999px; }
+.thumb-4::after { inset: 15% 12%; transform: rotate(10deg); border-color: rgba(255,152,47,.72); }
+.thumb-5::after { inset: 20% 8% 16% 20%; transform: rotate(-11deg); }
+
 .story-card > strong { font: 850 clamp(.95rem, 1.25vw, 1.25rem)/1.02 var(--display); }
 .story-card > p { margin: .55rem 0; color: #253b47; font-size: .78rem; line-height: 1.35; }
 .story-card > em { margin-top: auto; display: inline-flex; gap: .35rem; align-items: center; color: #05727a; font: normal 700 .62rem var(--mono); text-transform: uppercase; }
@@ -246,7 +287,6 @@ svg { display: block; }
   .story-card + .story-card { padding-left: .8rem; }
   .story-card:nth-child(3), .story-card:nth-child(5) { border-left: 0; }
   .story-card:last-child { grid-column: 1 / -1; }
-  .story-thumb { aspect-ratio: 16 / 9; background-size: contain; background-position: center; }
   .intelligence-panels { grid-template-columns: 1fr 1fr; }
   .outlook-panel { grid-column: 1 / -1; min-height: 260px; }
   .front-footer { grid-template-columns: 1fr auto; }
@@ -280,7 +320,6 @@ svg { display: block; }
   .outcome-rail { grid-template-columns: 1fr 1fr; }
   .story-grid { grid-template-columns: 1fr; }
   .story-card, .story-card + .story-card, .story-card:last-child { grid-column: auto; padding: .8rem 0; border-left: 0; }
-  .story-thumb { width: 100%; height: auto; aspect-ratio: 16 / 9; background-size: contain; background-position: center; }
   .intelligence-panels { grid-template-columns: 1fr; }
   .outlook-panel { grid-column: auto; }
   .threat-list > div { grid-template-columns: 45px 82px 1fr; }
