@@ -101,12 +101,12 @@ svg { display: block; }
 .story-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
 .story-card { min-width: 0; min-height: 280px; padding: 0 .85rem .2rem 0; display: flex; flex-direction: column; color: var(--ink); text-decoration: none; }
 .story-card + .story-card { padding-left: .85rem; border-left: 1px solid #c1d1d7; }
-.story-thumb { position: relative; height: 105px; margin-bottom: .55rem; display: block; overflow: hidden; border-radius: 4px; background-image: url("assets/ai-safety-news-infographic.jpeg"); background-size: 560% auto; background-repeat: no-repeat; filter: contrast(1.05) saturate(1.12); }
-.thumb-1 { background-position: 3.5% 54.3%; }
-.thumb-2 { background-position: 27% 54.3%; }
-.thumb-3 { background-position: 51% 54.3%; }
+.story-thumb { position: relative; width: 100%; aspect-ratio: 16 / 9; height: auto; min-height: 0; margin-bottom: .65rem; display: block; overflow: hidden; border: 1px solid rgba(8,19,29,.12); border-radius: 7px; background-color: #dfe9ed; background-image: url("assets/ai-safety-news-infographic.jpeg"); background-size: 500% auto; background-repeat: no-repeat; filter: contrast(1.03) saturate(1.08); }
+.thumb-1 { background-position: 0% 54.3%; }
+.thumb-2 { background-position: 25% 54.3%; }
+.thumb-3 { background-position: 50% 54.3%; }
 .thumb-4 { background-position: 75% 54.3%; }
-.thumb-5 { background-position: 98.5% 54.3%; }
+.thumb-5 { background-position: 100% 54.3%; }
 .story-card > strong { font: 850 clamp(.95rem, 1.25vw, 1.25rem)/1.02 var(--display); }
 .story-card > p { margin: .55rem 0; color: #253b47; font-size: .78rem; line-height: 1.35; }
 .story-card > em { margin-top: auto; display: inline-flex; gap: .35rem; align-items: center; color: #05727a; font: normal 700 .62rem var(--mono); text-transform: uppercase; }
@@ -250,6 +250,7 @@ svg { display: block; }
   .story-card + .story-card { padding-left: .8rem; }
   .story-card:nth-child(3), .story-card:nth-child(5) { border-left: 0; }
   .story-card:last-child { grid-column: 1 / -1; }
+  .story-thumb { aspect-ratio: 16 / 9; background-size: 500% auto; }
   .intelligence-panels { grid-template-columns: 1fr 1fr; }
   .outlook-panel { grid-column: 1 / -1; min-height: 260px; }
   .front-footer { grid-template-columns: 1fr auto; }
@@ -283,7 +284,7 @@ svg { display: block; }
   .outcome-rail { grid-template-columns: 1fr 1fr; }
   .story-grid { grid-template-columns: 1fr; }
   .story-card, .story-card + .story-card, .story-card:last-child { grid-column: auto; padding: .8rem 0; border-left: 0; }
-  .story-thumb { height: 150px; background-size: 560% auto; }
+  .story-thumb { width: 100%; height: auto; aspect-ratio: 16 / 9; background-size: 500% auto; }
   .intelligence-panels { grid-template-columns: 1fr; }
   .outlook-panel { grid-column: auto; }
   .threat-list > div { grid-template-columns: 45px 82px 1fr; }
