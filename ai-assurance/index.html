@@ -150,7 +150,7 @@
             <span>Critical gaps <b id="criticalCount">—</b></span>
           </div>
           <h2 id="resultTitle">Your deployment-readiness profile</h2>
-          <p id="resultSummary"></p>
+          <p id="resultSummary"></p><p class="disclaimer" style="margin-top:10px">Control Debt = Exposure Index minus Assurance Index, floored at zero. Exposure measures consequence and reach; Assurance measures control strength.</p>
         </div>
       </div>
 
@@ -266,7 +266,7 @@ const results = document.getElementById("results");
 
 let saved = {};
 try {
-  const raw = localStorage.getItem("dop-agent-check");
+  const raw = localStorage.getItem("dop-agent-check-v2");
   saved = raw ? (JSON.parse(raw) || {}) : {};
 } catch {
   saved = {};
@@ -298,7 +298,7 @@ function getAnswers(){
 }
 
 function safeSave(obj){
-  try { localStorage.setItem("dop-agent-check",JSON.stringify(obj)); } catch {}
+  try { localStorage.setItem("dop-agent-check-v2",JSON.stringify(obj)); } catch {}
 }
 
 function persistAndProgress(){
@@ -471,7 +471,7 @@ scoreButton.addEventListener("click",scoreAssessment);
 resetButton.addEventListener("click",()=>{
   const hasAnswers=Object.keys(getAnswers()).length>0;
   if(hasAnswers && !window.confirm("Clear all assessment answers and start again?")) return;
-  try { localStorage.removeItem("dop-agent-check"); } catch {}
+  try { localStorage.removeItem("dop-agent-check-v2"); } catch {}
   form.reset();
   results.classList.remove("live");
   results.dataset.summary="";
