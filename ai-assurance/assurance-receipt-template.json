@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1",
+  "artefact": "DOP Agent Assurance Receipt",
+  "status": "template",
+  "disclaimer": "Independent readiness/assurance assessment. Not certification, penetration testing, legal advice or a guarantee of safety.",
+  "receipt_id": "",
+  "methodology_version": "DOP-Agent-Assurance-v0.1",
+  "organisation": "",
+  "agent_workflow": "",
+  "business_owner": "",
+  "technical_owner": "",
+  "assessment_date": "",
+  "assessor": "",
+  "purpose": "",
+  "model_provider": "",
+  "deployment_state": "",
+  "connected_systems": [],
+  "permission_envelope": {
+    "identities": [],
+    "tools": [],
+    "data_categories": [],
+    "network_destinations": [],
+    "allowed_actions": [],
+    "prohibited_actions": [],
+    "hard_limits": [],
+    "approval_required": []
+  },
+  "scores": {
+    "permission_control": null,
+    "data_control": null,
+    "boundary_strength": null,
+    "human_authority": null,
+    "observability": null,
+    "incident_readiness": null,
+    "overall_readiness": null,
+    "evidence_confidence": null
+  },
+  "human_authority": {
+    "visibility": "",
+    "comprehension": "",
+    "time": "",
+    "authority": "",
+    "intervention": "",
+    "human_theatre_flag": false
+  },
+  "incident_readiness": {
+    "incident_owner": "",
+    "stop_revoke_tested": false,
+    "playbook_tested": false,
+    "aial_days": null,
+    "detection_latency_days": null,
+    "notification_latency_days": null
+  },
+  "recommendation": "",
+  "priority_remediation": [],
+  "unresolved_assumptions": [],
+  "evidence_ledger": [],
+  "retest_conditions": [],
+  "next_review_date": "",
+  "notes": ""
+}
