@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="838" viewBox="0 0 1600 838">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#01070d"/><stop offset=".55" stop-color="#06243a"/><stop offset="1" stop-color="#020d16"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#20f28a" stop-opacity=".36"/><stop offset="1" stop-color="#20f28a" stop-opacity="0"/></radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1600" height="838" fill="url(#bg)"/>
+  <g opacity=".22" stroke="#22d7ff" fill="none">
+    <path d="M920 110h520M980 180h430M1050 250h340M970 690h450M1030 620h390"/>
+    <circle cx="1210" cy="415" r="250"/><circle cx="1210" cy="415" r="178"/><circle cx="1210" cy="415" r="105"/>
+  </g>
+  <circle cx="1210" cy="415" r="280" fill="url(#glow)" filter="url(#soft)"/>
+  <g transform="translate(915 180)">
+    <rect x="0" y="0" width="520" height="470" rx="30" fill="#031522" stroke="#20f28a" stroke-width="3"/>
+    <rect x="35" y="40" width="450" height="80" rx="15" fill="#062b3b" stroke="#22d7ff"/>
+    <circle cx="78" cy="80" r="18" fill="#20f28a"/><path d="M112 68h265M112 88h195" stroke="#9db3c0" stroke-width="8" stroke-linecap="round"/>
+    <g fill="none" stroke="#20f28a" stroke-width="4">
+      <rect x="55" y="165" width="110" height="80" rx="12"/><rect x="205" y="165" width="110" height="80" rx="12"/><rect x="355" y="165" width="110" height="80" rx="12"/>
+      <path d="M165 205h40M315 205h40"/>
+    </g>
+    <path d="M260 275v78" stroke="#22d7ff" stroke-width="5"/>
+    <path d="m246 337 14 16 14-16" fill="none" stroke="#22d7ff" stroke-width="5"/>
+    <rect x="125" y="360" width="270" height="70" rx="35" fill="#20f28a"/>
+    <text x="260" y="405" text-anchor="middle" fill="#032015" font-family="Arial, sans-serif" font-size="26" font-weight="800">POLICY ENFORCED</text>
+  </g>
+  <g transform="translate(90 82)">
+    <image xlink:href="de-omega-point-emblem-v2.png" width="110" height="110" preserveAspectRatio="xMinYMid meet"/>
+    <text x="135" y="70" fill="#20f28a" font-family="Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="5">AI SAFETY INTELLIGENCE · 1 OCTOBER 2026</text>
+    <text x="0" y="315" fill="#f7fbff" font-family="Arial Narrow, Arial, sans-serif" font-size="92" font-weight="900">THE NEXT</text>
+    <text x="0" y="405" fill="#f7fbff" font-family="Arial Narrow, Arial, sans-serif" font-size="92" font-weight="900">SAFETY LAYER</text>
+    <text x="0" y="472" fill="#22d7ff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Control is moving outside the agent.</text>
+    <path d="M0 515h630" stroke="#20f28a" stroke-width="3"/>
+    <text x="0" y="570" fill="#c7d7df" font-family="Arial, sans-serif" font-size="27">THREAT 76 — UNCHANGED</text>
+    <text x="0" y="616" fill="#c7d7df" font-family="Arial, sans-serif" font-size="27">ASSURANCE 62 → 64</text>
+    <text x="0" y="662" fill="#c7d7df" font-family="Arial, sans-serif" font-size="27">CONTROL DEBT 14 → 12</text>
+    <text x="0" y="735" fill="#20f28a" font-family="Arial, sans-serif" font-size="28" font-weight="800">AUTONOMY MUST NEVER SCALE FASTER THAN ASSURANCE.</text>
+  </g>
+</svg>
+
