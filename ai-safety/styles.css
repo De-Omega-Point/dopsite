@@ -118,11 +118,11 @@ svg { display: block; }
   filter: none;
 }
 .story-thumb::before, .story-thumb::after { content: none; }
-.thumb-1 { background-image: url("assets/story-incident-latency-2026-10-01.svg"); }
-.thumb-2 { background-image: url("assets/story-runtime-control-2026-10-01.svg"); }
-.thumb-3 { background-image: url("assets/story-voluntary-pact-2026-10-01.svg"); }
-.thumb-4 { background-image: url("assets/story-asic-banking-2026-10-01.svg"); }
-.thumb-5 { background-image: url("assets/story-assurance-market-2026-10-01.svg"); }
+.thumb-1 { background-image: url("assets/story-incident-inventory-2026-10-05.svg"); }
+.thumb-2 { background-image: url("assets/story-npws-2026-10-05.svg"); }
+.thumb-3 { background-image: url("assets/story-eda-exploit-2026-10-05.svg"); }
+.thumb-4 { background-image: url("assets/story-subpoena-2026-10-05.svg"); }
+.thumb-5 { background-image: url("assets/story-assurance-hold-2026-10-05.svg"); }
 
 .story-card > strong { font: 850 clamp(.95rem, 1.25vw, 1.25rem)/1.02 var(--display); }
 .story-card > p { margin: .55rem 0; color: #253b47; font-size: .78rem; line-height: 1.35; }
