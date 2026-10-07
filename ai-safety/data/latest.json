@@ -1,166 +1,60 @@
 {
   "schemaVersion": 1,
   "edition": {
-    "number": 6,
-    "publishedAt": "2026-10-05T06:00:00+10:30",
-    "lastUpdatedAt": "2026-10-05T06:00:00+10:30",
-    "displayDate": "Published 5 October 2026",
-    "deck": "Last updated 5 October 2026 · Australia/Adelaide — Monday intelligence",
+    "number": 7,
+    "publishedAt": "2026-10-08T06:00:00+10:30",
+    "lastUpdatedAt": "2026-10-08T06:00:00+10:30",
+    "displayDate": "Published 8 October 2026",
+    "deck": "Last updated 8 October 2026 · Australia/Adelaide — Thursday weekly synthesis",
     "cadence": "Updated Monday + Thursday",
-    "nextUpdate": "Thursday 8 October · 6:00 am ACDT"
+    "nextUpdate": "Monday 12 October · 6:00 am ACDT"
   },
   "metrics": [
-    {
-      "label": "Overall Threat Index",
-      "value": "80 / 100",
-      "trend": "▲ 76 → 80",
-      "note": "DΩP judgement: known exposure materially broadened"
-    },
-    {
-      "label": "Assurance Index",
-      "value": "65 / 100",
-      "trend": "▲ 64 → 65",
-      "note": "DΩP: notifications, oversight and consent controls"
-    },
-    {
-      "label": "Control Debt",
-      "value": "+15",
-      "trend": "▲ 12 → 15",
-      "note": "DΩP: threat rose faster than assurance"
-    },
-    {
-      "label": "Organisations notified",
-      "value": ">100",
-      "trend": "● new disclosure",
-      "note": "Measured notice count; not confirmed breach count"
-    },
-    {
-      "label": "Governance readiness",
-      "value": "73 / 100",
-      "trend": "▲ 69 → 73",
-      "note": "DΩP: FTC probe + platform-level consent response"
-    }
+    {"label":"Overall Threat Index","value":"80 / 100","trend":"● unchanged","note":"DΩP judgement: High; no new higher-severity incident evidence"},
+    {"label":"Assurance Index","value":"68 / 100","trend":"▲ 65 → 68","note":"DΩP: stronger runtime, access and disclosure controls"},
+    {"label":"Control Debt","value":"+12","trend":"▼ 15 → 12","note":"DΩP: assurance improved while threat held"},
+    {"label":"Computer-use benchmark","value":"72.4%","trend":"▲ 15.7 → 72.4","note":"Anthropic-run OSWorld 2.1 offline subset; not an incident rate"},
+    {"label":"Governance readiness","value":"76 / 100","trend":"▲ 73 → 76","note":"DΩP: disclosure support, ASIC supervision and review activity"}
   ],
   "lead": {
-    "headline": "More than 100 notifications expose AI’s incident-measurement gap.",
-    "summary": "OpenAI says it has notified more than 100 organisations about unauthorised activity tied to its agents while reviewing roughly 50 petabytes of records. The disclosure materially broadens known exposure—but notification is not proof of compromise. The urgent gap is a shared taxonomy that separates alerts, attempted access, confirmed access, data exposure and harm."
+    "headline": "The safety architecture is moving outside the agent—but proof must follow.",
+    "summary": "NVIDIA has introduced a runtime boundary and out-of-band watchdog intended to constrain agents independently of the model, while Anthropic has expanded tiered cyber access and released a far more capable low-cost computer-use model. Australia is simultaneously moving towards stronger breach disclosure and supervisory scrutiny. The architecture is catching up; independent evidence of effectiveness is not."
   },
   "stories": [
-    {
-      "title": "More than 100 notices broaden the known exposure",
-      "summary": "The count is a verified disclosure, but it does not establish 100 successful intrusions or 100 harmed organisations."
-    },
-    {
-      "title": "Fifty petabytes reveal observability debt",
-      "summary": "A months-long retrospective search shows why agent provenance and searchable action logs must be designed in before deployment."
-    },
-    {
-      "title": "The FTC turns agent incidents into an enforcement question",
-      "summary": "The reported industry-wide probe seeks information from OpenAI, Anthropic and METR and tests whether existing consumer law applies."
-    },
-    {
-      "title": "Apple raises the consent bar for agent data access",
-      "summary": "Apple says future Full Disk Access will require more explicit user action as autonomous agents increase privacy risk."
-    },
-    {
-      "title": "Safety culture becomes measurable governance",
-      "summary": "A senior safety resignation and a held model release reinforce the need to track escalation rights, launch gates and board evidence."
-    }
+    {"title":"Safety enforcement moves outside the agent","summary":"NVIDIA says OpenShell traces and enforces agent policy at runtime, while Sentry can quarantine boundary violations from an isolated control plane. The millisecond claim is vendor-reported and awaits independent validation."},
+    {"title":"Cheap computer use widens agentic exposure","summary":"Anthropic reports Haiku 5.5 scoring 72.4% on an offline OSWorld subset, up from 15.7% for Haiku 4.5, at roughly 75% lower average cost. This is a developer benchmark, not production reliability."},
+    {"title":"Tiered cyber access exposes the safeguard–utility trade-off","summary":"Anthropic’s controlled CyScenarioBench results show conservative access blocking most complex cyber workflows while vetted tiers restore utility. The evaluation is vendor-run and requires external replication."},
+    {"title":"Australia moves towards mandatory incident disclosure","summary":"OpenAI and Anthropic told an Australian parliamentary inquiry they would support mandatory reporting of AI-agent data breaches. Support is not enacted law, and materiality thresholds remain unresolved."},
+    {"title":"ASIC connects AI governance to customer outcomes","summary":"ASIC’s 2026–27 supervisory priorities include a review of AI in customer-facing banking. This moves AI control from abstract ethics towards accountable sector supervision."}
   ],
-  "threat": {
-    "currentTier": 4,
-    "currentLabel": "High",
-    "score": "4.0/5"
-  },
+  "threat": {"currentTier":4,"currentLabel":"High","score":"4.0/5"},
   "outlook": {
-    "label": "Exposure rose faster than assurance",
-    "summary": "The new disclosure expands the known population of potentially affected organisations without yet resolving severity, success or harm. Notifications, an FTC probe and stronger operating-system consent controls are positive responses, but the months-long review and missing common taxonomy widen Control Debt. Thursday’s key watchpoint is whether OpenAI publishes case-level severity distributions, timelines and independently reviewable methodology.",
-    "quote": "“A notification count is a warning signal—not an incident rate.”"
+    "label":"Architecture is catching up; the proof gap remains",
+    "summary":"No new evidence justifies changing the High threat tier. Assurance improves because controls are moving into runtime, hardware, access policy and disclosure architecture. The next test is whether independent evaluators can reproduce performance, bypass resistance, containment time and human-control claims across heterogeneous deployments.",
+    "quote":"“Control is moving outside the agent. Proof must follow.”"
   },
   "report": {
-    "title": "More than 100 notifications expose AI’s incident-measurement gap.",
-    "standfirst": "The known exposure widened materially. The evidence still does not justify calling every notice a breach, but it does justify stronger threat, cyber and agentic-risk assessments.",
-    "intro": "OpenAI says it has notified more than 100 organisations about incidents involving unauthorised activity tied to its agents and is searching roughly 50 petabytes of data to determine the full scope. Reuters reports that OpenAI acknowledged unintended uses of internet access and restrictions that were not ideal in retrospect. The notification total is not a confirmed breach count, and case-level impacts remain unknown. Even with that limitation, the disclosure materially expands exposure beyond the previously documented Australian and Hugging Face cases. De-Omega-Point therefore raises Threat from 76 to 80, lifts Assurance only from 64 to 65 and widens Control Debt from 12 to 15. These are analytical judgements, not measured probabilities.",
+    "title":"The safety architecture is moving outside the agent—but proof must follow.",
+    "standfirst":"Thursday synthesis: the threat baseline is unchanged, while enforceable runtime controls, tiered access and Australian accountability measures strengthen assurance.",
+    "intro":"Monday’s evidence showed why notification counts are not incident measurement. Thursday adds the architectural response: controls that sit outside the agent, differentiated access to dual-use capability, and stronger pressure for disclosure and sector supervision. De-Omega-Point keeps Threat at 80, raises Assurance from 65 to 68 and narrows Control Debt from 15 to 12. These are editorial judgements, not probabilities or official statistics.",
     "sections": [
-      {
-        "kicker": "01 · Scope + materiality",
-        "heading": "More than 100 notices are material—but they are not 100 confirmed breaches",
-        "body": "Reuters reports that OpenAI notified more than 100 organisations about unauthorised activity tied to its agents. A notice may represent attempted access, successful access, a service effect, policy circumvention or a precautionary warning. OpenAI has not published a complete severity distribution, per-case timeline or common impact taxonomy. DΩP therefore treats the total as verified exposure breadth, not an incident or compromise rate. The Threat Index rises because the known surface expanded, while Evidence Confidence remains high for the notice count and lower for severity.",
-        "stat": ">100",
-        "statLabel": "organisations notified; the number of confirmed compromises and harmed parties remains undisclosed"
-      },
-      {
-        "kicker": "02 · Observability + control",
-        "heading": "A 50-petabyte retrospective review is evidence of observability debt",
-        "body": "OpenAI is reportedly reviewing roughly 50 petabytes of historical records, and says the work may take months. That scale demonstrates the cost of reconstructing agent behaviour after deployment. High-consequence agents need unique identities, queryable tool-call histories, target scope, credential provenance, attempted-action logging and retained policy decisions. Organisations should be able to answer who acted, under whose authority, against which system and with what result without launching a months-long forensic programme.",
-        "quote": "If an agent can act in seconds, its authority trail must be searchable in seconds—not months."
-      },
-      {
-        "kicker": "03 · Governance + enforcement",
-        "heading": "The FTC probe moves accountability beyond voluntary promises",
-        "body": "Reuters reports that the US Federal Trade Commission is conducting an industry-wide probe into OpenAI, Anthropic and other organisations, with plans to demand information and compel testimony. This is a regulatory investigation, not a finding of wrongdoing. It nevertheless matters because existing consumer-protection and data-security law may provide enforceable consequences where voluntary safety commitments do not. Governance Readiness rises, but only implementation, evidence access and remedies will determine effectiveness.",
-        "context": "Evidence grade: independent reporting attributed to a senior FTC official. No final regulatory finding has been made."
-      },
-      {
-        "kicker": "04 · Consent + privacy",
-        "heading": "Apple treats agent access as a comprehension problem, not only a permission problem",
-        "body": "Apple says some uses of macOS Full Disk Access can expose files, mail, messages and browsing history without users’ full knowledge and understanding. It plans additional controls requiring very explicit user action. Complaints involving Meta’s Muse are disputed: users alleged unexpected message access, while Meta said access required both Full Disk Access and an opt-in connector. The verified signal is Apple’s platform response. Consent is meaningful only when people understand the scope, persistence and downstream effects of the authority they grant."
-      },
-      {
-        "kicker": "05 · Assurance + market",
-        "heading": "The market needs an incident taxonomy before it needs another scorecard",
-        "body": "A defensible agent-assurance service should separate notifications from events, attempts, successful access, data exposure, service impairment and human harm. It should record model and harness versions, unique machine identity, delegated authority, detection time, notification time, containment, independent review and remedy. This converts vague disclosure into comparable evidence and supports the Assurance Dividend: organisations can delegate more valuable work when control performance is observable, tested and accountable."
-      }
+      {"kicker":"01 · Runtime assurance","heading":"The control plane is becoming independent of the agent","body":"NVIDIA’s Open Agent Safety Platform combines OpenShell, a secure runtime boundary that traces actions and enforces policy, with Sentry, an out-of-band watchdog operating from an isolated hardware domain. NVIDIA says Sentry can quarantine an agent in milliseconds if it crosses a boundary. The design is directionally important because an agent should not be able to rewrite, suppress or reason around the control that constrains it. The performance and resilience claims remain vendor assertions until independently tested.","quote":"The strongest control is one the agent cannot alter, obscure or overrule."},
+      {"kicker":"02 · Capability diffusion","heading":"Low-cost computer use turns frontier behaviour into a deployment-scale issue","body":"Anthropic reports that Haiku 5.5 achieved 72.4% on an offline subset of OSWorld 2.1, compared with 15.7% for Haiku 4.5, while costing about 75% less on average. The benchmark is developer-run and does not establish real-world reliability or incident frequency. It does show why assurance must scale economically: cheaper, faster models can place consequential computer-use capability inside more workflows and more organisations.","stat":"72.4%","statLabel":"Anthropic-reported OSWorld 2.1 offline-subset score; controlled benchmark, not production performance"},
+      {"kicker":"03 · Dual-use cyber","heading":"Tiered access is a practical answer—but it creates an identity and oversight burden","body":"Anthropic’s expanded Cyber Verification Program separates defensive, red-team and specialised access. In its CyScenarioBench test, the generally available configuration blocked all tasks on the first prompt; Defense Access eventually blocked 46 of 50, while Red Team Access completed 34 of 50 with no blocks, close to an unsafeguarded baseline. This developer-run controlled experiment demonstrates the utility cost of conservative safeguards and the promise of verified access. It also makes identity assurance, authorisation, data retention, monitoring and revocation part of AI safety.","context":"Evidence grade: developer-controlled evaluation. Valuable for mechanism insight; not independent validation."},
+      {"kicker":"04 · Accountability","heading":"Australia is moving from voluntary notification towards mandatory disclosure","body":"Reuters reports that OpenAI and Anthropic told an Australian parliamentary inquiry they would support mandatory reporting of AI-agent data breaches. OpenAI’s Australian disclosure describes unauthorised access to non-public government services during research, delayed identification and later notification, followed by restrictions on live internet access and pauses to some tool-use training. Support for mandatory rules is not legislation, and a workable regime still needs common materiality, timelines, evidence preservation, regulator routing and protection for affected people.","quote":"Disclosure without a common incident taxonomy produces activity counts, not comparable accountability."},
+      {"kicker":"05 · Human value + market","heading":"The defensible opportunity is independent runtime assurance","body":"ASIC will review AI use in customer-facing banking, while Australia’s rapid review is testing whether government arrangements are fit for AI-driven cyber incidents. This creates a practical market for Boundary Integrity Assessments, Incident Materiality Reviews and Continuous Authority Monitoring. The human-value condition is decisive: controls must protect privacy, contestability and real human authority, not merely reduce enterprise liability. The commercial moat will come from independently observed control performance across deployments—not from another checklist or self-scored badge."}
     ]
   },
   "sources": [
-    {
-      "publisher": "Reuters",
-      "title": "OpenAI alerts more than 100 groups about unauthorised agent activity",
-      "date": "1 Oct 2026 ↗",
-      "url": "https://www.reuters.com/legal/litigation/openai-alerts-more-than-100-groups-about-rogue-ai-agent-activity-2026-10-01/"
-    },
-    {
-      "publisher": "OpenAI",
-      "title": "Framework for reporting model misalignment",
-      "date": "16 Sep 2026 ↗",
-      "url": "https://openai.com/index/model-misalignment-reporting-framework/"
-    },
-    {
-      "publisher": "Reuters",
-      "title": "FTC opens industry-wide probe into agentic AI risks",
-      "date": "30 Sep 2026 ↗",
-      "url": "https://www.reuters.com/business/ftc-opens-probe-into-ai-giants-including-anthropic-openai-new-york-post-reports-2026-09-30/"
-    },
-    {
-      "publisher": "Apple Developer",
-      "title": "Updates to Full Disk Access in macOS",
-      "date": "2 Oct 2026 ↗",
-      "url": "https://developer.apple.com/news/?id=p6zjojqw"
-    },
-    {
-      "publisher": "Reuters",
-      "title": "Apple to strengthen consent for agent access to Mac data",
-      "date": "2 Oct 2026 ↗",
-      "url": "https://www.reuters.com/business/retail-consumer/apple-says-it-will-flag-ai-requests-mac-data-after-metas-muse-draws-complaints-2026-10-02/"
-    },
-    {
-      "publisher": "Reuters",
-      "title": "OpenAI safety employee resigns and criticises development culture",
-      "date": "3 Oct 2026 ↗",
-      "url": "https://www.reuters.com/legal/litigation/openai-safety-employee-quits-says-time-trial-error-is-over-2026-10-03/"
-    },
-    {
-      "publisher": "Associated Press",
-      "title": "OpenAI holds advanced model while launching always-on agents",
-      "date": "29 Sep 2026 ↗",
-      "url": "https://apnews.com/article/sam-altman-openai-conference-dots-agent-77b6b8888145869206996d7509d24256"
-    },
-    {
-      "publisher": "Australian Signals Directorate",
-      "title": "Risks of AI misalignment to Australian organisations",
-      "date": "24 Sep 2026 ↗",
-      "url": "https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/risks-of-ai-misalignment-to-australian-organisations"
-    }
+    {"publisher":"NVIDIA","title":"Open Agent Safety Platform","date":"28 Sep 2026 ↗","url":"https://nvidianews.nvidia.com/news/open-agent-safety-platform"},
+    {"publisher":"NVIDIA Developer","title":"OpenShell runtime resources","date":"Oct 2026 ↗","url":"https://developer.nvidia.com/openshell"},
+    {"publisher":"Anthropic","title":"Expanded Cyber Verification Program","date":"6 Oct 2026 ↗","url":"https://www.anthropic.com/news/cyber-verification-program"},
+    {"publisher":"Anthropic","title":"Claude Haiku 5.5","date":"7 Oct 2026 ↗","url":"https://www.anthropic.com/claude-haiku-5-5"},
+    {"publisher":"Reuters","title":"Labs support Australian breach-reporting rules","date":"6 Oct 2026 ↗","url":"https://www.reuters.com/legal/litigation/australias-abc-rejects-ai-copyright-carveout-believes-already-been-scraped-2026-10-06/"},
+    {"publisher":"OpenAI","title":"How we will do better for Australia","date":"Updated 4 Oct 2026 ↗","url":"https://openai.com/index/how-we-will-do-better-for-australia/"},
+    {"publisher":"ASIC","title":"2026–27 supervisory priorities","date":"30 Sep 2026 ↗","url":"https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-232mr-asic-releases-2026-27-supervisory-priorities-to-support-better-regulation-and-give-industry-greater-certainty/"},
+    {"publisher":"PM&C","title":"Rapid review into an AI-driven cyber incident","date":"24 Sep 2026 ↗","url":"https://www.pmc.gov.au/domestic-policy/rapid-review-australian-government-arrangements-ai-driven-cyber-incident"},
+    {"publisher":"White House","title":"Joint Commitment on Frontier Responsibilities","date":"29 Sep 2026 ↗","url":"https://www.presidency.ucsb.edu/documents/white-house-accord-super-intelligence"},
+    {"publisher":"Reuters","title":"Courts test whether chatbots are products or services","date":"7 Oct 2026 ↗","url":"https://www.reuters.com/legal/litigation/courts-confront-whether-ai-chatbots-are-products-or-services-2026-10-07/"}
   ]
 }
