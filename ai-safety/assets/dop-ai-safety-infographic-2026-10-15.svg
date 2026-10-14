@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1800" viewBox="0 0 1200 1800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020811"/><stop offset=".55" stop-color="#061a27"/><stop offset="1" stop-color="#020a12"/></linearGradient>
+    <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#3cf1c1"/><stop offset="1" stop-color="#28b8e8"/></linearGradient>
+    <filter id="g"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="1800" fill="url(#bg)"/>
+  <g opacity=".16" stroke="#4decc6"><path d="M760 40C640 320 1050 330 880 570S650 900 1040 1090 720 1450 980 1780" fill="none"/><circle cx="865" cy="258" r="95" fill="none"/><circle cx="950" cy="705" r="135" fill="none"/></g>
+  <rect x="45" y="42" width="1110" height="1716" rx="24" fill="none" stroke="#46edc4" stroke-opacity=".28"/>
+  <image href="de-omega-point-emblem-v2.png" x="72" y="66" width="100" height="92" preserveAspectRatio="xMidYMid meet"/>
+  <text x="190" y="102" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" letter-spacing="2">DE-OMEGA-POINT</text>
+  <text x="190" y="138" fill="#81ecd2" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="1.5">AI SAFETY INTELLIGENCE · 15 OCTOBER 2026</text>
+  <rect x="870" y="75" width="240" height="64" rx="32" fill="#3d2110" stroke="#ffae57"/>
+  <text x="990" y="116" text-anchor="middle" fill="#ffc47f" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700">THREAT: HIGH</text>
+
+  <text x="72" y="245" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="800">THE OFF SWITCH IS BECOMING</text>
+  <text x="72" y="305" fill="#46f1c4" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="800">A NETWORK PROBLEM</text>
+  <text x="76" y="355" fill="#c9dfe3" font-family="Arial,Helvetica,sans-serif" font-size="22">Controlled replication evidence raises propagation risk—without proving a live AI worm.</text>
+
+  <text x="72" y="430" fill="#8eeed7" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="2">FIVE CORE INDICATORS · DΩP EDITORIAL JUDGEMENTS</text>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <g transform="translate(72 455)"><rect width="200" height="110" rx="14" fill="#082330" stroke="#2cd8ae"/><text x="18" y="31" fill="#9cefdc" font-size="16">THREAT INDEX</text><text x="18" y="76" fill="#fff" font-size="36" font-weight="800">84</text><text x="91" y="76" fill="#ffb25c" font-size="18">▲ 82 → 84</text></g>
+    <g transform="translate(286 455)"><rect width="200" height="110" rx="14" fill="#082330" stroke="#2cd8ae"/><text x="18" y="31" fill="#9cefdc" font-size="16">ASSURANCE</text><text x="18" y="76" fill="#fff" font-size="36" font-weight="800">71</text><text x="91" y="76" fill="#54e7c0" font-size="18">▲ 69 → 71</text></g>
+    <g transform="translate(500 455)"><rect width="200" height="110" rx="14" fill="#082330" stroke="#2cd8ae"/><text x="18" y="31" fill="#9cefdc" font-size="16">CONTROL DEBT</text><text x="18" y="76" fill="#fff" font-size="36" font-weight="800">+13</text><text x="103" y="76" fill="#b6c7cc" font-size="17">UNCHANGED</text></g>
+    <g transform="translate(714 455)"><rect width="200" height="110" rx="14" fill="#082330" stroke="#2cd8ae"/><text x="18" y="31" fill="#9cefdc" font-size="16">HUMAN AUTHORITY</text><text x="18" y="76" fill="#fff" font-size="36" font-weight="800">58</text><text x="90" y="76" fill="#b6c7cc" font-size="17">UNCHANGED</text></g>
+    <g transform="translate(928 455)"><rect width="200" height="110" rx="14" fill="#082330" stroke="#2cd8ae"/><text x="18" y="31" fill="#9cefdc" font-size="16">EVIDENCE</text><text x="18" y="76" fill="#fff" font-size="36" font-weight="800">94</text><text x="90" y="76" fill="#b6c7cc" font-size="17">HIGH</text></g>
+  </g>
+
+  <text x="72" y="640" fill="#8eeed7" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="2">FIVE VERIFIED DEVELOPMENTS</text>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <g transform="translate(72 668)"><circle cx="24" cy="24" r="24" fill="#1bd4a8"/><text x="24" y="32" text-anchor="middle" fill="#00140f" font-size="22" font-weight="800">1</text><text x="66" y="18" fill="#fff" font-size="21" font-weight="700">Simplified end-to-end replication</text><text x="66" y="47" fill="#c3d7dc" font-size="18">GLM-5.2 completed Anthropic’s controlled workflow.</text></g>
+    <g transform="translate(72 748)"><circle cx="24" cy="24" r="24" fill="#1bd4a8"/><text x="24" y="32" text-anchor="middle" fill="#00140f" font-size="22" font-weight="800">2</text><text x="66" y="18" fill="#fff" font-size="21" font-weight="700">Edge inference became practical</text><text x="66" y="47" fill="#c3d7dc" font-size="18">A 9B model ran on 8 of 9 tested hardware types.</text></g>
+    <g transform="translate(72 828)"><circle cx="24" cy="24" r="24" fill="#1bd4a8"/><text x="24" y="32" text-anchor="middle" fill="#00140f" font-size="22" font-weight="800">3</text><text x="66" y="18" fill="#fff" font-size="21" font-weight="700">Gemini 4 Argon crossed warning thresholds</text><text x="66" y="47" fill="#c3d7dc" font-size="18">Google cannot rule out bio, cyber and stealth thresholds.</text></g>
+    <g transform="translate(72 908)"><circle cx="24" cy="24" r="24" fill="#1bd4a8"/><text x="24" y="32" text-anchor="middle" fill="#00140f" font-size="22" font-weight="800">4</text><text x="66" y="18" fill="#fff" font-size="21" font-weight="700">Evaluator independence remains unsettled</text><text x="66" y="47" fill="#c3d7dc" font-size="18">Publication rights and access still depend on lab agreements.</text></g>
+    <g transform="translate(72 988)"><circle cx="24" cy="24" r="24" fill="#1bd4a8"/><text x="24" y="32" text-anchor="middle" fill="#00140f" font-size="22" font-weight="800">5</text><text x="66" y="18" fill="#fff" font-size="21" font-weight="700">Assurance capacity is scaling</text><text x="66" y="47" fill="#c3d7dc" font-size="18">NVIDIA pledged US$250m in UK safety compute over five years.</text></g>
+  </g>
+
+  <rect x="72" y="1085" width="1056" height="196" rx="18" fill="#061f2c" stroke="#2ed8b0"/>
+  <text x="102" y="1128" fill="#8eeed7" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" letter-spacing="2">RISK → BENEFIT / ASSURANCE PATHWAY</text>
+  <g font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="19">
+    <rect x="102" y="1160" width="176" height="66" rx="10" fill="#183543"/><text x="190" y="1200" text-anchor="middle" fill="#fff">CAPABILITY</text>
+    <text x="294" y="1201" fill="#45edc4" font-size="30">→</text>
+    <rect x="326" y="1160" width="176" height="66" rx="10" fill="#183543"/><text x="414" y="1200" text-anchor="middle" fill="#fff">PROPAGATION</text>
+    <text x="518" y="1201" fill="#45edc4" font-size="30">→</text>
+    <rect x="550" y="1160" width="176" height="66" rx="10" fill="#183543"/><text x="638" y="1200" text-anchor="middle" fill="#fff">CONTAINMENT</text>
+    <text x="742" y="1201" fill="#45edc4" font-size="30">→</text>
+    <rect x="774" y="1160" width="176" height="66" rx="10" fill="#183543"/><text x="862" y="1200" text-anchor="middle" fill="#fff">EVIDENCE</text>
+    <text x="966" y="1201" fill="#45edc4" font-size="30">→</text>
+    <rect x="998" y="1160" width="104" height="66" rx="10" fill="#0d5a49"/><text x="1050" y="1200" text-anchor="middle" fill="#fff" font-size="16">VALUE</text>
+  </g>
+
+  <text x="72" y="1350" fill="#8eeed7" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="2">HUMAN-VALUE IMPLICATIONS</text>
+  <g font-family="Arial,Helvetica,sans-serif" font-size="19">
+    <text x="86" y="1392" fill="#fff">• Containment must survive distributed execution and delayed detection.</text>
+    <text x="86" y="1430" fill="#fff">• Purpose legitimacy remains separate from technical control.</text>
+    <text x="86" y="1468" fill="#fff">• Human authority requires visibility, intervention, contestability and remedy.</text>
+    <text x="86" y="1506" fill="#fff">• Safety capacity should remain accessible beyond the largest laboratories.</text>
+  </g>
+
+  <rect x="72" y="1560" width="1056" height="118" rx="18" fill="#10291f" stroke="#41f0bd" stroke-width="2" filter="url(#g)"/>
+  <text x="600" y="1605" text-anchor="middle" fill="#91f6da" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700">DΩP CORE READ</text>
+  <text x="600" y="1648" text-anchor="middle" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="800">NO DISTRIBUTED AUTONOMY WITHOUT DISTRIBUTED ASSURANCE.</text>
+  <text x="72" y="1725" fill="#afc4ca" font-family="Arial,Helvetica,sans-serif" font-size="16">Evidence labels: controlled experiment · developer assessment · investigative reporting · DΩP editorial judgement</text>
+</svg>
