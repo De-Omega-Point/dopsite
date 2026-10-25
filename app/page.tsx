@@ -60,10 +60,8 @@ export default function Home() {
             <a href={AI_SAFETY_URL} aria-label="AI Safety Observatory, updated twice weekly">
               AI Safety <span className="nav-live">Live</span>
             </a>
-            <a className="nav-check-link" href="/ai-visibility">
-              Free AI check <span aria-hidden="true">↗</span>
-            </a>
           </span>
+          <a href="/de4humanity/">De4Humanity</a>
           <a href="/lightbridge/">Lightbridge</a>
           <a href="#mission">Mission</a>
           <a href="#store">Store</a>
@@ -72,11 +70,11 @@ export default function Home() {
         </nav>
         <div className="header-actions">
           <span className="mobile-intelligence-links">
+            <a className="mobile-safety-link" href="/de4humanity/">De4Humanity</a>
             <a className="mobile-safety-link" href="/lightbridge/">Play Lightbridge</a>
             <a className="mobile-safety-link" href={AI_SAFETY_URL}>
               AI Safety <span>Live</span>
             </a>
-            <a className="nav-cta" href="/ai-visibility">Free AI check <span aria-hidden="true">↗</span></a>
           </span>
         </div>
       </header>
@@ -217,7 +215,6 @@ export default function Home() {
             <li><span>03</span>Ranked action plan</li>
           </ul>
           <div className="commerce-actions">
-            <a className="button primary" href="/ai-visibility">Check my AI readiness <span aria-hidden="true">↗</span></a>
             <p>Free · About 20 seconds · No login</p>
           </div>
         </div>

@@ -79,6 +79,7 @@ try {
   await waitForServer();
   await cp(path.join(projectRoot, "public", "lightbridge"), path.join(projectRoot, "lightbridge"), { recursive: true });
   await exportRoute("/", path.join(projectRoot, "index.html"));
+  await exportRoute("/de4humanity", path.join(projectRoot, "de4humanity", "index.html"));
   await exportRoute("/platform", path.join(projectRoot, "platform", "index.html"));
   await cp(path.join(projectRoot, "index.html"), path.join(projectRoot, "404.html"));
   await writeFile(path.join(projectRoot, ".nojekyll"), "");
