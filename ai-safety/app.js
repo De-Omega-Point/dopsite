@@ -15,6 +15,22 @@ function resolvePath(object, path) {
   }, object);
 }
 
+function latestScheduledEditionDate() {
+  const now = Date.now();
+  for (let offset = 0; offset < 8; offset += 1) {
+    const parts = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Australia/Adelaide", year: "numeric", month: "2-digit", day: "2-digit",
+      weekday: "short", hour: "2-digit", hourCycle: "h23"
+    }).formatToParts(new Date(now - offset * 86400000)).filter(function (part) {
+      return part.type !== "literal";
+    }).map(function (part) { return [part.type, part.value]; }));
+    if ((parts.weekday === "Mon" || parts.weekday === "Thu") && (offset > 0 || Number(parts.hour) >= 6)) {
+      return parts.year + "-" + parts.month + "-" + parts.day;
+    }
+  }
+  return "";
+}
+
 function renderEdition(data) {
   document.querySelectorAll("[data-bind]").forEach(function (node) {
     const value = resolvePath(data, node.dataset.bind);
@@ -32,7 +48,12 @@ function renderEdition(data) {
   });
 
   document.documentElement.dataset.edition = String(data.edition && data.edition.number || "current");
-  document.querySelector("#editionStatus").textContent = "Live edition";
+  const publishedDate = String(data.edition && data.edition.publishedAt || "").slice(0, 10);
+  document.querySelectorAll('time[data-bind="edition.displayDate"]').forEach(function (node) {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(publishedDate)) node.setAttribute("datetime", publishedDate);
+  });
+  const status = document.querySelector("#editionStatus");
+  if (status) status.textContent = publishedDate >= latestScheduledEditionDate() ? "Current published edition" : "Previous edition · awaiting update";
 }
 
 async function loadEdition() {
