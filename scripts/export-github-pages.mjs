@@ -7,7 +7,7 @@ const projectRoot = process.cwd();
 // prefix works on the github.io project URL but breaks every asset on
 // de-omega-point.com.
 const basePath = "";
-const fullApplication = "https://de-omega-point.sammielee.chatgpt.site";
+// Server-only features must remain separately gated; AI Visibility is now static + Worker API.
 const assetsDirectory = path.join(projectRoot, "assets");
 const serverUrl = "http://127.0.0.1:3000";
 
@@ -30,7 +30,7 @@ function rewriteHtml(html) {
     .replaceAll("/assets/", `${basePath}/assets/`)
     .replaceAll("/workspace/sites/de-omega-point/.vinext/fonts/geist-8ac0455e797f/", `${basePath}/assets/fonts/`)
     .replaceAll("/workspace/sites/de-omega-point/.vinext/fonts/geist-mono-00e989178794/", `${basePath}/assets/fonts/`)
-    .replaceAll('href="/ai-visibility"', `href="${fullApplication}/ai-visibility"`)
+    .replaceAll('href="/ai-visibility"', `href="${basePath}/ai-visibility/"`)
     .replaceAll('href="/admin"', `href="${fullApplication}/admin"`)
     .replaceAll('href="/platform"', `href="${basePath}/platform/"`)
     .replaceAll('href="/#', `href="${basePath}/#`)
