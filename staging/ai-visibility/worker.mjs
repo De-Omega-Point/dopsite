@@ -102,4 +102,4 @@ export default {async fetch(request,env){
   const queryPack=[`Best ${category} in ${location}`,`${category} near me with strong reviews`,`Which ${category} in ${location} should I choose?`,`Compare local ${category} options in ${location}`,`Recommended ${category} in ${location}`];
   return json({business,competitors:checks,queryPack,measuredAt:new Date().toISOString()},200,origin);
  }catch(e){return json({error:e instanceof Error?e.message:"Request could not be completed."},400,origin)}
-}}};
+}};
