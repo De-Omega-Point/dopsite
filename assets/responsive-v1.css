@@ -1,0 +1,47 @@
+/* Shared public-site layout fixes: keep navigation usable at every width. */
+.site-header{height:auto;min-height:90px;grid-template-columns:auto minmax(0,1fr);gap:16px 28px;padding:18px clamp(16px,4vw,60px)}
+.site-header .header-actions{display:none}
+.site-header>nav{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:4px 18px;min-width:0}
+.site-header>nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 0;white-space:normal;line-height:1.4;color:#e5eee4}
+.site-header .nav-intelligence{min-width:0;display:flex;align-items:center}
+.site-header .brand{max-width:100%;min-width:0}
+.site-header .brand-mark{flex-shrink:0}
+.hero-copy,.hero-intro,.store-heading>*,.product-card>*,.project-card>*,.mission>*,.principles>*,.quantum-inner>*,.artifact>*{min-width:0}
+.hero h1,.visibility-callout h2,.contact h2{overflow-wrap:break-word}
+.de4-page .de4-header nav{display:flex;flex-wrap:wrap;gap:4px 20px}
+.de4-page .de4-header nav a,.de4-page .de4-footer a{display:inline-flex;align-items:center;min-height:44px}
+.de4-page .de4-header,.de4-page .de4-grid,.de4-page .de4-purpose,.de4-page .de4-reporting{min-width:0}
+.de4-page .de4-grid>*{min-width:0;overflow-wrap:break-word}
+@media(max-width:1100px){
+ .site-header{position:relative;left:auto;top:auto;transform:none;width:100%;grid-template-columns:minmax(0,1fr);gap:10px;padding:16px 24px}
+ .site-header>nav{justify-content:flex-start;gap:4px 22px}
+ .hero{min-height:660px}
+ .hero-copy{margin-top:0;padding-top:clamp(70px,12vh,130px);padding-bottom:100px}
+ .hero-status{position:relative;bottom:auto;margin-top:0}
+}
+@media(max-width:620px){
+ .site-header{padding:14px 18px;gap:10px;min-height:0}
+ .site-header>nav{gap:2px 18px;font-size:11px;letter-spacing:.04em}
+ .site-header>nav a{min-height:44px}
+ .hero{min-height:0;padding-bottom:30px}
+ .hero-copy{margin-top:0;padding:clamp(90px,25vw,140px) 20px 45px}
+ .hero h1{font-size:clamp(40px,11.8vw,70px);line-height:1.04}
+ .hero-intro{font-size:17px;line-height:1.65}
+ .hero-backdrop{background-size:cover;background-position:60% top}
+ .hero::after{background:linear-gradient(180deg,rgba(2,4,3,.25),rgba(2,4,3,.8) 35%,#020403 95%)}
+ .hero-status{padding:0 20px;flex-wrap:wrap;gap:12px}
+ .scroll-cue{display:none}
+ .safety-entry-visual{min-height:280px}
+ .product-card,.project-card{min-height:0}
+ .visibility-callout h2{font-size:clamp(30px,9vw,43px)}
+ .button{max-width:100%;min-height:44px;white-space:normal;text-align:center}
+ .de4-page{padding-inline:20px}
+ .de4-page h1 span{font-size:clamp(39px,12vw,60px)}
+ .de4-page .de4-link{margin:12px 0 0;display:flex;align-items:center;min-height:44px;width:max-content}
+ .de4-page .de4-header{gap:12px}
+ .de4-page .de4-footer{overflow-wrap:anywhere}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.interactive-particles{display:none}}
+@media(max-width:1100px){.hero-status{right:auto;left:auto;padding:0 clamp(20px,5vw,60px) 24px;flex-wrap:wrap;gap:12px}.scroll-cue{display:none}}
+@media(max-width:620px){.site-header>nav{font-size:12px;gap:2px 16px}.site-header>nav a{font-size:12px}}
+.de4-page{font-family:Arial,Helvetica,sans-serif}
