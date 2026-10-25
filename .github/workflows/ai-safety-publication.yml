@@ -1,0 +1,55 @@
+name: AI Safety publication gate
+
+# The ChatGPT AI Safety Engine prepares and verifies editions at 06:00 Adelaide
+# Monday/Thursday. This independent read-only gate checks the result afterwards.
+# 23:30 UTC Sun/Wed = Mon/Thu 09:00 (ACST) or 10:00 (ACDT).
+on:
+  push:
+    paths:
+      - "ai-safety/**"
+      - "scripts/verify-ai-safety.mjs"
+      - ".github/workflows/ai-safety-publication.yml"
+  schedule:
+    - cron: "30 23 * * 0,3"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify-edition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate edition, dated metadata, source ledger and dashboard links
+        run: node scripts/verify-ai-safety.mjs local
+      - name: Confirm current Monday/Thursday edition is live
+        if: github.event_name != 'push'
+        run: node scripts/verify-ai-safety.mjs public
+      - name: Open or update one missing-edition alert
+        if: failure() && github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="AI Safety publication needs attention"
+          issue="$(gh issue list --state open --json number,title --jq '.[] | select(.title == "AI Safety publication needs attention") | .number' | head -n 1)"
+          message="The Monday/Thursday AI Safety publication gate failed. Check this workflow run and the GitHub Pages edition before claiming publication. Do not roll forward an old story or alter scores without verified evidence. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          if [[ -n "$issue" ]]; then
+            gh issue comment "$issue" --body "$message"
+          else
+            gh issue create --title "$title" --body "$message"
+          fi
+      - name: Close the alert once publishing is verified
+        if: success() && github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          issue="$(gh issue list --state open --json number,title --jq '.[] | select(.title == "AI Safety publication needs attention") | .number' | head -n 1)"
+          if [[ -n "$issue" ]]; then
+            gh issue close "$issue" --comment "The latest due Monday/Thursday edition is now verified on the public site."
+          fi
