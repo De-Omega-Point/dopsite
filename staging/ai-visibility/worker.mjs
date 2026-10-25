@@ -16,15 +16,15 @@ async function readWebsite(raw,limit=450000){
  let url=validateWebsite(raw);
  for(let redirect=0;redirect<3;redirect++){
   const ctrl=new AbortController();const timer=setTimeout(()=>ctrl.abort(),8000);
-  let res;try{res=await fetch(url.toString(),{redirect:"manual",signal:ctrl.signal,headers:{"accept":"text/html, text/plain;q=0.8"}})}finally{clearTimeout(timer)}
-  if([301,302,303,307,308].includes(res.status)){const next=res.headers.get("location");if(!next)throw Error("Website redirect missing destination.");url=validateWebsite(new URL(next,url).href);continue;}
-  if(!res.ok)throw Error("Website returned HTTP "+res.status);
-  const type=res.headers.get("content-type")||"";if(!/text\/html|text\/plain|application\/xml|text\/xml/i.test(type))throw Error("Website content is not readable HTML.");
-  const claimed=Number(res.headers.get("content-length")||0);if(claimed>limit)throw Error("Website response is too large.");
+  let res;try{res=await fetch(url.toString(),{redirect:"manual",signal:ctrl.signal,headers:{"accept":"text/html, text/plain;q=0.8"}})}catch(e){clearTimeout(timer);throw e}
+  if([301,302,303,307,308].includes(res.status)){clearTimeout(timer);const next=res.headers.get("location");if(!next)throw Error("Website redirect missing destination.");url=validateWebsite(new URL(next,url).href);continue;}
+  if(!res.ok){clearTimeout(timer);throw Error("Website returned HTTP "+res.status);}
+  const type=res.headers.get("content-type")||"";if(!/text\/html|text\/plain|application\/xml|text\/xml/i.test(type)){clearTimeout(timer);throw Error("Website content is not readable HTML.");}
+  const claimed=Number(res.headers.get("content-length")||0);if(claimed>limit){clearTimeout(timer);throw Error("Website response is too large.");}
   // Bound network read memory; disallow large files and stream indefinite content.
-  if(!res.body)throw Error("Website returned empty content.");
+  if(!res.body){clearTimeout(timer);throw Error("Website returned empty content.");}
   const reader=res.body.getReader();const chunks=[];let total=0;
-  try{while(true){const {done,value}=await reader.read();if(done)break;total+=value.byteLength;if(total>limit)throw Error("Website response is too large.");chunks.push(value)}}finally{reader.cancel().catch(()=>{})}
+  try{while(true){const {done,value}=await reader.read();if(done)break;total+=value.byteLength;if(total>limit)throw Error("Website response is too large.");chunks.push(value)}}finally{clearTimeout(timer);reader.cancel().catch(()=>{})}
   const merged=new Uint8Array(total);let offset=0;for(const piece of chunks){merged.set(piece,offset);offset+=piece.byteLength}
   return {html:new TextDecoder().decode(merged),url};
  }
