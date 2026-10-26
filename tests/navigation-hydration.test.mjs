@@ -10,4 +10,9 @@ for(const file of ['index.html','404.html'])test(`${file}: navigation survives h
  assert.ok(!chunks.includes('"href":"/ai-visibility"'));
  assert.ok(!html.includes('href="/ai-visibility"'));
  assert.ok(html.includes('interactive-particles'));
+ assert.ok(html.includes('href="/bridging-light/"'));
+ assert.ok(chunks.includes('"href":"/bridging-light/"'));
+ assert.ok(chunks.includes('"id":"bridge-entry-title"'));
+ assert.ok(html.includes('id="bridge-entry-title"'));
+ assert.ok(chunks.includes('Bridging-Lights'));
 });
