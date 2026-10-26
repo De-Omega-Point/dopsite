@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free AI Visibility Check | De-Omega-Point</title>
+<meta name="description" content="Free AI website readiness diagnostic for Australian businesses. Check public website signals, compare competitors and identify practical improvements.">
+<link rel="icon" href="/assets/de-omega-point-emblem-v2.png">
+<style>
+:root{color-scheme:dark;font-family:Arial,Helvetica,sans-serif;background:#030805;color:#eef9f0}*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 5% 0%,#163e20 0,transparent 45%),#030805}
+a{color:#8eff81}header{border-bottom:1px solid #24402b;padding:18px max(20px,5vw);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;color:#fff}.brand img{width:46px;height:46px;object-fit:contain}
+main{max-width:1250px;margin:auto;padding:70px 22px}h1{font-size:clamp(48px,6.7vw,94px);letter-spacing:-.07em;line-height:.98;margin:15px 0 26px}
+em{font-style:normal;color:#85f75e}.eyebrow{font-size:12px;letter-spacing:.18em;color:#85f75e;text-transform:uppercase}
+.intro{max-width:590px;font-size:17px;color:#b6c7b8;line-height:1.65}
+.layout{display:grid;grid-template-columns:1fr minmax(340px,.86fr);gap:clamp(25px,6vw,88px);align-items:start}
+form,.panel{background:#07100a;border:1px solid #32643b;padding:clamp(22px,3vw,36px);border-radius:12px}
+label{display:block;margin:0 0 19px;font-size:13px;font-weight:700}label span{display:block;margin-bottom:8px}
+input,textarea{font:inherit;background:#030805;color:#fff;border:1px solid #405448;padding:13px;border-radius:6px;width:100%;max-width:100%}
+input:focus,textarea:focus,button:focus-visible{outline:2px solid #85f75e;outline-offset:2px}
+button{border:0;background:#85f75e;color:#091608;padding:15px 21px;font-weight:800;border-radius:7px;cursor:pointer;width:100%;font-size:15px}
+button:disabled{opacity:.6;cursor:wait}.small{font-size:12px;color:#acbbae;line-height:1.6}.error{color:#ffb6a9}
+#results{display:none;margin-top:55px}#results.visible{display:block}
+.score{font-size:76px;font-weight:800;color:#85f75e;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.panel h3{margin:8px 0}.finding{border-bottom:1px solid #24382a;padding:12px 0;line-height:1.5}
+.pass{color:#85f75e}.fail{color:#ffb6a9}.mini{font-size:12px;color:#bdc8be}
+footer{padding:28px;text-align:center;color:#a1b2a3;border-top:1px solid #24402b}
+@media(max-width:760px){.layout{grid-template-columns:1fr}main{padding-top:40px}header{flex-wrap:wrap}h1{font-size:54px}}
+</style></head>
+<body><header><a class="brand" href="/"><img src="/assets/de-omega-point-emblem-v2.png" alt=""><span>De-Omega-Point</span></a><a href="/">Company home</a></header>
+<main><div class="layout"><section><p class="eyebrow">AI Visibility Lab · Free diagnostic</p><h1>Will AI choose<br><em>your business?</em></h1>
+<p class="intro">Find out how clearly your public website communicates its identity, offerings, trust signals and next steps to AI-enabled discovery systems.</p>
+<p class="intro">Evidence-led website readiness, not fabricated rankings or claims about what ChatGPT recommends.</p>
+</section>
+<form id="scan-form"><label><span>Business website *</span><input id="businessUrl" type="text" inputmode="url" autocomplete="url" placeholder="example.com.au" required maxlength="260"></label>
+<label><span>Business category *</span><input id="category" placeholder="e.g. accounting firm" required maxlength="100"></label>
+<label><span>Location *</span><input id="location" value="Adelaide, SA" required maxlength="120"></label>
+<label><span>Competitor websites (optional, up to 3, separated by commas)</span><textarea id="competitors" rows="3" maxlength="1000"></textarea></label>
+<button id="scan-button" type="submit">Run my free AI visibility check ↗</button>
+<p class="small">Public website information only. No passwords or logins. Checks may not work if a website blocks automated requests.</p>
+<p id="error" class="error" role="alert" aria-live="polite"></p></form></div>
+<section id="results" aria-live="polite"><p class="eyebrow">Your measurable baseline</p><div class="grid"><div class="panel"><p id="score" class="score"></p><h2>AI website readiness / 100</h2><p id="measured" class="mini"></p></div>
+<div class="panel"><h2>Core dimensions</h2><div id="dimensions"></div></div></div>
+<div class="grid" style="margin-top:15px"><div class="panel"><h2>Verified website signals</h2><div id="findings"></div></div>
+<div class="panel"><h2>Competitor website readiness</h2><div id="comparison"></div><p class="mini">Observable website signals only, not live AI recommendation share.</p>
+<h3>Relevant customer questions</h3><div id="queries"></div></div></div>
+<div class="panel" style="margin-top:15px"><h2>Request a full benchmark</h2><p class="small">Optional. Submit your email to request a human-led assessment. Founding audits from A$249; no automatic charge.</p>
+<form id="lead-form" style="border:0;padding:0;background:transparent"><label><span>Email address</span><input type="email" id="email" required maxlength="200"></label>
+<label style="font-weight:400"><input type="checkbox" id="consent" required style="width:auto;margin-right:8px">I agree to be contacted about this audit request.</label>
+<button id="lead-button">Request the full benchmark ↗</button><p id="lead-error" role="alert" class="error"></p></form></div></section>
+</main><footer>De-Omega-Point · Human-value intelligence · Adelaide, Australia</footer>
+<script>
+"use strict";
+// Staging configuration must be set to the verified Workers endpoint before release.
+const API_BASE = "https://dop-ai-visibility-staging.deomegapoint.workers.dev";
+const el = id => document.getElementById(id);
+let lastResult = null;
+function line(container,title,detail,ok){const node=document.createElement("div");node.className="finding";
+const head=document.createElement("strong");head.className=ok===null?"":ok?"pass":"fail";head.textContent=(ok===null?"":ok?"✓ ":"! ")+title;
+const sub=document.createElement("div");sub.className="mini";sub.textContent=detail || "";
+node.append(head,sub);container.append(node);}
+el("scan-form").addEventListener("submit",async event=>{
+event.preventDefault();el("error").textContent="";el("results").classList.remove("visible");
+const button=el("scan-button");button.disabled=true;button.textContent="Scanning public signals…";
+try{const payload={businessUrl:el("businessUrl").value,category:el("category").value,location:el("location").value,competitors:el("competitors").value.split(/[,\n]/).map(x=>x.trim()).filter(Boolean)};
+const resp=await fetch(API_BASE+"/scan",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)});
+const data=await resp.json();if(!resp.ok)throw Error(data.error||"Scan unavailable");lastResult=data;
+el("score").textContent=data.business.score;el("measured").textContent="Scanned "+new Date(data.measuredAt).toLocaleString("en-AU");
+for(const id of ["dimensions","findings","comparison","queries"])el(id).replaceChildren();
+for(const [name,value]of Object.entries(data.business.dimensions))line(el("dimensions"),name[0].toUpperCase()+name.slice(1),value+" / 100",null);
+for(const f of data.business.findings)line(el("findings"),f.label,f.detail,f.passed);
+line(el("comparison"),"Your website",data.business.score+" / 100",null);
+for(const c of data.competitors)line(el("comparison"),c.name,c.score===null?"Unable to scan":c.score+" / 100",null);
+for(const q of data.queryPack)line(el("queries"),q,"",null);
+el("results").classList.add("visible");el("results").scrollIntoView({behavior:"smooth"});
+}catch(e){el("error").textContent=e.message||"Scan unavailable";}finally{button.disabled=false;button.textContent="Run my free AI visibility check ↗";}
+});
+el("lead-form").addEventListener("submit",async event=>{
+event.preventDefault();if(!lastResult)return;const btn=el("lead-button");btn.disabled=true;el("lead-error").textContent="";
+try{const resp=await fetch(API_BASE+"/lead",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({
+email:el("email").value,consent:el("consent").checked,businessUrl:el("businessUrl").value,businessName:lastResult.business.name,category:el("category").value,location:el("location").value,score:lastResult.business.score})});
+const data=await resp.json();if(!resp.ok)throw Error(data.error||"Request unavailable");
+el("lead-form").replaceChildren(document.createTextNode("Request received. Thank you; we'll be in touch."));
+}catch(e){el("lead-error").textContent=e.message||"Request unavailable";btn.disabled=false;}
+});
+</script></body></html>

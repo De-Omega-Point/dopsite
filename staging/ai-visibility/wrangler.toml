@@ -1,0 +1,10 @@
+name = "dop-ai-visibility-staging"
+main = "worker.mjs"
+compatibility_date = "2026-10-25"
+workers_dev = true
+
+# Configure using the new D1 database ID after creating the staging-only database.
+[[d1_databases]]
+binding = "DB"
+database_name = "dop-ai-visibility-staging"
+database_id = "a941f4e0-bfd7-4ba3-acb6-3acb7a0093d9"
