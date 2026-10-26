@@ -63,7 +63,7 @@ export default function Home() {
           </span>
           <a href="/de4humanity/">De4Humanity</a>
           <a href="/bridging-light/">Bridging-Light</a>
-          <a href="/lightbridge/">Bridging-Lights</a>
+          <a href="/lightbridge/">BL-Game</a>
           <a href="#mission">Mission</a>
           <a href="#store">Store</a>
           <a href="#systems">Systems</a>
@@ -73,7 +73,7 @@ export default function Home() {
           <span className="mobile-intelligence-links">
             <a className="mobile-safety-link" href="/de4humanity/">De4Humanity</a>
             <a className="mobile-safety-link" href="/bridging-light/">Bridging-Light</a>
-            <a className="mobile-safety-link" href="/lightbridge/">Play Bridging-Lights</a>
+            <a className="mobile-safety-link" href="/lightbridge/">BL-Game</a>
             <a className="mobile-safety-link" href={AI_SAFETY_URL}>
               AI Safety <span>Live</span>
             </a>
