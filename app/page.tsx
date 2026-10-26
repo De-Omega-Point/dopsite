@@ -62,7 +62,8 @@ export default function Home() {
             </a>
           </span>
           <a href="/de4humanity/">De4Humanity</a>
-          <a href="/lightbridge/">Bridging Lights</a>
+          <a href="/bridging-light/">Bridging-Light</a>
+          <a href="/lightbridge/">Bridging-Lights</a>
           <a href="#mission">Mission</a>
           <a href="#store">Store</a>
           <a href="#systems">Systems</a>
@@ -71,7 +72,8 @@ export default function Home() {
         <div className="header-actions">
           <span className="mobile-intelligence-links">
             <a className="mobile-safety-link" href="/de4humanity/">De4Humanity</a>
-            <a className="mobile-safety-link" href="/lightbridge/">Play Bridging Lights</a>
+            <a className="mobile-safety-link" href="/bridging-light/">Bridging-Light</a>
+            <a className="mobile-safety-link" href="/lightbridge/">Play Bridging-Lights</a>
             <a className="mobile-safety-link" href={AI_SAFETY_URL}>
               AI Safety <span>Live</span>
             </a>
@@ -130,6 +132,7 @@ export default function Home() {
         </figure>
       </section>
 
+      <section className="safety-entry section-shell" aria-labelledby="bridge-entry-title"><a className="safety-entry-visual" href="/bridging-light/" aria-label="Explore the Bridging-Light project"><img src="/assets/bridging-light-logo.jpeg" alt="Official Bridging Light project logo" width="1254" height="1254" loading="lazy" style={{width:"100%",height:"auto",objectFit:"contain"}}/></a><div className="safety-entry-copy"><p className="kicker">Bridging-Light / Research initiative</p><h2 id="bridge-entry-title">A spark of curiosity.<br/><span>A bridge to possibility.</span></h2><p>Discover our exploration of light, matter and possible future structures—or take a relaxing break with the puzzle game it inspired.</p><a className="button primary" href="/bridging-light/">Explore Bridging-Light ↗</a><p><a className="text-link" href="/lightbridge/">Play Bridging-Lights →</a></p></div></section>
       <section className="safety-entry section-shell" aria-labelledby="safety-entry-title">
         <a
           className="safety-entry-visual"
