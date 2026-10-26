@@ -62,7 +62,7 @@ export default function Home() {
             </a>
           </span>
           <a href="/de4humanity/">De4Humanity</a>
-          <a href="/lightbridge/">Lightbridge</a>
+          <a href="/lightbridge/">Bridging Lights</a>
           <a href="#mission">Mission</a>
           <a href="#store">Store</a>
           <a href="#systems">Systems</a>
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="header-actions">
           <span className="mobile-intelligence-links">
             <a className="mobile-safety-link" href="/de4humanity/">De4Humanity</a>
-            <a className="mobile-safety-link" href="/lightbridge/">Play Lightbridge</a>
+            <a className="mobile-safety-link" href="/lightbridge/">Play Bridging Lights</a>
             <a className="mobile-safety-link" href={AI_SAFETY_URL}>
               AI Safety <span>Live</span>
             </a>
