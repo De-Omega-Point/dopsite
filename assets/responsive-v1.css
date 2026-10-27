@@ -50,3 +50,9 @@
 img[src="/assets/bridging-light-logo.jpeg"]{animation:bridge-logo-illuminate 4.8s ease-in-out both;filter:drop-shadow(0 0 12px rgba(56,183,255,.16));transform-origin:center}
 @keyframes bridge-logo-illuminate{0%{transform:translateY(0);filter:drop-shadow(0 0 4px rgba(56,183,255,.08))}45%{transform:translateY(-6px);filter:drop-shadow(0 0 24px rgba(56,183,255,.4))}100%{transform:translateY(0);filter:drop-shadow(0 0 12px rgba(56,183,255,.16))}}
 @media(prefers-reduced-motion:reduce){img[src="/assets/bridging-light-logo.jpeg"]{animation:none;transform:none}}
+
+/* The document owns scrolling; decorative wrappers must not trap focus or anchors. */
+html{scroll-behavior:auto}
+body{overflow-x:clip;overflow-y:visible}
+main{overflow:visible;overflow-x:clip}
+[id]{scroll-margin-top:24px}
