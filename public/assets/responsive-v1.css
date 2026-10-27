@@ -45,3 +45,8 @@
 @media(max-width:1100px){.hero-status{right:auto;left:auto;padding:0 clamp(20px,5vw,60px) 24px;flex-wrap:wrap;gap:12px}.scroll-cue{display:none}}
 @media(max-width:620px){.site-header>nav{font-size:12px;gap:2px 16px}.site-header>nav a{font-size:12px}}
 .de4-page{font-family:Arial,Helvetica,sans-serif}
+
+/* Gentle logo illumination; settles within five seconds. */
+img[src="/assets/bridging-light-logo.jpeg"]{animation:bridge-logo-illuminate 4.8s ease-in-out both;filter:drop-shadow(0 0 12px rgba(56,183,255,.16));transform-origin:center}
+@keyframes bridge-logo-illuminate{0%{transform:translateY(0);filter:drop-shadow(0 0 4px rgba(56,183,255,.08))}45%{transform:translateY(-6px);filter:drop-shadow(0 0 24px rgba(56,183,255,.4))}100%{transform:translateY(0);filter:drop-shadow(0 0 12px rgba(56,183,255,.16))}}
+@media(prefers-reduced-motion:reduce){img[src="/assets/bridging-light-logo.jpeg"]{animation:none;transform:none}}
