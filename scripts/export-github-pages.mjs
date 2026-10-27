@@ -2,6 +2,8 @@ import { spawn } from "node:child_process";
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+import { staticPublicHtml } from "./static-public-html.mjs";
+
 const projectRoot = process.cwd();
 // This repository is served from the custom domain root via CNAME. A /dopsite
 // prefix works on the github.io project URL but breaks every asset on
@@ -42,7 +44,7 @@ async function exportRoute(route, outputPath) {
   if (!response.ok) {
     throw new Error(`Could not render ${route}: HTTP ${response.status}`);
   }
-  const html = rewriteHtml(await response.text());
+  const html = staticPublicHtml(rewriteHtml(await response.text()));
   await mkdir(path.dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);
 }
@@ -62,6 +64,7 @@ async function copyFonts(sourceDirectory) {
 await rm(assetsDirectory, { recursive: true, force: true });
 await rm(path.join(projectRoot, "platform"), { recursive: true, force: true });
 await cp(path.join(projectRoot, "dist", "client", "assets"), assetsDirectory, { recursive: true });
+await cp(path.join(projectRoot, "public", "assets"), assetsDirectory, { recursive: true });
 await mkdir(path.join(assetsDirectory, "fonts"), { recursive: true });
 await copyFonts(path.join(projectRoot, ".vinext", "fonts"));
 

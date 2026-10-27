@@ -45,3 +45,9 @@
 @media(max-width:1100px){.hero-status{right:auto;left:auto;padding:0 clamp(20px,5vw,60px) 24px;flex-wrap:wrap;gap:12px}.scroll-cue{display:none}}
 @media(max-width:620px){.site-header>nav{font-size:12px;gap:2px 16px}.site-header>nav a{font-size:12px}}
 .de4-page{font-family:Arial,Helvetica,sans-serif}
+
+/* The document owns scrolling; decorative wrappers must not trap focus or anchors. */
+html{scroll-behavior:auto}
+body{overflow-x:clip;overflow-y:visible}
+main{overflow:visible;overflow-x:clip}
+[id]{scroll-margin-top:24px}
