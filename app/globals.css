@@ -1818,3 +1818,8 @@ footer p:last-child {
 @media(max-width:900px){.site-header{min-height:112px}.mobile-intelligence-links a{min-height:28px;display:inline-flex;align-items:center;font-size:13px}.hero-copy{padding-top:max(140px,18vh)}}
 
 @media(min-width:901px){.site-header>nav{gap:clamp(14px,2vw,28px)}}
+
+/* Gentle logo illumination; settles within five seconds. */
+img[src="/assets/bridging-light-logo.jpeg"]{animation:bridge-logo-illuminate 4.8s ease-in-out both;filter:drop-shadow(0 0 12px rgba(56,183,255,.16));transform-origin:center}
+@keyframes bridge-logo-illuminate{0%{transform:translateY(0);filter:drop-shadow(0 0 4px rgba(56,183,255,.08))}45%{transform:translateY(-6px);filter:drop-shadow(0 0 24px rgba(56,183,255,.4))}100%{transform:translateY(0);filter:drop-shadow(0 0 12px rgba(56,183,255,.16))}}
+@media(prefers-reduced-motion:reduce){img[src="/assets/bridging-light-logo.jpeg"]{animation:none;transform:none}}
