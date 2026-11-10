@@ -5,6 +5,7 @@ name: AI Safety publication gate
 # 23:30 UTC Sun/Wed = Mon/Thu 09:00 (ACST) or 10:00 (ACDT).
 on:
   push:
+    branches: [main]
     paths:
       - "ai-safety/**"
       - "scripts/verify-ai-safety.mjs"
@@ -12,10 +13,6 @@ on:
       - "scripts/sync-ai-safety.mjs"
       - "tests/ai-safety-publication.test.mjs"
       - ".github/workflows/ai-safety-publication.yml"
-  workflow_run:
-    workflows: ["pages build and deployment"]
-    types: [completed]
-    branches: [main]
   schedule:
     - cron: "30 23 * * 0,3"
   workflow_dispatch:
@@ -27,7 +24,7 @@ permissions:
 jobs:
   verify-edition:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -37,12 +34,11 @@ jobs:
         run: node --test tests/ai-safety-publication.test.mjs
       - name: Validate edition, dated metadata, source ledger and dashboard links
         run: node scripts/verify-ai-safety.mjs local
-      - name: Confirm current Monday/Thursday edition is live
-        if: github.event_name != 'push'
+      - name: Wait for and confirm the current edition is live
         run: |
-          for attempt in 1 2 3; do
+          for attempt in {1..10}; do
             if node scripts/verify-ai-safety.mjs public; then exit 0; fi
-            if [[ "$attempt" != "3" ]]; then sleep 20; fi
+            if [[ "$attempt" != "10" ]]; then sleep 15; fi
           done
           exit 1
       - name: Open or update one missing-edition alert
@@ -59,7 +55,7 @@ jobs:
             gh issue create --title "$title" --body "$message"
           fi
       - name: Close the alert once publishing is verified
-        if: success() && github.event_name != 'push'
+        if: success()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

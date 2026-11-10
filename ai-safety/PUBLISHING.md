@@ -1,6 +1,6 @@
 # AI Safety publishing runbook
 
-This is the existing edition workflow, not a new schedule. The GitHub Actions publication gate validates content and observes the public result; it does **not** research, generate or publish an edition. A successful scheduled validator does not prove a future content-publishing run will succeed.
+This is the existing edition workflow, not a new schedule. The GitHub Actions publication gate validates content and observes the public result; it does **not** research, generate or publish an edition. A successful scheduled validator does not prove a future content-publishing run will succeed. Main-branch publication pushes also run the gate, which waits and retries while GitHub Pages updates, then checks the actual public HTML and feed. This does not depend on a separate Pages completion event.
 
 ## Prepare one canonical edition
 
@@ -45,4 +45,4 @@ Replace the example with the confirmed existing mirror URL. Mirror layout must e
 
 Only report full publication after primary and mirror are independently verified. Distinguish research, visual assets, primary publication, mirror publication and scheduled-workflow verification statuses. A Git push, local test, preview or successful validator alone is not complete publication.
 
-On failure preserve the last verified edition and record the exact action, destination, error, known outcome, completed steps and next required check. Do not blindly retry an uncertain write or bypass a denial. Roll back through the normal authorised path if the new release is broken and restoration is permitted. Reverify after any change. Do not close an alert or claim future scheduled publishing is repaired without evidence from the actual subsequent run.
+On failure preserve the last verified edition and record the exact action, destination, error, known outcome, completed steps and next required check. Do not blindly retry an uncertain write or bypass a denial. Roll back through the normal authorised path if the new release is broken and restoration is permitted. Reverify after any change. A current missing-edition alert may close after the live page and feed are verified. Do not claim future scheduled content publishing is repaired until the actual subsequent content-publishing run succeeds.
