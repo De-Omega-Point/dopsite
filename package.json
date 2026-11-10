@@ -15,7 +15,9 @@
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate",
     "export:github-pages": "node scripts/export-github-pages.mjs",
-    "test:assurance": "node --test tests/ai-assurance-static.test.mjs"
+    "test:assurance": "node --test tests/ai-assurance-static.test.mjs",
+    "test:ai-safety": "node --test tests/ai-safety-publication.test.mjs && node scripts/verify-ai-safety.mjs local",
+    "sync:ai-safety": "node scripts/sync-ai-safety.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

@@ -8,7 +8,14 @@ on:
     paths:
       - "ai-safety/**"
       - "scripts/verify-ai-safety.mjs"
+      - "scripts/ai-safety-html.mjs"
+      - "scripts/sync-ai-safety.mjs"
+      - "tests/ai-safety-publication.test.mjs"
       - ".github/workflows/ai-safety-publication.yml"
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+    branches: [main]
   schedule:
     - cron: "30 23 * * 0,3"
   workflow_dispatch:
@@ -26,11 +33,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Test canonical rendering and publication safeguards
+        run: node --test tests/ai-safety-publication.test.mjs
       - name: Validate edition, dated metadata, source ledger and dashboard links
         run: node scripts/verify-ai-safety.mjs local
       - name: Confirm current Monday/Thursday edition is live
         if: github.event_name != 'push'
-        run: node scripts/verify-ai-safety.mjs public
+        run: |
+          for attempt in 1 2 3; do
+            if node scripts/verify-ai-safety.mjs public; then exit 0; fi
+            if [[ "$attempt" != "3" ]]; then sleep 20; fi
+          done
+          exit 1
       - name: Open or update one missing-edition alert
         if: failure() && github.event_name != 'push'
         env:
@@ -53,3 +67,4 @@ jobs:
           if [[ -n "$issue" ]]; then
             gh issue close "$issue" --comment "The latest due Monday/Thursday edition is now verified on the public site."
           fi
+

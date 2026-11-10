@@ -338,3 +338,28 @@ svg { display: block; }
   .lead-copy h1, .lead-copy p { color: black; }
   .report-layout { display: block; }
 }
+
+
+/* Qualitative recovery edition: preserve the existing design at narrow widths. */
+.metric-reading strong{font-size:clamp(1.05rem,1.6vw,1.6rem);overflow-wrap:anywhere}
+.metric-reading em{white-space:normal}.metric-card{min-width:0}
+.recovery-note{padding:16px;border:1px solid #387080;border-radius:12px;color:#d8e8ef;line-height:1.6}
+.recovery-note a,.edition-jump-links a,.section-sources a,.assessment-card a{color:#8cf5d5}
+.edition-jump-links{display:flex;gap:16px;flex-wrap:wrap;margin:18px 0}
+.assessment-card{padding:18px;margin:18px 0;border:1px solid #346172;border-radius:14px;background:#092b3c;overflow-wrap:anywhere}
+.assessment-card h4{font-size:1.2rem;margin:0 0 12px}.assessment-card p{margin:10px 0}
+.section-sources{font-size:.85rem;overflow-wrap:anywhere}.editorial-quote-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+:focus-visible{outline:3px solid #8cf5d5;outline-offset:4px}
+
+/* Old illustrated headlines contain historical scores: use neutral decoration now. */
+.lead-art{background-image:radial-gradient(ellipse at 75% 35%,rgba(32,242,138,.18),transparent 45%),repeating-radial-gradient(circle at 80% 40%,transparent 0,transparent 55px,rgba(34,215,255,.15) 56px,transparent 57px),linear-gradient(135deg,#031522,#092d3f);background-size:auto;background-position:center}
+.lead-art span{display:block;color:#e7fff7;font-weight:800;font-size:clamp(1.6rem,3vw,2.7rem);line-height:1.1}
+.story-thumb{display:flex;align-items:center;justify-content:center;background-image:linear-gradient(135deg,#073546,#10564c)}
+.story-thumb svg{width:65px;height:65px;fill:none;stroke:#8cf5d5;stroke-width:1.5}
+.assessment-card{color:#e5f3f6}.assessment-card p{line-height:1.65}
+.section-sources a{color:#006448;text-decoration:underline}
+@media print{.assessment-card{background:white;color:black;border-color:#777}.assessment-card a,.section-sources a{color:black}}
+/* Qualitative values need two readable lines, not the old numeric inline row. */
+.metric-reading{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:.55rem;width:100%;min-width:0}
+.metric-reading strong{display:block;width:100%;max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.18}
+.metric-reading em{display:block;flex:0 1 auto;width:100%;max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.45}

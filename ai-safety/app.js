@@ -1,3 +1,4 @@
+import { renderPanels, renderSources, renderEditorial, renderReportSources } from "./panels.mjs";
 document.documentElement.classList.add("js");
 
 const progress = document.querySelector("#readingProgress");
@@ -32,14 +33,22 @@ function latestScheduledEditionDate() {
 }
 
 function renderEdition(data) {
+  const editorial = document.querySelector("#editionEditorial");
+  if (editorial) editorial.innerHTML = renderEditorial(data);
+  document.querySelectorAll("[data-section-sources]").forEach(node => { node.innerHTML = renderReportSources(data, Number(node.dataset.sectionSources)); });
+  const sourceList = document.querySelector("#sources ol");
+  if (sourceList) sourceList.innerHTML = renderSources(data);
+  const panels = document.querySelector("#editionAssessments");
+  if (panels) panels.innerHTML = renderPanels(data);
   document.querySelectorAll("[data-bind]").forEach(function (node) {
     const value = resolvePath(data, node.dataset.bind);
-    if (value !== undefined && value !== null) node.textContent = String(value);
+    node.textContent = value !== undefined && value !== null ? String(value) : "NOT VERIFIED THIS RUN";
   });
 
   document.querySelectorAll("[data-bind-href]").forEach(function (node) {
     const value = resolvePath(data, node.dataset.bindHref);
     if (typeof value === "string" && /^https:\/\//.test(value)) node.href = value;
+    else node.removeAttribute("href");
   });
 
   const currentTier = Number(data.threat && data.threat.currentTier);
@@ -74,7 +83,7 @@ window.addEventListener("scroll", updateProgress, { passive: true });
 window.addEventListener("resize", updateProgress);
 
 const trackedLinks = Array.from(document.querySelectorAll("[data-metric-index], [data-story-index]"));
-const sectionIds = ["capability-story", "cyber-story", "control-story", "governance-story", "public-story", "method-story"];
+const sectionIds = ["capability-story", "cyber-story", "control-story", "governance-story", "public-story", "method-story", "human-agency-tracker", "sources"];
 const sections = sectionIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
 
 function markActive(id) {
@@ -122,3 +131,4 @@ if (copyButton) {
 }
 
 document.querySelector("#printButton")?.addEventListener("click", function () { window.print(); });
+

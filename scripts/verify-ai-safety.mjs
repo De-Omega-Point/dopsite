@@ -5,6 +5,9 @@
  * Usage: node scripts/verify-ai-safety.mjs [local|public]
  */
 import { readFile } from "node:fs/promises";
+import { isDeepStrictEqual } from "node:util";
+import { auditBindings } from "./ai-safety-html.mjs";
+import { renderPanels, renderEditorial, renderReportSources } from "../ai-safety/panels.mjs";
 
 const mode = process.argv[2] || "local";
 const publicUrl = process.env.AI_SAFETY_PUBLIC_URL || "https://de-omega-point.com/ai-safety/";
@@ -32,7 +35,7 @@ function latestDueDate(now = new Date()) {
   }
   throw new Error("Cannot resolve Monday/Thursday schedule for Adelaide.");
 }
-function checkEdition(data, where) {
+function checkEdition(data, where, html) {
   assert(data && typeof data === "object", where + " feed is missing.");
   assert(Number.isInteger(data.edition?.number) && data.edition.number > 0, where + " edition number is invalid.");
   assert(typeof data.edition?.publishedAt === "string" && !Number.isNaN(Date.parse(data.edition.publishedAt)), where + " publishedAt is invalid.");
@@ -56,16 +59,39 @@ function checkEdition(data, where) {
   assert(html.includes('"dateModified": "' + updated + '"'), "static NewsArticle dateModified differs from feed.");
   assert(html.includes('datetime="' + published + '"'), "static date fallback differs from feed.");
   assert(html.includes(data.edition.displayDate), "static visible publication date differs from feed.");
-  assert(html.includes(data.lead.headline), "static lead story fallback differs from feed.");
-  assert(html.includes(data.report.title), "static report title differs from feed.");
   for (const m of [...html.matchAll(/<(?:a)\b[^>]*href="#([^"]+)"[^>]*data-(?:metric|story)-index=/g),
     ...html.matchAll(/<(?:a)\b[^>]*data-(?:metric|story)-index="[^"]+"[^>]*href="#([^"]+)"/g)]) {
     assert(html.includes('id="' + m[1] + '"'), "dashboard/story anchor #" + m[1] + " is broken.");
   }
+  const bindingErrors = auditBindings(html, data);
+  assert(bindingErrors.length === 0, where + ": " + bindingErrors.join("; "));
+  if (data.roboticsAssessment || data.humanAgencyTracker) {
+    const panel = html.match(/<!-- ASSESSMENTS:START -->([\s\S]*?)<!-- ASSESSMENTS:END -->/);
+    assert(panel && panel[1] === renderPanels(data), where + " qualitative assessment fallback differs from canonical feed.");
+  }
+  if (data.methodology) {
+    const editorial = html.match(/<!-- EDITORIAL:START -->([\s\S]*?)<!-- EDITORIAL:END -->/);
+    assert(editorial && editorial[1] === renderEditorial(data), where + " source perspectives/incidents/brief differ from feed.");
+    assert(data.methodology.status && data.methodology.version, where + " methodology disclosure missing.");
+    if (data.threat?.status === "methodology-unverified") {
+      assert(data.threat.currentTier === null, "Unverified methodology cannot assign a current tier.");
+      assert(!/data-tier="[^"]+"[^>]*class="[^"]*current/.test(html), "Unscored edition has an active threat tier.");
+    }
+    for (let i = 0; i < data.report.sections.length; i++) {
+      assert(data.report.sections[i].sourceIds?.every(id => data.sources.some(s => s.id === id)), "Report source mapping incomplete.");
+      const block = html.match(new RegExp("<!-- REPORT-SOURCES:" + i + ":START -->([\\s\\S]*?)<!-- REPORT-SOURCES:" + i + ":END -->"));
+      assert(block && block[1] === renderReportSources(data, i), "Report source links differ: " + i);
+    }
+    for (const key of ["roboticsAssessment", "humanAgencyTracker"]) {
+      const panel = data[key];
+      assert(panel?.scope && panel.assessedAt && panel.status && Array.isArray(panel.entries), key + " metadata incomplete.");
+      assert(panel.entries.every(entry => entry.id && entry.title && entry.finding && entry.evidenceStatus && entry.sources?.length && entry.sources.every(s => data.sources.some(source => source.url === s.url))), key + " source mapping incomplete.");
+    }
+  }
   return { published, updated, edition: data.edition.number };
 }
 
-const baseline = checkEdition(local, "Repository");
+const baseline = checkEdition(local, "Repository", html);
 console.log("Local AI Safety edition valid:", JSON.stringify(baseline));
 if (mode === "local") process.exit(0);
 assert(mode === "public", "Use local or public.");
@@ -83,12 +109,13 @@ const remoteHtml = new URL("?gate=" + Date.now(), url);
 const [feedResponse, pageResponse] = await Promise.all([get(remoteFeed), get(remoteHtml)]);
 const remote = await feedResponse.json();
 const page = await pageResponse.text();
-checkEdition(remote, "Public");
+checkEdition(remote, "Public", page);
+assert(isDeepStrictEqual(remote, local), "Public JSON differs from the complete approved repository feed.");
 assert(remote.edition.publishedAt === local.edition.publishedAt, "Public JSON date differs from approved repository feed.");
 assert(remote.edition.number === local.edition.number, "Public JSON edition number differs from approved repository feed.");
 assert(remote.lead.headline === local.lead.headline, "Public lead headline differs from approved repository feed.");
 assert(page.includes('"datePublished": "' + baseline.published + '"'), "Public HTML metadata is out of sync.");
 assert(page.includes(local.edition.displayDate), "Public HTML date fallback is out of sync.");
-assert(page.includes(local.lead.headline), "Public HTML lead story fallback is out of sync.");
 console.log("PASS: public AI Safety edition " + baseline.edition + " (" + baseline.published + ") matches verified repository content.");
 console.log("Note: this tests publication and internal anchor references, NOT external source uptime or a separate Sites mirror.");
+
