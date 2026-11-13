@@ -29,3 +29,24 @@ test('report citations refer to canonical source ids',()=>{for(const s of feed.r
 test("unscored indicators link to their actual basis",()=>{const expected=["method-story","capability-story","method-story","human-agency-tracker","sources"];for(let i=0;i<5;i++)assert.match(html,new RegExp(`data-metric-index="${i}" href="#${expected[i]}"`));});
 
 test("main publication pushes verify the live page before closing alerts",async()=>{const workflow=await readFile(new URL("../.github/workflows/ai-safety-publication.yml",import.meta.url),"utf8");assert(workflow.includes("branches: [main]"));const check=workflow.slice(workflow.indexOf("      - name: Wait for and confirm"),workflow.indexOf("      - name: Open or update"));assert(check.includes("node scripts/verify-ai-safety.mjs public"));assert(check.includes("{1..10}"));assert(!check.includes("if: github.event_name"));const close=workflow.slice(workflow.indexOf("      - name: Close the alert"));assert(close.includes("if: success()"));});
+
+test('Edition 16 recovery separates schedule, release and source-assessment dates',()=>{
+  if(feed.edition.number!==16)return;
+  assert.equal(feed.edition.scheduledFor,'2026-11-12T06:00:00+10:30');
+  assert.equal(feed.publicationManifest.scheduledFor,feed.edition.scheduledFor);
+  assert(Date.parse(feed.edition.publishedAt)>Date.parse(feed.edition.scheduledFor));
+  assert.equal(feed.publicationManifest.previousEdition,'archive/edition-15/');
+  assert.equal(feed.roboticsAssessment.assessedAt,'2026-11-12');
+  assert(feed.sources.some(s=>s.id==='ifr-tiago'));
+  for(const stale of ['US$1.5m','Test the application boundary, not just the model’s answer.'])assert(!html.includes(stale));
+});
+test('Edition 15 archive is frozen with original dates and working local assets',async()=>{
+  const root=new URL('../ai-safety/archive/edition-15/',import.meta.url);
+  const old=JSON.parse(await readFile(new URL('latest.json',root),'utf8'));
+  const page=await readFile(new URL('index.html',root),'utf8');
+  assert.equal(old.edition.number,15);
+  assert.equal(old.edition.publishedAt.slice(0,10),'2026-11-10');
+  assert(!/<script[^>]+src=/.test(page));
+  assert(page.includes('src="../../assets/de-omega-point-emblem-v2.png"'));
+  assert(page.includes('href="../edition-14/"'));
+});
