@@ -50,3 +50,6 @@ test('Edition 15 archive is frozen with original dates and working local assets'
   assert(page.includes('src="../../assets/de-omega-point-emblem-v2.png"'));
   assert(page.includes('href="../edition-14/"'));
 });
+
+test('Edition 17 recovery distinguishes full-package gaps and preserves real dates',()=>{if(feed.edition.number!==17)return;assert.equal(feed.edition.scheduledFor,'2026-11-16T06:00:00+10:30');assert(feed.edition.publishedAt.startsWith('2026-11-17'));assert(feed.edition.recoveryNote.includes('not the complete original'));assert(feed.publicationManifest.docs.includes('remain unrecovered'));assert.equal(feed.publicationManifest.previousEdition,'archive/edition-16/');});
+test('Edition 16 archive remains frozen with its original data and local assets',async()=>{const root=new URL('../ai-safety/archive/edition-16/',import.meta.url);const data=JSON.parse(await readFile(new URL('latest.json',root),'utf8'));const page=await readFile(new URL('index.html',root),'utf8');assert.equal(data.edition.number,16);assert.equal(data.edition.publishedAt.slice(0,10),'2026-11-13');assert(!/<script[^>]+src=/.test(page));assert(page.includes('src="../../assets/de-omega-point-emblem-v2.png"'));assert(page.includes('href="../edition-15/"'));});

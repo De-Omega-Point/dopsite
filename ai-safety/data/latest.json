@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "edition": {
-    "number": 16,
-    "publishedAt": "2026-11-13T12:00:54+10:30",
-    "lastUpdatedAt": "2026-11-13T12:00:54+10:30",
-    "scheduledFor": "2026-11-12T06:00:00+10:30",
-    "displayDate": "Published 13 November 2026",
-    "deck": "Recovery edition · Scheduled 12 November 2026 · Prepared 13 November 2026 · Australia/Adelaide",
+    "number": 17,
+    "publishedAt": "2026-11-17T07:46:24+10:30",
+    "lastUpdatedAt": "2026-11-17T07:46:24+10:30",
+    "scheduledFor": "2026-11-16T06:00:00+10:30",
+    "displayDate": "Published 17 November 2026",
+    "deck": "Recovery update · Scheduled 16 November · Published 17 November 2026 · Australia/Adelaide",
     "cadence": "Updated Monday + Thursday",
-    "nextUpdate": "Monday 16 November · 6:00 am ACDT",
-    "recoveryNote": "Edition 16 recovers the missed 12 November cycle. Research dates and the actual publication date are distinct; Edition 15 remains available in the archive.",
-    "description": "DΩP AI Safety Edition 16 recovery: Waymo recall-remedy inquiry, proposed Australian AI safeguards, and scoped human-control evidence. Published 13 November 2026."
+    "nextUpdate": "Thursday 19 November · 6:00 am ACDT",
+    "recoveryNote": "Edition 17 website recovery: selected claims from the missed 16 November report were independently rechecked. This is not the complete original publication package. Edition 16 is preserved in the archive.",
+    "description": "DΩP AI Safety Edition 17 recovery: human oversight, facial-search understanding, automated safety testing and scoped robotics evidence. Published 17 November 2026."
   },
   "metrics": [
     {
@@ -22,8 +22,8 @@
     {
       "label": "Assurance Index",
       "value": "Not scored",
-      "trend": "CONFIGURATION TESTS REQUIRED",
-      "note": "One manufacturer's remedy and developer simulations do not establish general deployed assurance."
+      "trend": "CONFIGURATION-SPECIFIC TESTING",
+      "note": "Developer testing advances do not establish general deployed assurance."
     },
     {
       "label": "Control Debt",
@@ -34,40 +34,40 @@
     {
       "label": "Human Authority",
       "value": "Not scored",
-      "trend": "BYSTANDERS MATTER",
-      "note": "Practical intervention for schoolchildren and other affected people remains unverified."
+      "trend": "COMPREHENSION MATTERS",
+      "note": "Human sign-off does not establish understanding, intervention or effective recourse."
     },
     {
       "label": "Evidence confidence",
       "value": "Qualitative",
       "trend": "CASE-SPECIFIC",
-      "note": "Official filing high confidence as filed; cause, benefit and legal implementation are unresolved."
+      "note": "Survey: voluntary responses; Anvil: developer assessment; NHTSA: primary inquiry, not final cause."
     }
   ],
   "lead": {
-    "headline": "A software fix is not proof of a safe outcome.",
-    "summary": "NHTSA opened recall query RQ26006 on 6 November after reports of Waymo automated vehicles passing stopped school buses following a 2025 software remedy. Australia announced proposed frontier-AI safety obligations on 10 November, while Gemini 4 Carbon reached wider availability. The core question: what proves a control works for affected people?"
+    "headline": "Human oversight needs evidence, not just a sign-off.",
+    "summary": "A UK Home Office survey exposes limits in users’ understanding of facial-search results, while Anthropic reports advances in automated safety testing. These are different evidence types: voluntary perceptions, developer evaluations and regulatory findings must not become unsupported claims of universal safety."
   },
   "stories": [
     {
-      "title": "Waymo post-remedy school-bus safety under review",
-      "summary": "NHTSA RQ26006, opened 6 Nov: regulator examines a 2025 software remedy. 2,895 is the number of vehicles covered, not people harmed or incidents."
+      "title": "A candidate match is not a final identification",
+      "summary": "The Home Office survey received 779 voluntary responses, representing 13% of eligible users. It found 34% misunderstood or were uncertain whether a facial-search match met a specified evidential standard. This is a finding about respondent understanding, not an algorithmic error or wrongful-arrest rate. Non-response limits generalisation. DΩP recommends testing comprehension before consequential decisions."
     },
     {
-      "title": "Australia proposes new frontier AI obligations",
-      "summary": "10 Nov: proposed independent evaluation, security controls, fast reporting and regulator. Legislation not enacted."
+      "title": "Perceived efficiency is useful, but not a measured outcome",
+      "summary": "In the same voluntary survey, 88% of respondents perceived efficiency benefits. The survey does not independently measure time saved or final investigative accuracy. Assess benefits and burdens together: corroboration, investigation time, correction and remedy."
     },
     {
-      "title": "Gemini 4 Carbon expands agent capability",
-      "summary": "Google 10 Nov release and /swarm preview. Vendor simulation statistics are not production incident rates."
+      "title": "Automated red teaming is a promising testing advance",
+      "summary": "Anthropic’s 12 November Anvil research reports stronger automated jailbreak discovery than expert human testers in studied biosecurity, cybersecurity and distillation tasks. These are developer-reported evaluations using internal frontier models with safeguards disabled, not independent field-safety validation. Defensive value depends on representative tests and verified remediation."
     },
     {
-      "title": "Historical Check Point remedy: continuity",
-      "summary": "5 Nov disclosure reported a 18 Sep patch and specific retest. No newly substantiated customer impact this edition."
+      "title": "Waymo inquiry examines whether the remedy worked",
+      "summary": "NHTSA opened RQ26006 on 6 November for 2,895 fifth-generation Waymo ADS vehicles. The regulator states that most reported incidents in its earlier evaluation occurred after the stated November 2025 remedy. The filing opens inquiry into adequacy and causes; it is not a final finding. No newer remedy outcome was verified in this recovery."
     },
     {
-      "title": "Agentic espionage reports require corroboration",
-      "summary": "11 Nov Reuters reports CloudSek allegations; independent victim response and state attribution unavailable."
+      "title": "Announced safeguards are not demonstrated protections",
+      "summary": "The 10 November Australian Government release proposes frontier-AI obligations and a regulator, including independent evaluation and rapid incident reporting. It describes future legislation, not evidence that protections are already operational. This recovery has not verified later legislative status. Implementation and practical recourse remain watchpoints."
     }
   ],
   "threat": {
@@ -78,256 +78,189 @@
     "disclaimer": "No current tier assigned. Target six labels are approved, numeric boundaries unverified. Preserve five-tier public display until renderer, archive and mobile compatibility tests pass. SIX-TIER DISPLAY PENDING VERIFICATION."
   },
   "outlook": {
-    "label": "Verify post-remedy outcomes",
-    "summary": "DΩP analysis: a published fix, a regulator's new investigation, a proposed law and a simulation benchmark answer different questions. Record release configurations, representative tests and safe human intervention. The newest NHTSA filing predates Monday and was newly incorporated today; it is not relabelled as a Thursday event.",
-    "quote": "Human agency is prime. The person bearing the risk deserves a working remedy."
+    "label": "Test the human control pathway",
+    "summary": "DΩP proposes a versioned human-control evidence record: system and configuration, decision-maker, comprehension check, intervention result, correction route and affected people. This is an editorial proposal, not a validated standard.",
+    "quote": "Human agency is prime. A person in the workflow is not proof of effective control."
   },
   "report": {
-    "title": "After the patch: proof of real-world safety and human recourse",
-    "standfirst": "Thursday 12 November research synthesis, recovered on 13 November: proposed Australian AI safeguards, frontier capability and an open Waymo recall-remedy inquiry.",
-    "intro": "The edition records policy announcements, primary regulatory filings, developer evaluations and historical remediations as different evidence types. The official metrics methodology was not recovered; no aggregate numerical scores, trends or incident grades are assigned.",
+    "title": "The difference between formal oversight and demonstrated human control",
+    "standfirst": "A scoped recovery of the missed Monday 16 November website edition, published 17 November after source rechecks. Original visual assets and the complete package remain unrecovered.",
+    "intro": "We distinguish survey perceptions, developer research, policy proposals and regulator filings. Quantitative methodology remains unavailable; no scores, historical numerical trends or incident severity grades are assigned. The original inspectorate page was inaccessible, so detailed claims from it and the South Wales case are excluded from this recovery.",
     "sections": [
       {
-        "kicker": "01 · Robotics investigation",
-        "heading": "A completed software update does not close a safety inquiry",
-        "body": "NHTSA opened recall query RQ26006 on 6 November to assess the adequacy of Waymo's school-bus remedy. Its filing lists Waymo fifth-generation ADS and a population of 2,895 vehicles under review; most reported incidents in the earlier evaluation occurred after completion of the 17 November 2025 remedy. This is an open regulator inquiry, not a completed causal finding. Next: configuration-specific tests and final regulator outcome.",
+        "kicker": "01 · Human understanding",
+        "heading": "A candidate match is not a final identification",
+        "body": "The Home Office survey received 779 voluntary responses, representing 13% of eligible users. It found 34% misunderstood or were uncertain whether a facial-search match met a specified evidential standard. This is a finding about respondent understanding, not an algorithmic error or wrongful-arrest rate. Non-response limits generalisation. DΩP recommends testing comprehension before consequential decisions.",
         "sourceIds": [
-          "nhtsa-waymo",
-          "techcrunch-waymo"
+          "home"
         ],
-        "quote": "A released remedy must still be tested against the hazard it was meant to address."
+        "quote": "DΩP assessment: ask what the authorised person understood, checked and could change."
       },
       {
-        "kicker": "02 · Australian governance",
-        "heading": "Mandatory frontier controls are proposed, not enacted",
-        "body": "On 10 November, the Australian Government announced an intended six-part frontier AI safety/security framework including development safeguards, independent evaluation, incident reporting, transparency and adaptive standards, to be enforced by a proposed regulator. Enacted text and commencement remain pending.",
+        "kicker": "02 · Benefits and limits",
+        "heading": "Perceived efficiency is useful, but not a measured outcome",
+        "body": "In the same voluntary survey, 88% of respondents perceived efficiency benefits. The survey does not independently measure time saved or final investigative accuracy. Assess benefits and burdens together: corroboration, investigation time, correction and remedy.",
         "sourceIds": [
-          "pm-aus-ai",
-          "reuters-aus-ai"
+          "home"
         ],
-        "stat": "6",
-        "statLabel": "Proposed frontier-AI obligations, not enacted requirements"
+        "stat": "88%",
+        "statLabel": "Voluntary respondents reporting perceived efficiency benefits; not measured time saved"
       },
       {
-        "kicker": "03 · Frontier capability and security",
-        "heading": "Google's Carbon release makes evidence scope essential",
-        "body": "Google expanded availability of Gemini 4 Carbon on 10 November and previewed agent /swarm coordination. Developer-reported cyber-safety rates come from simulated attack distributions rather than field incident populations. New tool and multi-agent configurations require permission checks, monitoring and independent reproduction.",
+        "kicker": "03 · Defensive safety research",
+        "heading": "Automated red teaming is a promising testing advance",
+        "body": "Anthropic’s 12 November Anvil research reports stronger automated jailbreak discovery than expert human testers in studied biosecurity, cybersecurity and distillation tasks. These are developer-reported evaluations using internal frontier models with safeguards disabled, not independent field-safety validation. Defensive value depends on representative tests and verified remediation.",
         "sourceIds": [
-          "google-carbon"
+          "anvil"
         ]
       },
       {
-        "kicker": "04 · Continuity and contested cyber allegations",
-        "heading": "A historical fix and a new alleged intrusion are different evidence classes",
-        "body": "Check Point's 5 November disclosed ChatGPT HTML preview route was reportedly fixed 18 September and retested by the discoverer. No new evidence changes that scoped result. Reuters published vendor-based allegations of an AI-aided intrusion in Central Asia on 11 November; state attribution and victim confirmation remained unverified during this review.",
+        "kicker": "04 · Robotics continuity",
+        "heading": "Waymo inquiry examines whether the remedy worked",
+        "body": "NHTSA opened RQ26006 on 6 November for 2,895 fifth-generation Waymo ADS vehicles. The regulator states that most reported incidents in its earlier evaluation occurred after the stated November 2025 remedy. The filing opens inquiry into adequacy and causes; it is not a final finding. No newer remedy outcome was verified in this recovery.",
         "sourceIds": [
-          "checkpoint",
-          "reuters-tajik"
+          "waymo"
         ]
       },
       {
-        "kicker": "05 · Human agency and resolution",
-        "heading": "The affected person is not always the customer",
-        "body": "Schoolchildren near automated vehicles are non-consenting bystanders; Australian government users and enterprise users face other authority limits. For each system, DΩP proposes testing the authorised human's ability to see, refuse, stop and challenge, with evidence from representative conditions. Three selected cases lack a comparable baseline, and neither numerical Control Debt nor a global agency direction is asserted.",
+        "kicker": "05 · Australian governance",
+        "heading": "Announced safeguards are not demonstrated protections",
+        "body": "The 10 November Australian Government release proposes frontier-AI obligations and a regulator, including independent evaluation and rapid incident reporting. It describes future legislation, not evidence that protections are already operational. This recovery has not verified later legislative status. Implementation and practical recourse remain watchpoints.",
         "sourceIds": [
-          "nhtsa-waymo",
-          "pm-aus-ai",
-          "iso-robotics"
+          "aus"
         ]
       }
     ]
   },
   "sources": [
     {
-      "id": "nhtsa-waymo",
+      "id": "home",
+      "publisher": "UK Home Office",
+      "title": "Police user insights on retrospective facial recognition 2026",
+      "date": "12 Nov 2026 · survey fieldwork 8 Apr–2 Jun 2026; voluntary, unweighted",
+      "url": "https://www.gov.uk/government/publications/police-user-insights-on-retrospective-facial-recognition-2026/police-user-insights-on-retrospective-facial-recognition-2026"
+    },
+    {
+      "id": "anvil",
+      "publisher": "Anthropic",
+      "title": "Automated red teaming with Anvil",
+      "date": "12 Nov 2026 · developer research",
+      "url": "https://safeguards.anthropic.com/2026/automated-red-teaming/"
+    },
+    {
+      "id": "waymo",
       "publisher": "NHTSA",
-      "title": "Recall Query RQ26006: Waymo automated vehicles passing stopped school buses",
-      "date": "6 Nov 2026 · primary regulator filing",
+      "title": "Recall Query RQ26006: effectiveness of Waymo school-bus remedy",
+      "date": "6 Nov 2026 · primary regulatory filing",
       "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
     },
     {
-      "id": "techcrunch-waymo",
-      "publisher": "TechCrunch",
-      "title": "Waymo robotaxis kept passing stopped school buses after software fix",
-      "date": "9 Nov 2026 · Waymo company response included",
-      "url": "https://techcrunch.com/2026/11/09/waymo-robotaxis-kept-illegally-passing-school-buses-after-software-fix-feds-say/"
-    },
-    {
-      "id": "pm-aus-ai",
+      "id": "aus",
       "publisher": "Prime Minister of Australia",
       "title": "New Australian AI safety and security protections",
-      "date": "10 Nov 2026 · proposed future legislation",
+      "date": "10 Nov 2026 · policy announcement",
       "url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
     },
     {
-      "id": "reuters-aus-ai",
-      "publisher": "Reuters",
-      "title": "Australia to mandate AI breach reporting, create regulator after OpenAI breach",
-      "date": "10 Nov 2026 · independent reporting",
-      "url": "https://www.reuters.com/world/australia-tightens-ai-oversight-rules-after-openai-agent-breached-government-2026-11-10/"
-    },
-    {
-      "id": "google-carbon",
-      "publisher": "Google",
-      "title": "Gemini 4 Carbon is now available",
-      "date": "10 Nov 2026 · developer self-assessment",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
-    },
-    {
-      "id": "checkpoint",
-      "publisher": "Check Point",
-      "title": "ChatGPT Lockdown Mode Bypass Reveals a Wider Challenge in AI Security",
-      "date": "5 Nov 2026 · remedy reportedly 18 Sep 2026",
-      "url": "https://blog.checkpoint.com/security/chatgpt-lockdown-mode-bypass-reveals-a-wider-challenge-in-ai-security/"
-    },
-    {
-      "id": "reuters-tajik",
-      "publisher": "Reuters",
-      "title": "Kazakhstan-linked hackers used AI to steal Tajik government documents, researchers say",
-      "date": "11 Nov 2026 · attributed vendor allegation",
-      "url": "https://www.reuters.com/legal/government/kazakhstan-linked-hackers-used-ai-steal-tajik-government-documents-researchers-2026-11-11/"
-    },
-    {
-      "id": "iso-robotics",
-      "publisher": "ISO",
-      "title": "ISO 10218-1:2025 industrial robotics standard",
-      "date": "Feb 2025 · scoped, no automatic certification",
-      "url": "https://www.iso.org/standard/73933.html"
-    },
-    {
-      "id": "ifr-tiago",
-      "publisher": "International Federation of Robotics",
-      "title": "Collaborative Robotics in Textile Manufacturing: TIAGo Pro at CETRIKO",
-      "date": "7 Sep 2026 · project-reported supervised pilot",
-      "url": "https://ifr.org/case-studies/collaborative-robotics-in-textile-manufacturing"
+      "id": "inspector",
+      "publisher": "HMICFRS",
+      "title": "Retrospective facial recognition oversight: original inspectorate release",
+      "date": "Original page inaccessible in recovery check; discovery lead, not independently reviewed here",
+      "url": "https://hmicfrs.justiceinspectorates.gov.uk/news/news-feed/police-forces-and-national-crime-agency-must-improve-oversight-of-retrospective-facial-recognition-to-maintain-public-confidence/"
     }
   ],
-  "voices": [
-    {
-      "speaker": "Anthony Albanese",
-      "role": "Prime Minister of Australia; government policy perspective",
-      "date": "10 Nov 2026",
-      "quote": "We must also be prepared for the new risks",
-      "context": "Statement in official media release about proposed frontier-AI protections; not independent evidence of their future effectiveness.",
-      "url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
-    }
-  ],
+  "voices": [],
   "incidents": [
     {
       "name": "Waymo school-bus passing reports / recall-remedy query",
       "date": "Recall remedy 17 Nov 2025; inquiry opened 6 Nov 2026",
       "classification": "Confirmed open regulator inquiry; causes unresolved",
       "severity": "NOT SCORED",
-      "known": "Fifth-generation Waymo ADS, 2,895 vehicles covered by the query; majority reported incidents occurred after remedy date.",
+      "known": "The inquiry covers 2,895 fifth-generation ADS vehicles and investigates post-remedy reports; final cause is not established.",
       "unknown": "Number of all incidents, causal mechanism, exposure denominators, injury outcomes and effective updated remedy.",
       "lesson": "A deployed fix is not independent evidence that the hazard has stopped in representative conditions.",
       "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
-    },
-    {
-      "name": "Historical HTML preview boundary flaw",
-      "date": "Fix reportedly 18 Sep; disclosure 5 Nov 2026",
-      "classification": "Controlled research disclosure / reported remediation",
-      "severity": "NOT SCORED",
-      "known": "Specific exploit route reported fixed and retested.",
-      "unknown": "Generalisability across runtime and model configurations.",
-      "lesson": "Boundaries include runtime and tools, not model responses alone.",
-      "url": "https://blog.checkpoint.com/security/chatgpt-lockdown-mode-bypass-reveals-a-wider-challenge-in-ai-security/"
     }
   ],
-  "investigativeSummary": "NHTSA opened recall query RQ26006 on 6 November after reports of Waymo automated vehicles passing stopped school buses. The inquiry covers 2,895 fifth-generation ADS vehicles, not 2,895 incidents or harmed people. The regulator says a majority of reported events occurred after the software remedy was completed on 17 November 2025. It has not yet made a final finding on cause or adequacy. Schoolchildren, bus drivers and road users are affected bystanders. The public filing lacks a comparable encounter denominator, complete post-remedy count and independent field intervention testing. Waymo told TechCrunch it had improved bus behaviour and received no citations since March 2026. Next verification: current software configuration, realistic stopped-bus tests, outcome evidence and the regulator's conclusion.",
+  "investigativeSummary": "The recovery focuses on whether human review provides independent judgement. The Home Office’s voluntary facial-search survey found gaps in respondents’ understanding of an evidential threshold alongside perceived efficiency benefits. It cannot establish all-user error prevalence or causal enforcement outcomes. Affected people include those identified, investigators, victims and families. DΩP recommends a representative audit from candidate match through corroboration, enforcement, correction and remedy. The original inspectorate release was inaccessible; no claim here substitutes secondary reporting for a completed primary review. This is desk-based analysis, not original field reporting.",
   "methodology": {
     "status": "NOT SCORED THIS RUN; SIX-TIER DISPLAY PENDING VERIFICATION",
     "version": "DΩP AI Safety Metrics Standard: authoritative version unavailable",
     "note": "No scalar or incident severity values assigned without approved anchors; new six-tier taxonomy labels not mapped to numeric thresholds.",
     "tierStatus": "SIX-TIER DISPLAY PENDING VERIFICATION",
-    "history": "Edition 15 is retained unchanged as a dated historical record, not a current baseline endorsement."
+    "history": "Edition 16 is preserved unchanged as a dated historical record, not a newly revalidated baseline."
   },
   "roboticsAssessment": {
-    "scope": "Waymo fifth-generation ADS recall-remedy investigation; scoped continuity of TIAGo Pro textile pilot",
-    "assessedAt": "2026-11-12",
-    "status": "Regulator investigation open; configuration-specific remedy effectiveness NOT VERIFIED",
-    "methodologyNote": "Deployment stages are editorial labels; no I0-I5 incident grade. Historical safety assurance requires revalidation if relevant configuration changed.",
+    "scope": "Waymo fifth-generation ADS school-bus recall-remedy query only",
+    "assessedAt": "2026-11-17",
+    "status": "No newer remedy outcome verified in recovery; not a comprehensive current-status audit",
+    "methodologyNote": "The 6 November filing remains the cited evidence; no incident grade or exposure-adjusted rate.",
     "entries": [
       {
         "id": "ROB-RQ26006",
-        "title": "Waymo school-bus hazard, United States",
-        "affectedGroup": "Schoolchildren, school-bus operators, bystanders and AV passengers",
-        "finding": "NHTSA opened recall query 6 Nov; most reported events followed Nov 2025 remedy, causal finding pending.",
-        "evidenceStatus": "PRIMARY REGULATORY FILING; REMEDY NOT VERIFIED EFFECTIVE",
-        "controlGap": "Current software version, remote intervention delay and representative-condition safe-stop result not disclosed.",
-        "nextVerification": "Regulator's investigation outcome and representative post-remedy tests",
+        "title": "Post-remedy safety evidence",
+        "affectedGroup": "Schoolchildren, bus operators and road users",
+        "finding": "Regulator opened inquiry into remedy adequacy and causes.",
+        "evidenceStatus": "PRIMARY FILING; FINAL OUTCOME NOT VERIFIED",
+        "controlGap": "Representative safe-stop and intervention outcomes remain unverified.",
+        "nextVerification": "Final regulator findings and versioned remedy tests",
         "sources": [
           {
-            "title": "NHTSA filing",
+            "title": "waymo",
             "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
-          }
-        ]
-      },
-      {
-        "id": "ROB-TIAGO-CETRIKO",
-        "title": "TIAGo Pro supervised factory pilot (historical)",
-        "affectedGroup": "CETRIKO workers, supervisors and nearby staff",
-        "finding": "Industry project case study describes bounded worker and task outcomes; no new field safety data.",
-        "evidenceStatus": "PROJECT-REPORTED PILOT; CURRENT CONFIGURATION NOT REVALIDATED",
-        "controlGap": "Current firmware, safe-state timing and independent drop-load/override tests unavailable.",
-        "nextVerification": "Versioned intervention test results with workers under representative conditions",
-        "sources": [
-          {
-            "title": "IFR case study",
-            "url": "https://ifr.org/case-studies/collaborative-robotics-in-textile-manufacturing"
           }
         ]
       }
     ]
   },
   "humanAgencyTracker": {
-    "scope": "Three selected case contexts only; children near Waymo, Australian government/AI users, Gemini Carbon tool users",
-    "assessedAt": "2026-11-12",
-    "status": "BASELINE NOT ESTABLISHED; no global direction",
-    "methodologyNote": "Editorial eight-dimension framework, not a validated global index; critical control gap not labelled without positive evidence.",
+    "scope": "Facial-search understanding, affected road users and proposed Australian safeguards",
+    "assessedAt": "2026-11-17",
+    "status": "BASELINE NOT ESTABLISHED; no global direction assigned",
+    "methodologyNote": "Scoped editorial analysis, not a validated composite index; absent disclosure is not proof of absent safeguards.",
     "entries": [
       {
-        "id": "AG-20261112-01",
-        "title": "Children as non-consenting AV bystanders",
-        "affectedGroup": "Schoolchildren, drivers and nearby pedestrians",
-        "finding": "Regulator's open post-remedy query raises effectiveness questions; no causation decision.",
-        "evidenceStatus": "DOCUMENTED INQUIRY; PRACTICAL INTERVENTION NOT DISCLOSED",
-        "controlGap": "Schoolchild cannot control third-party vehicle; regulator/complaint routes documented but time-to-safe-state unknown.",
-        "nextVerification": "Versioned safe-state and bystander-remedy results",
+        "id": "AG-E17-01",
+        "title": "Understanding before enforcement",
+        "affectedGroup": "Investigators and identified people",
+        "finding": "Survey reveals a comprehension gap among voluntary respondents.",
+        "evidenceStatus": "PRIMARY VOLUNTARY SURVEY",
+        "controlGap": "Corroboration and final outcome rates not established by survey.",
+        "nextVerification": "Representative audit of decisions and correction routes",
         "sources": [
           {
-            "title": "NHTSA primary query",
+            "title": "home",
+            "url": "https://www.gov.uk/government/publications/police-user-insights-on-retrospective-facial-recognition-2026/police-user-insights-on-retrospective-facial-recognition-2026"
+          }
+        ]
+      },
+      {
+        "id": "AG-E17-02",
+        "title": "Bystander control and remedy",
+        "affectedGroup": "Schoolchildren, bus drivers and nearby people",
+        "finding": "A regulator inquiry does not establish an effective bystander intervention route.",
+        "evidenceStatus": "PRIMARY INQUIRY; OUTCOMES UNRESOLVED",
+        "controlGap": "Time-to-safe-state and practical recourse not verified.",
+        "nextVerification": "Versioned intervention and remedy evidence",
+        "sources": [
+          {
+            "title": "waymo",
             "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
           }
         ]
       },
       {
-        "id": "AG-20261112-02",
-        "title": "Proposed Australian reporting and evaluation",
-        "affectedGroup": "Australian public, businesses and frontier AI developers",
-        "finding": "Government announced proposed six obligations, not enacted.",
-        "evidenceStatus": "PRIMARY ANNOUNCEMENT; NOT IMPLEMENTED",
-        "controlGap": "User contestability and transparency channels must be specified and tested as bill develops.",
-        "nextVerification": "Published draft legislation and real operational reporting processes",
+        "id": "AG-E17-03",
+        "title": "Proposed governance",
+        "affectedGroup": "Australian public and AI users",
+        "finding": "The announcement describes future obligations, not tested operational protections.",
+        "evidenceStatus": "PRIMARY POLICY ANNOUNCEMENT",
+        "controlGap": "Later legal status and effectiveness not verified in this recovery.",
+        "nextVerification": "Enacted text and operating evidence",
         "sources": [
           {
-            "title": "Australian PM release",
+            "title": "aus",
             "url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
-          }
-        ]
-      },
-      {
-        "id": "AG-20261112-03",
-        "title": "Gemini Carbon multi-agent users and third parties",
-        "affectedGroup": "Developers, enterprise decision makers and indirectly affected users",
-        "finding": "Developer describes expanded capability and new tool orchestration; human outcomes unmeasured.",
-        "evidenceStatus": "VENDOR RELEASE; HUMAN CONTROL NOT INDEPENDENTLY TESTED",
-        "controlGap": "Override, approval separation, tool egress and remediation under representative workflows not reported.",
-        "nextVerification": "Independent, tool-level agent intervention tests",
-        "sources": [
-          {
-            "title": "Google developer announcement",
-            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
           }
         ]
       }
@@ -335,35 +268,35 @@
   },
   "reportRail": {
     "direction": "No global trend assigned",
-    "highestSignal": "Open post-remedy regulator inquiry",
-    "positiveSignal": "Scoped controls and remedy tracking",
-    "bottomLine": "Show who can intervene, what they can change and whether the remedy works."
+    "highestSignal": "Human comprehension needs testing",
+    "positiveSignal": "Automated defensive testing research",
+    "bottomLine": "Measure understanding, intervention, outcomes and remedies separately."
   },
   "focusAreas": [
-    "Application boundaries",
-    "Accessible remedies",
-    "Scoped robotics evidence",
-    "Independent verification",
-    "Privacy and consent",
-    "Practical human authority"
+    "Human comprehension",
+    "Independent corroboration",
+    "Defensive evaluations",
+    "Robotics remedy evidence",
+    "Practical recourse",
+    "Evidence provenance"
   ],
   "publicationManifest": {
-    "editionId": "DOP-AS-2026-11-12-E16",
-    "scheduledFor": "2026-11-12T06:00:00+10:30",
-    "preparedAt": "2026-11-13T11:54:05+10:30",
+    "editionId": "DOP-AS-2026-11-16-E17-RECOVERY",
+    "scheduledFor": "2026-11-16T06:00:00+10:30",
+    "preparedAt": "2026-11-17T07:46:24+10:30",
     "methodologyVersion": null,
     "publicRoute": "https://de-omega-point.com/ai-safety/",
     "mirror": "https://dop-ai-safety-observatory.sammielee.chatgpt.site/",
-    "previousEdition": "archive/edition-15/",
+    "previousEdition": "archive/edition-16/",
     "scoreStatus": "Unscored; historical values not reaffirmed",
-    "releasePreparedAt": "2026-11-13T12:00:54+10:30",
-    "editorialStatus": "APPROVED FOR RELEASE",
-    "publicationStatus": "RELEASE SUBMITTED; VERIFY LIVE ROUTE",
+    "releasePreparedAt": "2026-11-17T07:46:24+10:30",
+    "editorialStatus": "SOURCE-CHECKED SCOPED RECOVERY",
+    "publicationStatus": "RELEASE CANDIDATE; VERIFY LIVE ROUTE",
     "publicUrl": "https://de-omega-point.com/ai-safety/",
-    "mirrorStatus": "RELEASE SUBMITTED; VERIFY LIVE ROUTE",
-    "sourceLedgerVerifiedAt": "2026-11-13",
+    "mirrorStatus": "RELEASE CANDIDATE; VERIFY LIVE ROUTE",
+    "sourceLedgerVerifiedAt": "2026-11-17",
     "sixTierDisplay": "PENDING VERIFICATION",
     "officialLogo": "unchanged existing repository asset; no replacement",
-    "docs": "Recovered source-based report in canonical feed and synchronised static page; chat-only visual and podcast assets are not bundled in this website release."
+    "docs": "Scoped recovered website report only; original full report ending, LinkedIn completion, two visuals and original publication error remain unrecovered. No claim of a complete scheduled package."
   }
 }
