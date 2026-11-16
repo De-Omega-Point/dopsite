@@ -46,3 +46,46 @@ Replace the example with the confirmed existing mirror URL. Mirror layout must e
 Only report full publication after primary and mirror are independently verified. Distinguish research, visual assets, primary publication, mirror publication and scheduled-workflow verification statuses. A Git push, local test, preview or successful validator alone is not complete publication.
 
 On failure preserve the last verified edition and record the exact action, destination, error, known outcome, completed steps and next required check. Do not blindly retry an uncertain write or bypass a denial. Roll back through the normal authorised path if the new release is broken and restoration is permitted. Reverify after any change. A current missing-edition alert may close after the live page and feed are verified. Do not claim future scheduled content publishing is repaired until the actual subsequent content-publishing run succeeds.
+
+## Durable handoff and independent receipts
+
+Before ending a research run, save a portable release outside the checkout:
+
+    node scripts/prepare-ai-safety-release.mjs /tmp/edition-N-release
+
+The output directory must not already exist. It includes the exact validated `site/`
+payload (including frozen archives/assets) and a SHA-256 inventory manifest. Save
+this release as a retrievable artifact and record its identity in the run result;
+a chat response alone is not a durable publishing handoff. A dirty-source flag
+must be reconciled to the final pushed commit before release. This preparation
+command does not research, approve, upload, push or deploy anything.
+
+Publish `site/` unchanged to the existing GitHub `/ai-safety/` route and the
+existing Sites mirror root. Preserve each platform's own hosting configuration.
+On an interrupted run, recover the artifact, compare the inventory and current
+remote state, and continue only the missing destination. Never regenerate or
+renumber an edition just because one destination failed. Preserve the previous
+verified release until the replacement passes local validation.
+
+After deployments, run the independent two-destination check:
+
+    AI_SAFETY_MIRROR_URL='https://dop-ai-safety-observatory.sammielee.chatgpt.site/' \
+    AI_SAFETY_RECEIPT_PATH=/tmp/edition-N-receipt.json \
+    node scripts/verify-ai-safety-destinations.mjs
+
+This checks each destination even when the other fails. The receipt records
+separate results tied to the canonical feed hash. CI retains the receipt and
+must not close the missing-edition alert until **both** pass. A 403/timeout means
+verification failed, not proof the site is down. Do not add private bypass tokens
+to public CI or equate an authenticated read with public visitor acceptance.
+
+### Remaining automation boundary
+
+GitHub's existing workflow is a validator, not a content publisher. Sites mirror
+publication currently requires its supported authenticated save/deploy flow;
+no unattended CI publisher credential/API has been established here. The scheduled
+research executor must possess the publishing tools, persist the handoff artifact,
+publish both destinations, retain each deployment result, and deliver any exact
+blocker. This bundle and receipt tooling reduce loss and false-success reporting,
+but do not prove that the next unattended research-to-publication run will succeed.
+Do not call the permanent repair complete until that actual scheduled run succeeds.
