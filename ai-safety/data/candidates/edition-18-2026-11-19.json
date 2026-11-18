@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "editorialStatus": "STAGING CANDIDATE ONLY; NOT PUBLISHED; NOT VALIDATED AGAINST PRODUCTION RENDERER",
+  "edition": {
+    "number": 18,
+    "editionId": "DOP-AS-2026-11-19-E18-CANDIDATE",
+    "scheduledFor": "2026-11-19T06:00:00+10:30",
+    "publishedAt": null,
+    "lastUpdatedAt": null,
+    "displayDate": "Prepared 19 November 2026, unpublished",
+    "timezone": "Australia/Adelaide",
+    "comparison": "Edition 17 recovery in main, published 17 November 2026"
+  },
+  "methodology": {
+    "version": null,
+    "status": "APPROVED METRICS STANDARD NOT LOCATED; all numeric indices unscored",
+    "threatTaxonomy": [
+      "Baseline",
+      "Guarded",
+      "Elevated",
+      "High",
+      "Severe",
+      "Critical"
+    ],
+    "sixTierMigration": "SIX-TIER DISPLAY PENDING VERIFICATION"
+  },
+  "metrics": [
+    {
+      "label": "Overall Threat Index",
+      "value": "Not scored",
+      "trend": "METHODOLOGY NOT VERIFIED"
+    },
+    {
+      "label": "Assurance Index",
+      "value": "Not scored",
+      "trend": "CURRENT DEPLOYMENTS NOT REVALIDATED"
+    },
+    {
+      "label": "Control Debt",
+      "value": "Not calculated",
+      "trend": "SCALES NOT VALIDATED"
+    },
+    {
+      "label": "Human Authority Index",
+      "value": "Not scored",
+      "trend": "CASE-LEVEL GAPS"
+    },
+    {
+      "label": "Evidence Confidence",
+      "value": "Qualitative",
+      "trend": "SOURCE-SPECIFIC"
+    }
+  ],
+  "lead": {
+    "headline": "Safety claims need independent proof",
+    "summary": "GAO independent controlled tests publicly released on 18 November, UK parliament's 18 November oversight recommendations, and California Waymo freeway restrictions effective 11 November all underscore the need for verifiable safeguards and human intervention."
+  },
+  "stories": [
+    {
+      "title": "GAO audit tests historical chatbot safeguards",
+      "summary": "Four selected AI platforms under controlled spring 2026 scenarios; public release 18 Nov; does not establish actual attacks or failure rates for current model versions.",
+      "sourceIds": [
+        "S01"
+      ]
+    },
+    {
+      "title": "UK committee recommends enforceable assurance",
+      "summary": "18 Nov report identified ten gaps and proposed a new Bill and independent regulator; recommendations, not enacted legal requirements.",
+      "sourceIds": [
+        "S02"
+      ]
+    },
+    {
+      "title": "California restricts Waymo freeway operating domain",
+      "summary": "Restriction effective 11 Nov following construction closure concerns; reported 17–19 Nov. Company says recent incidents involved no injuries or collisions. Original DMV order not obtained.",
+      "sourceIds": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "title": "Qwen4-Max safety changes remain vendor claims",
+      "summary": "Reuters 16 Nov reported security-safety upgrades and noted claims were not independently verified.",
+      "sourceIds": [
+        "S09"
+      ]
+    },
+    {
+      "title": "Human-agency continuity: UK facial-search",
+      "summary": "12 Nov Home Office survey had 779 voluntary respondents, 34% misunderstanding or uncertainty on a threshold; not error rate and not a new event.",
+      "sourceIds": [
+        "S05"
+      ]
+    }
+  ],
+  "threat": {
+    "currentTier": null,
+    "currentLabel": "Unscored",
+    "score": "Not scored",
+    "status": "SIX-TIER DISPLAY PENDING VERIFICATION"
+  },
+  "roboticsAssessment": {
+    "scope": "California driverless freeway operations, plus separate school-bus inquiry watchpoint",
+    "assessedAt": "2026-11-19",
+    "status": "NEW DEPLOYMENT RESTRICTION; CONFIGURATION-SPECIFIC SAFETY NOT REVALIDATED",
+    "methodologyNote": "Qualitative, no exposure-adjusted incident rate",
+    "entries": [
+      {
+        "id": "R18-01",
+        "title": "Waymo freeway restriction",
+        "affectedGroup": "Construction workers, passengers, bystanders",
+        "finding": "Regulator cited recurring closure incursions and restricted the freeway operating domain effective 11 Nov",
+        "evidenceStatus": "Regulator/operator statements reported by corroborating press; underlying order unavailable",
+        "controlGap": "Current-version safe-state and intervention performance not independently verified",
+        "nextVerification": "Acquire signed DMV order and versioned representative-condition safety test results",
+        "sources": [
+          {
+            "title": "Business Insider / DMV and Waymo",
+            "url": "https://www.businessinsider.com/waymo-freeway-operations-banned-california-dmv-construction-zone-closure-2026-11"
+          },
+          {
+            "title": "Associated Press",
+            "url": "https://apnews.com/article/37bcd5371a4699a1850b7666b271946b"
+          }
+        ]
+      }
+    ]
+  },
+  "humanAgencyTracker": {
+    "scope": "Four nonrepresentative institutional/operational cases: regulator intervention, AI evaluation, facial search and user recourse",
+    "assessedAt": "2026-11-19",
+    "status": "BASELINE NOT ESTABLISHED; CASE-SPECIFIC EVIDENCE ONLY",
+    "methodologyNote": "No global index or confidence-weighted average",
+    "entries": [
+      {
+        "id": "AG18-01",
+        "title": "Bystanders in Waymo freeway domain",
+        "affectedGroup": "Construction workers, drivers, passengers",
+        "finding": "Regulator imposed a constraint on freeway deployment",
+        "evidenceStatus": "Documented by corroborating press, original order not retrieved",
+        "controlGap": "Real-time safe-state timing, worker redress not disclosed",
+        "nextVerification": "Regulator retest evidence and remedy criteria",
+        "sources": [
+          {
+            "title": "Associated Press",
+            "url": "https://apnews.com/article/37bcd5371a4699a1850b7666b271946b"
+          }
+        ]
+      },
+      {
+        "id": "AG18-02",
+        "title": "UK independent AI oversight recommendation",
+        "affectedGroup": "Public and providers",
+        "finding": "Committee recommends evaluator access and independent intervention",
+        "evidenceStatus": "Primary parliamentary proposal; implementation not tested",
+        "controlGap": "No enacted framework or demonstrated practical remedy in these recommendations",
+        "nextVerification": "Government response and statute if introduced",
+        "sources": [
+          {
+            "title": "UK Parliament",
+            "url": "https://committees.parliament.uk/committee/365/business-innovation-science-and-trade-committee/news/219006/close-ai-safety-gaps-to-secure-britains-400-billion-ai-growth-opportunity-mps-urge/"
+          }
+        ]
+      },
+      {
+        "id": "AG18-03",
+        "title": "UK police face-search survey continuity",
+        "affectedGroup": "Investigators and searched people",
+        "finding": "779 voluntary respondents, 34% uncertain/mistaken on evidential threshold",
+        "evidenceStatus": "Primary Home Office voluntary survey, not population model error rate",
+        "controlGap": "Objective reversal/appeal outcomes not measured",
+        "nextVerification": "Independent operational case audit",
+        "sources": [
+          {
+            "title": "Home Office",
+            "url": "https://www.gov.uk/government/publications/police-user-insights-on-retrospective-facial-recognition-2026/police-user-insights-on-retrospective-facial-recognition-2026"
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "publisher": "US GAO",
+      "title": "Artificial Intelligence: Covert Testing Used Common Platforms to Create Viable Attack Plans",
+      "date": "16 Oct report / public 18 Nov 2026",
+      "url": "https://www.gao.gov/products/gao-27-108814"
+    },
+    {
+      "id": "S02",
+      "publisher": "UK Parliament",
+      "title": "Guardrails for growth: AI safety and security",
+      "date": "18 Nov 2026",
+      "url": "https://committees.parliament.uk/committee/365/business-innovation-science-and-trade-committee/news/219006/close-ai-safety-gaps-to-secure-britains-400-billion-ai-growth-opportunity-mps-urge/"
+    },
+    {
+      "id": "S03",
+      "publisher": "Business Insider",
+      "title": "Waymo suspending highway operations",
+      "date": "17 Nov 2026",
+      "url": "https://www.businessinsider.com/waymo-freeway-operations-banned-california-dmv-construction-zone-closure-2026-11"
+    },
+    {
+      "id": "S04",
+      "publisher": "Associated Press",
+      "title": "Waymo suspends all driverless taxi rides on freeways",
+      "date": "17–18 Nov 2026",
+      "url": "https://apnews.com/article/37bcd5371a4699a1850b7666b271946b"
+    },
+    {
+      "id": "S05",
+      "publisher": "UK Home Office",
+      "title": "Police user insights on retrospective facial recognition",
+      "date": "12 Nov 2026",
+      "url": "https://www.gov.uk/government/publications/police-user-insights-on-retrospective-facial-recognition-2026/police-user-insights-on-retrospective-facial-recognition-2026"
+    },
+    {
+      "id": "S09",
+      "publisher": "Reuters",
+      "title": "Alibaba details new AI safeguards",
+      "date": "16 Nov 2026",
+      "url": "https://www.reuters.com/business/retail-consumer/alibaba-unveils-new-flagship-ai-model-with-safety-upgrades-2026-11-16/"
+    }
+  ],
+  "publicationManifest": {
+    "public": "NOT PUBLISHED",
+    "mirror": "NOT PUBLISHED",
+    "officialLogo": "NOT INCLUDED IN DRAFT VISUALS",
+    "editorialReview": "NOT COMPLETED",
+    "stageCommit": null
+  }
+}
