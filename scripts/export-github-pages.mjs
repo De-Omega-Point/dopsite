@@ -81,6 +81,7 @@ server.stderr.on("data", (chunk) => { serverLog += chunk; });
 try {
   await waitForServer();
   await cp(path.join(projectRoot, "public", "lightbridge"), path.join(projectRoot, "lightbridge"), { recursive: true });
+  await cp(path.join(projectRoot, "public", "apps"), path.join(projectRoot, "apps"), { recursive: true });
   await exportRoute("/", path.join(projectRoot, "index.html"));
   await exportRoute("/de4humanity", path.join(projectRoot, "de4humanity", "index.html"));
   await exportRoute("/platform", path.join(projectRoot, "platform", "index.html"));
