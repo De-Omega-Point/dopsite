@@ -11,7 +11,16 @@
 .portal-subtitle{font-size:clamp(1.2rem,4vw,1.6rem);font-weight:700;margin:.75rem 0}.jump-links{display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;align-items:center}.jump-links a{display:inline-flex;align-items:center;min-height:44px;font-weight:700}.app-group{margin-top:1.25rem}.status{margin-bottom:.6rem}#apps,#digital-products{scroll-margin-top:1.5rem}
 </style>
 <link rel="icon" type="image/png" href="/assets/de-omega-point-emblem-v2.png">
-<link rel="stylesheet" href="/assets/dop-brand-v1.css">
+<style id="dop-parent-brand-rules">
+/* De-Omega-Point parent brand, scoped to shared header elements. */
+.dop-brand-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.5rem}
+.dop-brand-bar .dop-parent-brand{display:inline-flex;align-items:center;gap:.65rem;max-width:100%;min-height:44px;color:#edf7f3;font:700 1rem/1.25 system-ui,sans-serif;text-decoration:none}
+.dop-brand-bar .dop-parent-brand img{display:block;width:44px;height:44px;flex:0 0 44px;object-fit:contain}
+.dop-brand-bar .dop-parent-links{display:flex;flex-wrap:wrap;align-items:center;gap:0 1.2rem}
+.dop-brand-bar .dop-parent-links a{display:inline-flex;align-items:center;min-height:44px;color:#d8e9dc;font:600 .875rem/1.35 system-ui,sans-serif;text-decoration:none}
+.dop-brand-bar a:hover{text-decoration:underline;text-underline-offset:.2em}
+.dop-brand-bar a:focus-visible{outline:2px solid #86ff70;outline-offset:3px}
+</style>
 </head>
 <body>
 <header class="dop-brand-bar"><a class="dop-parent-brand" href="/" aria-label="De-Omega-Point home"><img src="/assets/de-omega-point-emblem-v2.png" alt="" width="44" height="44"><span>De-Omega-Point</span></a><nav class="dop-parent-links" aria-label="Company navigation"><a href="/">Home</a><a href="/ai-safety/">AI Safety</a></nav></header>
