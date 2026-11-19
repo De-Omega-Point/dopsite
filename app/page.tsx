@@ -1,6 +1,7 @@
 import ParticleField from "./ParticleField";
 
-const AI_SAFETY_URL = "https://de-omega-point.com/ai-safety/";\nconst AI_ASSURANCE_URL = "/ai-assurance/";
+const AI_SAFETY_URL = "https://de-omega-point.com/ai-safety/";
+const AI_ASSURANCE_URL = "/ai-assurance/";
 
 const projects = [
   {
