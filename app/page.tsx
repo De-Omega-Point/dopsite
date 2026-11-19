@@ -92,7 +92,7 @@ export default function Home() {
             Tools for <em>right now.</em>
           </h1>
           <p className="hero-intro">
-            We build local-first apps, publish AI safety analysis and explore how light and matter could shape future technologies. Across all of it, our aim is the same: technology that serves people and keeps them in control.
+            We build local-first apps, publish AI safety analysis and explore how light and matter could shape future technologies. One principle guides our work: technology should serve people and keep them in control.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#store">Explore digital products <span aria-hidden="true">↓</span></a>
