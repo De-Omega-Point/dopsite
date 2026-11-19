@@ -17,6 +17,8 @@
     "export:github-pages": "node scripts/export-github-pages.mjs",
     "test:assurance": "node --test tests/ai-assurance-static.test.mjs",
     "test:ai-safety": "node --test tests/ai-safety-publication.test.mjs && node scripts/verify-ai-safety.mjs local",
+    "test:ai-safety-package": "node --test tests/ai-safety-package.test.mjs",
+    "preflight:ai-safety-package": "node scripts/check-ai-safety-package.mjs",
     "sync:ai-safety": "node scripts/sync-ai-safety.mjs"
   },
   "dependencies": {
