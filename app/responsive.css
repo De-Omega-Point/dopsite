@@ -66,3 +66,8 @@ main{overflow:visible;overflow-x:clip}
  #systems .project-grid{grid-template-columns:minmax(0,1fr)}
  #systems .project-card + .project-card{border-left:0;border-top:1px solid rgba(138,255,116,.15)}
 }
+
+/* Neutralise the white cut-out fringe without changing the vessel asset or framing. */
+.artifact-image .vessel-edge-defs{position:absolute;pointer-events:none}
+.artifact-image img{filter:url(#vessel-edge-cleanup) drop-shadow(0 22px 22px rgba(0,0,0,.72)) drop-shadow(0 0 19px rgba(85,255,47,.24))}
+.artifact-image:hover img{filter:url(#vessel-edge-cleanup) drop-shadow(0 26px 24px rgba(0,0,0,.78)) drop-shadow(0 0 27px rgba(85,255,47,.4))}
