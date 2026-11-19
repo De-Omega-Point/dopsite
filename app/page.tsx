@@ -24,27 +24,6 @@ const projects = [
   },
 ];
 
-const products = [
-  {
-    type: "Toolkit / Founders",
-    title: "AI Proof-First Product Kit",
-    copy: "A practical system for testing an AI product, finding its paid wedge and reaching evidence before expensive development.",
-    status: "Launching soon",
-  },
-  {
-    type: "Templates / Creators",
-    title: "Future Systems Content Pack",
-    copy: "Research prompts, visual frameworks and publishing templates for credible content across AI, space, robotics and quantum.",
-    status: "In development",
-  },
-  {
-    type: "Learning / Everyone",
-    title: "Quantum From Zero",
-    copy: "A plain-language micro-learning path that makes the mathematics and core ideas of quantum computing genuinely approachable.",
-    status: "Coming soon",
-  },
-];
-
 export default function Home() {
   return (
     <main>
@@ -66,7 +45,7 @@ export default function Home() {
           <a href="/bridging-light/">Bridging-Light</a>
           <a href="/lightbridge/">BL-Game</a>
           <a href="#mission">Mission</a>
-          <a href="#store">Store</a>
+          <a href="https://de-omega-point.com/apps/">Portal</a>
           <a href="#systems">Systems</a>
           <a href="#quantum">Quantum</a>
         </nav>
@@ -95,7 +74,7 @@ export default function Home() {
             We build local-first apps, publish AI safety analysis and explore how light and matter could shape future technologies. One principle guides our work: technology should serve people and keep them in control.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="#store">Explore digital products <span aria-hidden="true">↓</span></a>
+            <a className="button primary" href="https://de-omega-point.com/apps/">Explore apps &amp; products <span aria-hidden="true">↓</span></a>
             <a className="text-link" href="#mission">Discover the company <span aria-hidden="true">↗</span></a>
           </div>
         </div>
@@ -173,33 +152,10 @@ export default function Home() {
 
       <section className="store" id="store" aria-labelledby="store-title">
         <div className="store-heading section-shell">
-          <div>
-            <p className="kicker">De‑Omega‑Point store / Original releases</p>
-            <h2 id="store-title">Digital products built<br />for human <span>leverage.</span></h2>
-          </div>
-          <p>
-            Practical tools, learning systems and creative assets made by us—not a
-            crowded marketplace of random uploads. Every release must save time,
-            sharpen thinking or increase capability.
-          </p>
+          <div><p className="kicker">De‑Omega‑Point Portal</p><h2 id="store-title">Apps &amp; Digital Products</h2></div>
+          <p>Play what’s available and see what we’re building next.</p>
         </div>
-        <div className="product-grid section-shell">
-          {products.map((product, index) => (
-            <article className="product-card" key={product.title}>
-              <div className="product-meta"><span>0{index + 1}</span><span>{product.type}</span></div>
-              <div className="product-glyph" aria-hidden="true">
-                <img src="/assets/de-omega-point-emblem-v2.png" alt="" />
-              </div>
-              <div>
-                <p className="product-status">{product.status}</p>
-                <h3>{product.title}</h3>
-                <p>{product.copy}</p>
-                <a href="#contact" aria-label={`Register interest in ${product.title}`}>Register interest <span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-          ))}
-        </div>
-        <p className="store-note section-shell">First releases are being prepared now. Join the launch list for early access and founding prices. <a className="text-link" href="https://de-omega-point.com/apps/">Explore the App Portfolio</a></p>
+        <p className="store-note section-shell"><a className="button primary" href="https://de-omega-point.com/apps/">Explore the Portal <span aria-hidden="true">↗</span></a></p>
       </section>
 
       <section className="visibility-callout section-shell" aria-labelledby="visibility-title">
