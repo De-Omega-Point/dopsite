@@ -61,3 +61,18 @@ main{overflow:visible;overflow-x:clip}
 .artifact-image img,.artifact-image:hover img{transform:scale(.96);transition:filter .5s ease}
 .artifact-image img{filter:drop-shadow(0 22px 22px rgba(0,0,0,.72)) drop-shadow(0 0 12px rgba(85,255,47,.12))}
 .artifact-image:hover img{filter:drop-shadow(0 26px 24px rgba(0,0,0,.78)) drop-shadow(0 0 16px rgba(85,255,47,.18))}
+
+/* Give each horizon illustration its own row instead of floating it over copy. */
+#systems .systems-heading > *{min-width:0}
+#systems .systems-heading h2{line-height:1.04;overflow-wrap:break-word}
+#systems .project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#systems .project-card{display:grid;grid-template-rows:auto auto 1fr;gap:clamp(24px,4vw,48px);min-height:0;align-content:start}
+#systems .card-top{gap:12px;flex-wrap:wrap}
+#systems .card-orbit{position:relative;top:auto;left:auto;width:min(72%,260px);height:auto;aspect-ratio:1;margin-inline:auto}
+#systems .project-card h3,#systems .project-card p{overflow-wrap:break-word}
+@media(max-width:1000px){
+ #systems .systems-heading{flex-direction:column;align-items:flex-start;gap:20px;margin-bottom:32px}
+ #systems .systems-lede{margin:0}
+ #systems .project-grid{grid-template-columns:minmax(0,1fr)}
+ #systems .project-card + .project-card{border-left:0;border-top:1px solid rgba(138,255,116,.15)}
+}
