@@ -344,6 +344,7 @@ export default function Home() {
 
       <section className="artifact section-shell" aria-labelledby="artifact-title">
         <div className="artifact-image">
+          <svg className="vessel-edge-defs" width="0" height="0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><filter id="vessel-edge-cleanup" x="-5%" y="-5%" width="110%" height="110%" primitiveUnits="objectBoundingBox" colorInterpolationFilters="sRGB"><feMorphology in="SourceAlpha" operator="erode" radius="0.0019 0.0033" result="trimmed"/><feGaussianBlur in="trimmed" stdDeviation="0.00045 0.00075" result="soft-edge"/><feComposite in="SourceGraphic" in2="soft-edge" operator="in"/></filter></defs></svg>
           <img
             src="/assets/de-omega-command-ship.png"
             alt="The De-Omega-Point command ship in three-quarter view"
