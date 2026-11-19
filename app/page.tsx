@@ -92,9 +92,7 @@ export default function Home() {
             Tools for <em>right now.</em>
           </h1>
           <p className="hero-intro">
-            De‑Omega‑Point builds human-value technology and sells original digital
-            products that help founders, creators and curious minds turn future-facing
-            ideas into useful action.
+            We build local-first apps, publish AI safety analysis and explore how light and matter could shape future technologies. Across all of it, our aim is the same: technology that serves people and keeps them in control.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#store">Explore digital products <span aria-hidden="true">↓</span></a>
