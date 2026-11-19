@@ -1,0 +1,8 @@
+/* De-Omega-Point parent brand, scoped to shared header elements. */
+.dop-brand-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.5rem}
+.dop-brand-bar .dop-parent-brand{display:inline-flex;align-items:center;gap:.65rem;max-width:100%;min-height:44px;color:#edf7f3;font:700 1rem/1.25 system-ui,sans-serif;text-decoration:none}
+.dop-brand-bar .dop-parent-brand img{display:block;width:44px;height:44px;flex:0 0 44px;object-fit:contain}
+.dop-brand-bar .dop-parent-links{display:flex;flex-wrap:wrap;align-items:center;gap:0 1.2rem}
+.dop-brand-bar .dop-parent-links a{display:inline-flex;align-items:center;min-height:44px;color:#d8e9dc;font:600 .875rem/1.35 system-ui,sans-serif;text-decoration:none}
+.dop-brand-bar a:hover{text-decoration:underline;text-underline-offset:.2em}
+.dop-brand-bar a:focus-visible{outline:2px solid #86ff70;outline-offset:3px}
