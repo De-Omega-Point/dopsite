@@ -7,3 +7,5 @@ Use the [main homepage](https://de-omega-point.com/) as the reference for compan
 - The public **Portal** is `https://de-omega-point.com/apps/`, for apps and digital products. Keep old links and bookmarks working. The browse-only Portal is not the Commerce Hub, checkout or account area.
 - Make navigation and focus states clear on touch and keyboard. Check the page at desktop and phone widths and preserve existing routes, accessibility and local browser data.
 - Keep source and exported copies in sync (including `public/apps`, `public/bridging-light`, `public/lightbridge` and the De4Humanity source). The AI Safety publication is generated separately; change its shared template rather than hand-editing archive editions.
+
+The scoped header rules in `public/assets/dop-brand-v1.css` are the reference for the identical `dop-parent-brand-rules` style block embedded in static Portal, Bridging-Light and Academy pages. The embedded copy keeps the header usable when a host does not serve the separate asset.
