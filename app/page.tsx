@@ -200,7 +200,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="store-note section-shell">First releases are being prepared now. Join the launch list for early access and founding prices.</p>
+        <p className="store-note section-shell">First releases are being prepared now. Join the launch list for early access and founding prices. <a className="text-link" href="https://de-omega-point.com/apps/">Explore the App Portfolio</a></p>
       </section>
 
       <section className="visibility-callout section-shell" aria-labelledby="visibility-title">
