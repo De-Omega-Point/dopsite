@@ -8,7 +8,27 @@ import { pathToFileURL } from 'node:url';
 const text = value => typeof value === 'string' && value.trim().length > 0;
 const ok = (condition, message) => { if (!condition) throw new Error(message); };
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
-export const roles = ['report', 'linkedinArticle', 'banner', 'infographic', 'whitePaper', 'podcastSynthesis'];
+const sharedRoles = ['report', 'linkedinArticle', 'banner', 'infographic'];
+const researchRoles = ['whitePaper', 'researchContinuity'];
+const adelaide = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Australia/Adelaide', weekday: 'short', year: 'numeric',
+  month: '2-digit', day: '2-digit'
+});
+
+function adelaideDate(value, label) {
+  ok(text(value) && /(?:Z|[+-]\d{2}:\d{2})$/.test(value) && Number.isFinite(Date.parse(value)),
+    'Missing or invalid zoned ' + label);
+  const fields = Object.fromEntries(adelaide.formatToParts(new Date(value)).map(p => [p.type,p.value]));
+  return { date: fields.year + '-' + fields.month + '-' + fields.day, weekday: fields.weekday };
+}
+
+export function requiredRoles(feed, artifacts) {
+  const {weekday} = adelaideDate(feed?.edition?.scheduledFor, 'edition scheduledFor');
+  ok(weekday === 'Mon' || weekday === 'Thu', 'Edition must be scheduled on Monday or Thursday Adelaide time');
+  const research = artifacts.filter(a => researchRoles.includes(a?.role));
+  ok(research.length === 1, 'Expected one standalone white paper or research continuity note');
+  return [...sharedRoles, research[0].role, ...(weekday === 'Thu' ? ['podcastSynthesis'] : [])];
+}
 
 export function checkFeed(feed, expectedEdition) {
   ok(Number.isInteger(expectedEdition) && expectedEdition > 0 && feed?.edition?.number === expectedEdition, 'Wrong or missing edition');
@@ -39,8 +59,11 @@ export async function checkPacket(path) {
   const packet = JSON.parse(await readFile(path,'utf8'));
   ok(packet.review?.editorial === 'passed' && packet.review?.visualBrand === 'passed', 'Editorial and brand reviews required');
   const feedBytes = await readFile(await inside(packet.feed));
-  checkFeed(JSON.parse(feedBytes), packet.edition);
-  ok(Array.isArray(packet.artifacts) && packet.artifacts.length === roles.length, 'Incomplete artifact manifest');
+  const feed = JSON.parse(feedBytes);
+  checkFeed(feed, packet.edition);
+  ok(Array.isArray(packet.artifacts) && packet.artifacts.every(a => a && typeof a === 'object'), 'Invalid artifact manifest');
+  const roles = requiredRoles(feed, packet.artifacts);
+  ok(packet.artifacts.length === roles.length, 'Incomplete or unexpected artifact manifest');
   const files = new Set(), digests = new Set();
   for (const role of roles) {
     const entries = packet.artifacts.filter(entry => entry.role === role);
@@ -71,8 +94,7 @@ export async function verifyLive(path, packetResult, request = fetch) {
   const bytes = await readFile(resolve(dirname(path), packet.feed));
   ok(hash(bytes) === packetResult.feedSha256, 'Approved feed changed during verification');
   const approved = JSON.parse(bytes);
-  const date = approved.edition.publishedAt?.slice(0,10);
-  ok(/^\d{4}-\d{2}-\d{2}$/.test(date ?? ''), 'Missing publication date');
+  const {date} = adelaideDate(approved.edition.publishedAt, 'edition publishedAt');
   const receipts = await Promise.all(targets.map(async target => {
     const read = async suffix => {
       const url = new URL(suffix + '?preflight=' + Date.now(),target);
