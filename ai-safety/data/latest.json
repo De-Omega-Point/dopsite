@@ -1,72 +1,72 @@
 {
   "schemaVersion": 1,
   "edition": {
-    "number": 18,
-    "publishedAt": "2026-11-19T08:36:15+10:30",
-    "lastUpdatedAt": "2026-11-19T08:36:15+10:30",
-    "scheduledFor": "2026-11-19T06:00:00+10:30",
-    "displayDate": "Published 19 November 2026",
+    "number": 19,
+    "publishedAt": "2026-11-24T11:40:35+10:30",
+    "lastUpdatedAt": "2026-11-24T11:40:35+10:30",
+    "scheduledFor": "2026-11-23T06:00:00+10:30",
+    "displayDate": "Published 24 November 2026",
     "deck": "AI safety · Robotics · Human agency",
     "cadence": "Updated Monday + Thursday",
-    "nextUpdate": "Monday 23 November · 6:00 am ACDT",
-    "description": "DΩP AI Safety Edition 18: independently tested safeguards, oversight proposals, robotics evidence and practical human control."
+    "nextUpdate": "Thursday 26 November · 6:00 am ACDT",
+    "description": "De-Omega-Point AI Safety Edition 19: outage evidence, agent oversight, software provenance and human fallback."
   },
   "metrics": [
     {
       "label": "Overall Threat Index",
       "value": "Not scored",
-      "trend": "METHODOLOGY UNVERIFIED",
-      "note": "The authoritative DΩP 0–100 method is not available; no new aggregate threat value."
+      "trend": "NO GLOBAL ESTIMATE",
+      "note": "The cases are not a representative sample of threats."
     },
     {
       "label": "Assurance Index",
       "value": "Not scored",
-      "trend": "CONFIGURATION-SPECIFIC TESTING",
-      "note": "Developer testing advances do not establish general deployed assurance."
+      "trend": "VERSION-SPECIFIC EVIDENCE",
+      "note": "A reported fix is not proof of effectiveness."
     },
     {
       "label": "Control Debt",
       "value": "Not calculated",
       "trend": "SCALES NOT VALIDATED",
-      "note": "No defensible numeric subtraction without commensurable measurement constructs."
+      "note": "No comparable scales support a numeric difference."
     },
     {
       "label": "Human Authority",
       "value": "Not scored",
-      "trend": "COMPREHENSION MATTERS",
-      "note": "Human sign-off does not establish understanding, intervention or effective recourse."
+      "trend": "FALLBACK MUST WORK",
+      "note": "Test who can intervene, what they can still do and who can seek correction."
     },
     {
       "label": "Evidence confidence",
       "value": "Qualitative",
       "trend": "CASE-SPECIFIC",
-      "note": "Survey: voluntary responses; Anvil: developer assessment; NHTSA: primary inquiry, not final cause."
+      "note": "Distinguish primary regulator evidence, first-party reporting and DΩP analysis."
     }
   ],
   "lead": {
-    "headline": "Safety claims need independent proof",
-    "summary": "A newly released US audit and a UK parliamentary report make the case for independent testing. A US vehicle inquiry and an English and Welsh police-user survey show why oversight must be tested where systems are used."
+    "headline": "Not every outage is an AI attack",
+    "summary": "Three distinct signals point to a practical question: who can safely intervene when a system fails?"
   },
   "stories": [
     {
-      "title": "Independent tests exposed historical safeguards gaps",
-      "summary": "US GAO tested four selected AI platforms in spring 2026 and found that each could yield harmful assistance under its assigned scenario. The agency released its audit publicly on 18 November. These observations do not establish a present-day failure rate, rank the platforms or document actual harm. Recheck safeguards after significant model updates."
+      "title": "The FAA reported no indication of a cyberattack",
+      "summary": "The FAA says instability affected 17 of 22 en-route control centres before its 13 November nationwide ground stop. The agency reported that some radio and radar functions remained available and flights already airborne landed safely. In its 15 November account, it reported no indication of cyberattack and said the root cause was still under investigation. That day’s cancellation total is not a count of flights cancelled because of the ground stop. The case demonstrates a decision to pause on safety grounds, not proof the fallback worked equally well for everyone."
     },
     {
-      "title": "A parliamentary recommendation is not a safeguard in force",
-      "summary": "On 18 November, a UK House of Commons committee recommended stronger frontier-AI oversight, including an independent regulator. Its report is advice to government, not enacted law. Track the government response, the powers eventually proposed and the evidence of their use."
+      "title": "One investigation does not establish prevalence",
+      "summary": "On 20 November, Amazon Threat Intelligence reported observing autonomous AI agents used in a September intrusion campaign. This is a first-party account of a specific investigation, not a global incident count or independent proof of actor identity. The operational lesson is to limit tool and data access, monitor actions outside scope and rehearse how an authorised person stops a run."
     },
     {
-      "title": "Human review needs a comprehension check",
-      "summary": "A Home Office survey of facial-search users in England and Wales obtained 779 valid voluntary responses. The respondent findings cannot describe the whole population or the accuracy of the algorithm. Audit comprehension, how a suggested match is corroborated, and how a person can correct an error."
+      "title": "A compromised AI dependency is not evidence of AI authorship",
+      "summary": "GitHub’s malware advisory identifies two malicious agent-framework releases, 1.26.1 and 1.26.2, which it says were removed from PyPI. The advisory does not establish how many installations were affected or whether an AI system authored the malware. If exposure is suspected, use the organisation’s incident-response process to isolate and rebuild affected environments, review accessible credentials and rotate them as appropriate."
     },
     {
-      "title": "A deployed fix is not a verified outcome",
-      "summary": "In a 6 November filing, NHTSA opened a recall query into the effectiveness of a previous Waymo school-bus remedy. This is a continuing watchpoint, not a new incident, final causation finding or exposure-adjusted estimate. Ask for version-specific tests and evidence of the corrected behaviour."
+      "title": "A software update is not proof of a safe outcome",
+      "summary": "The 6 November NHTSA recall query examines the adequacy of an earlier Waymo school-bus remedy and post-remedy reports. This is a continuing watchpoint, not a new filing this week or a final finding. It does not establish a population-wide incident rate or that a subsequent remedy works. Request evidence for the deployed configuration in representative conditions, including the experience of people who did not choose to be near an automated vehicle."
     },
     {
-      "title": "Australia can ask for evidence before deployment",
-      "summary": "Australia’s 10 November policy announcement outlined proposed AI safety and security protections. That is not evidence of enacted protections or an effective remedy. A practical step now is to require a named decision-maker and to test the route for stopping, reversing or contesting a consequential decision."
+      "title": "Design and rehearse the human fallback",
+      "summary": "Australian cyber guidance recommends containing AI agents during testing, monitoring activity and keeping human oversight rather than relying only on prompts. For a critical workflow, identify the person who can pause the system, the usable fallback and the route for people to correct an error. Record what happened during a representative, authorised test and repeat it after material changes. This is a DΩP recommendation, not a claim of industry adoption or certification."
     }
   ],
   "threat": {
@@ -77,121 +77,160 @@
     "disclaimer": "No current tier assigned. Target six labels are approved, numeric boundaries unverified. Preserve five-tier public display until renderer, archive and mobile compatibility tests pass. SIX-TIER DISPLAY PENDING VERIFICATION."
   },
   "outlook": {
-    "label": "Require a versioned record of human control",
-    "summary": "For an important deployment, record the system version, the person authorised to intervene, the observed result of their intervention and the correction or appeal route. Then retest after material changes.",
+    "label": "Practise the fallback before launch",
+    "summary": "Name the person who can intervene. Test a usable fallback in representative conditions and record what worked, what failed and who can correct the result.",
     "quote": "Human agency is prime."
   },
   "report": {
-    "title": "What counts as proof that a safeguard works?",
-    "standfirst": "The evidence is strongest when an independent reviewer can test a particular safeguard and identify what it did not prove.",
-    "intro": "This edition separates the two newly published findings from continuing watchpoints. The evidence does not support aggregate safety scores, a platform ranking or a global trend.",
+    "title": "Not every outage is an AI attack",
+    "standfirst": "What infrastructure outages, agent misuse and compromised software teach us about keeping people in control.",
+    "intro": "This edition separates a documented service disruption, a first-party account of agent misuse and a malware advisory. They are not evidence of a shared cause. We keep the robotics inquiry as a continuing watchpoint, and do not assign a global risk or human agency score.",
     "sections": [
       {
-        "kicker": "01 · Independent testing",
-        "heading": "Independent tests exposed historical safeguards gaps",
-        "body": "US GAO tested four selected AI platforms in spring 2026 and found that each could yield harmful assistance under its assigned scenario. The agency released its audit publicly on 18 November. These observations do not establish a present-day failure rate, rank the platforms or document actual harm. Recheck safeguards after significant model updates.",
+        "kicker": "01 · Infrastructure resilience",
+        "heading": "The FAA reported no indication of a cyberattack",
+        "body": "The FAA says instability affected 17 of 22 en-route control centres before its 13 November nationwide ground stop. The agency reported that some radio and radar functions remained available and flights already airborne landed safely. In its 15 November account, it reported no indication of cyberattack and said the root cause was still under investigation. That day’s cancellation total is not a count of flights cancelled because of the ground stop. The case demonstrates a decision to pause on safety grounds, not proof the fallback worked equally well for everyone.",
         "sourceIds": [
-          "S01"
+          "faa"
         ],
-        "quote": "DΩP assessment: Retest safeguards after material changes; a historical audit does not describe current performance."
+        "quote": "DΩP assessment: Test how people will keep a critical service safe when a dependency fails."
       },
       {
-        "kicker": "02 · Policy accountability",
-        "heading": "A parliamentary recommendation is not a safeguard in force",
-        "body": "On 18 November, a UK House of Commons committee recommended stronger frontier-AI oversight, including an independent regulator. Its report is advice to government, not enacted law. Track the government response, the powers eventually proposed and the evidence of their use.",
+        "kicker": "02 · Agent oversight",
+        "heading": "One investigation does not establish prevalence",
+        "body": "On 20 November, Amazon Threat Intelligence reported observing autonomous AI agents used in a September intrusion campaign. This is a first-party account of a specific investigation, not a global incident count or independent proof of actor identity. The operational lesson is to limit tool and data access, monitor actions outside scope and rehearse how an authorised person stops a run.",
         "sourceIds": [
-          "S02"
+          "aws",
+          "asd"
         ],
-        "stat": "18 November",
-        "statLabel": "Date of the UK committee report; recommendations are not law"
+        "stat": "20 November",
+        "statLabel": "Date of Amazon’s disclosure, not the date of the observed activity"
       },
       {
-        "kicker": "03 · Human agency",
-        "heading": "Human review needs a comprehension check",
-        "body": "A Home Office survey of facial-search users in England and Wales obtained 779 valid voluntary responses. The respondent findings cannot describe the whole population or the accuracy of the algorithm. Audit comprehension, how a suggested match is corroborated, and how a person can correct an error.",
+        "kicker": "03 · Software supply chain",
+        "heading": "A compromised AI dependency is not evidence of AI authorship",
+        "body": "GitHub’s malware advisory identifies two malicious agent-framework releases, 1.26.1 and 1.26.2, which it says were removed from PyPI. The advisory does not establish how many installations were affected or whether an AI system authored the malware. If exposure is suspected, use the organisation’s incident-response process to isolate and rebuild affected environments, review accessible credentials and rotate them as appropriate.",
         "sourceIds": [
-          "S05"
+          "ghsa"
         ]
       },
       {
-        "kicker": "04 · Robotics watchpoint",
-        "heading": "A deployed fix is not a verified outcome",
-        "body": "In a 6 November filing, NHTSA opened a recall query into the effectiveness of a previous Waymo school-bus remedy. This is a continuing watchpoint, not a new incident, final causation finding or exposure-adjusted estimate. Ask for version-specific tests and evidence of the corrected behaviour.",
+        "kicker": "04 · Robotics continuity",
+        "heading": "A software update is not proof of a safe outcome",
+        "body": "The 6 November NHTSA recall query examines the adequacy of an earlier Waymo school-bus remedy and post-remedy reports. This is a continuing watchpoint, not a new filing this week or a final finding. It does not establish a population-wide incident rate or that a subsequent remedy works. Request evidence for the deployed configuration in representative conditions, including the experience of people who did not choose to be near an automated vehicle.",
         "sourceIds": [
-          "waymo"
+          "nhtsa"
         ]
       },
       {
-        "kicker": "05 · Australian implications",
-        "heading": "Australia can ask for evidence before deployment",
-        "body": "Australia’s 10 November policy announcement outlined proposed AI safety and security protections. That is not evidence of enacted protections or an effective remedy. A practical step now is to require a named decision-maker and to test the route for stopping, reversing or contesting a consequential decision.",
+        "kicker": "05 · Human agency in practice",
+        "heading": "Design and rehearse the human fallback",
+        "body": "Australian cyber guidance recommends containing AI agents during testing, monitoring activity and keeping human oversight rather than relying only on prompts. For a critical workflow, identify the person who can pause the system, the usable fallback and the route for people to correct an error. Record what happened during a representative, authorised test and repeat it after material changes. This is a DΩP recommendation, not a claim of industry adoption or certification.",
         "sourceIds": [
-          "australia"
+          "asd",
+          "faa"
         ]
       }
     ]
   },
   "sources": [
     {
-      "id": "S01",
-      "publisher": "US GAO",
-      "title": "Independent audit of safeguards on four generative AI platforms",
-      "date": "16 October report · released publicly 18 November 2026",
-      "url": "https://www.gao.gov/products/gao-27-108814"
+      "id": "faa",
+      "publisher": "US FAA",
+      "title": "Nationwide ground stop: questions and answers",
+      "date": "15 Nov 2026 · update on 13 Nov ground stop",
+      "url": "https://www.faa.gov/newsroom/nationwide-ground-stop-questions-and-answers"
     },
     {
-      "id": "S02",
-      "publisher": "UK Parliament",
-      "title": "Guardrails for growth: AI safety and security",
-      "date": "18 Nov 2026",
-      "url": "https://publications.parliament.uk/pa/cm5902/cmselect/cmbeis/689/report.html"
+      "id": "aws",
+      "publisher": "Amazon Threat Intelligence",
+      "title": "November disclosure of an AI-agent misuse investigation",
+      "date": "20 Nov 2026 · September activity",
+      "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/"
     },
     {
-      "id": "S05",
-      "publisher": "UK Home Office",
-      "title": "Police user insights on retrospective facial recognition",
-      "date": "12 Nov 2026",
-      "url": "https://www.gov.uk/government/publications/police-user-insights-on-retrospective-facial-recognition-2026/police-user-insights-on-retrospective-facial-recognition-2026"
+      "id": "ghsa",
+      "publisher": "GitHub Advisory Database",
+      "title": "Malicious releases of agent-framework",
+      "date": "18 Nov 2026 · updated 23 Nov",
+      "url": "https://github.com/advisories/GHSA-764m-3ppc-5m73"
     },
     {
-      "id": "waymo",
+      "id": "nhtsa",
       "publisher": "NHTSA",
-      "title": "Recall Query RQ26006: effectiveness of Waymo school-bus remedy",
-      "date": "6 Nov 2026 · primary regulatory filing",
+      "title": "Recall Query RQ26006: Waymo school-bus remedy",
+      "date": "6 Nov 2026 · continuing watchpoint",
       "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
     },
     {
-      "id": "australia",
-      "publisher": "Prime Minister of Australia",
-      "title": "New Australian AI safety and security protections",
-      "date": "10 Nov 2026 · policy announcement",
-      "url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+      "id": "asd",
+      "publisher": "ASD / ACSC",
+      "title": "Secure AI testing to reduce unauthorised access",
+      "date": "12 Nov 2026 · Australian guidance",
+      "url": "https://www.cyber.gov.au/news/secure-ai-testing-to-reduce-unauthorised-access"
     }
   ],
-  "voices": [],
+  "voices": [
+    {
+      "speaker": "US Federal Aviation Administration",
+      "role": "Regulator statement",
+      "date": "15 November 2026",
+      "quote": "we have no indication that this was a cyberattack or an outside nefarious actor",
+      "context": "The agency was describing what it knew at that date, not a final root-cause finding.",
+      "url": "https://www.faa.gov/newsroom/nationwide-ground-stop-questions-and-answers"
+    },
+    {
+      "speaker": "ASD / ACSC",
+      "role": "Australian cyber guidance",
+      "date": "12 November 2026",
+      "quote": "cautions against relying solely on prompts or model-level safeguards for containment",
+      "context": "The published summary describes separate controls and human oversight during testing.",
+      "url": "https://www.cyber.gov.au/news/secure-ai-testing-to-reduce-unauthorised-access"
+    }
+  ],
   "incidents": [
     {
-      "name": "Waymo school-bus passing reports / recall-remedy query",
-      "date": "Recall remedy 17 Nov 2025; inquiry opened 6 Nov 2026",
-      "classification": "Confirmed open regulator inquiry; causes unresolved",
+      "name": "US FAA nationwide ground stop",
+      "date": "13 Nov 2026 · FAA account 15 Nov",
+      "classification": "Confirmed service disruption; no cyberattack indication at disclosure",
       "severity": "NOT SCORED",
-      "known": "The inquiry covers 2,895 fifth-generation ADS vehicles and investigates post-remedy reports; final cause is not established.",
-      "unknown": "Number of all incidents, causal mechanism, exposure denominators, injury outcomes and effective updated remedy.",
-      "lesson": "A deployed fix is not independent evidence that the hazard has stopped in representative conditions.",
-      "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
+      "known": "FAA reports instability at 17 of 22 en-route centres and a precautionary ground stop.",
+      "unknown": "Final root cause and how many cancellations were directly attributable.",
+      "lesson": "Test safe degraded operation and equitable passenger support.",
+      "url": "https://www.faa.gov/newsroom/nationwide-ground-stop-questions-and-answers"
+    },
+    {
+      "name": "AI-agent misuse reported by Amazon",
+      "date": "September activity · disclosed 20 Nov 2026",
+      "classification": "First-party investigation; no prevalence inference",
+      "severity": "NOT SCORED",
+      "known": "Amazon describes observed misuse involving an autonomous AI agent framework.",
+      "unknown": "Total impact and independent attribution.",
+      "lesson": "Constrain permissions and test intervention.",
+      "url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/"
+    },
+    {
+      "name": "Malicious agent-framework distributions",
+      "date": "17 Nov 2026 · advisory 18 Nov, updated 23 Nov",
+      "classification": "Software supply-chain compromise; AI authorship not established",
+      "severity": "NOT SCORED",
+      "known": "GitHub lists two malicious versions and says they were removed.",
+      "unknown": "Affected installation count, authorship and total downstream impact.",
+      "lesson": "Review provenance, exposure and credential response.",
+      "url": "https://github.com/advisories/GHSA-764m-3ppc-5m73"
     }
   ],
-  "investigativeSummary": "A controlled audit, a parliamentary recommendation, an open regulator inquiry and a volunteer survey answer different questions. We do not combine them into a safety score or infer that a policy proposal or installed fix is already effective. The common practical test is whether people can understand, stop and contest a consequential decision.",
+  "investigativeSummary": "The regulator’s 15 November account separates the 13 November nationwide precautionary stop from any confirmed malicious act. It reports instability at 17 of 22 en-route centres, some still-operational radio and radar functions, and safe landings. The FAA said there was no indication of cyberattack and the precise root cause was still under investigation. Record availability, confirmed cause and the effect of safeguards as separate questions.",
   "methodology": {
     "status": "NOT SCORED THIS RUN; SIX-TIER DISPLAY PENDING VERIFICATION",
     "version": "DΩP AI Safety Metrics Standard: authoritative version unavailable",
-    "note": "No scalar or incident severity values assigned without approved anchors; new six-tier taxonomy labels not mapped to numeric thresholds.",
+    "note": "These purposefully selected cases do not establish prevalence, a global trend or comparative rankings. No scores, new thresholds or incident grades are assigned.",
     "tierStatus": "SIX-TIER DISPLAY PENDING VERIFICATION",
-    "history": "Edition 17 remains an archived historical record, not a newly revalidated baseline."
+    "history": "Edition 18 remains the preceding record. It is not newly revalidated or silently rescored."
   },
   "roboticsAssessment": {
     "scope": "Waymo fifth-generation ADS school-bus recall-remedy query only",
-    "assessedAt": "2026-11-19",
+    "assessedAt": "2026-11-24",
     "status": "CONTINUITY WATCHPOINT; NO NEW REMEDY OUTCOME VERIFIED",
     "methodologyNote": "The 6 November filing remains the cited evidence; no incident grade or exposure-adjusted rate.",
     "entries": [
@@ -205,7 +244,7 @@
         "nextVerification": "Final regulator findings and versioned remedy tests",
         "sources": [
           {
-            "title": "waymo",
+            "title": "NHTSA",
             "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
           }
         ]
@@ -213,53 +252,53 @@
     ]
   },
   "humanAgencyTracker": {
-    "scope": "Three nonrepresentative cases: robotics remedy, proposed oversight and police facial-search understanding",
-    "assessedAt": "2026-11-19",
-    "status": "BASELINE NOT ESTABLISHED; CASE-SPECIFIC EVIDENCE ONLY",
-    "methodologyNote": "No global index or confidence-weighted average",
+    "scope": "Selected cases; understanding, intervention, fallback and correction",
+    "assessedAt": "2026-11-24",
+    "status": "CASE-SPECIFIC EVIDENCE; NO AGGREGATE SCORE",
+    "methodologyNote": "Record who can act and what demonstrates control. Do not infer agency from an approval button alone.",
     "entries": [
       {
-        "id": "AG18-01",
-        "title": "Intervention and recourse around autonomous vehicles",
+        "id": "AG19-01",
+        "title": "Authority to pause and recover",
+        "affectedGroup": "Flight crews, controllers and travellers",
+        "finding": "FAA documents a precautionary pause and continued use of some communication and tracking capabilities.",
+        "evidenceStatus": "PRIMARY SOURCE; CASE-SPECIFIC",
+        "controlGap": "The filing does not establish every traveller had an accessible fallback.",
+        "nextVerification": "Check continuity and accessible notification during representative drills.",
+        "sources": [
+          {
+            "title": "US FAA",
+            "url": "https://www.faa.gov/newsroom/nationwide-ground-stop-questions-and-answers"
+          }
+        ]
+      },
+      {
+        "id": "AG19-02",
+        "title": "Authority to interrupt an agent test",
+        "affectedGroup": "Test operators and people whose data or services could be affected",
+        "finding": "ASD / ACSC describes containment, monitoring and human oversight practices.",
+        "evidenceStatus": "PRIMARY SOURCE; CASE-SPECIFIC",
+        "controlGap": "Practice guidance does not show that any specific operator can intervene in time.",
+        "nextVerification": "Record an authorised stop test, its observed result and an escalation route.",
+        "sources": [
+          {
+            "title": "ASD / ACSC",
+            "url": "https://www.cyber.gov.au/news/secure-ai-testing-to-reduce-unauthorised-access"
+          }
+        ]
+      },
+      {
+        "id": "AG19-03",
+        "title": "Remedy evidence in shared public space",
         "affectedGroup": "Schoolchildren, bus operators and road users",
-        "finding": "NHTSA has opened a query into a prior remedy; the filing does not establish a practicable intervention or remedy for bystanders.",
-        "evidenceStatus": "PRIMARY FILING; FINAL OUTCOME NOT ESTABLISHED",
-        "controlGap": "Representative intervention evidence and practical recourse not verified",
-        "nextVerification": "Versioned test results and final regulator findings",
+        "finding": "The regulator opened a query into an earlier remedy.",
+        "evidenceStatus": "PRIMARY SOURCE; CASE-SPECIFIC",
+        "controlGap": "Final findings and practical intervention or recourse for bystanders have not been verified here.",
+        "nextVerification": "Check regulator findings and version-specific tests when available.",
         "sources": [
           {
-            "title": "NHTSA filing",
+            "title": "NHTSA",
             "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
-          }
-        ]
-      },
-      {
-        "id": "AG18-02",
-        "title": "UK independent AI oversight recommendation",
-        "affectedGroup": "Public and providers",
-        "finding": "Committee recommends evaluator access and independent intervention",
-        "evidenceStatus": "Primary parliamentary proposal; implementation not tested",
-        "controlGap": "No enacted framework or demonstrated practical remedy in these recommendations",
-        "nextVerification": "Government response and statute if introduced",
-        "sources": [
-          {
-            "title": "UK Parliament",
-            "url": "https://publications.parliament.uk/pa/cm5902/cmselect/cmbeis/689/report.html"
-          }
-        ]
-      },
-      {
-        "id": "AG18-03",
-        "title": "UK police face-search survey continuity",
-        "affectedGroup": "Investigators and searched people",
-        "finding": "The voluntary survey obtained 779 valid responses and examined understanding of safeguards. It did not measure real-world reversals or appeals.",
-        "evidenceStatus": "Primary Home Office voluntary survey, not population model error rate",
-        "controlGap": "Objective reversal/appeal outcomes not measured",
-        "nextVerification": "Independent operational case audit",
-        "sources": [
-          {
-            "title": "Home Office",
-            "url": "https://www.gov.uk/government/publications/police-user-insights-on-retrospective-facial-recognition-2026/police-user-insights-on-retrospective-facial-recognition-2026"
           }
         ]
       }
@@ -267,35 +306,35 @@
   },
   "reportRail": {
     "direction": "No global trend assigned",
-    "highestSignal": "Independent evidence of historical safeguards gaps",
-    "positiveSignal": "Independent audit and proposed stronger oversight",
-    "bottomLine": "Retest safeguards, verify intervention and document recourse."
+    "highestSignal": "Separate service failure, observed misuse and compromised software",
+    "positiveSignal": "Documented precautionary action and practical containment guidance",
+    "bottomLine": "Test whether a named person can stop an unsafe action and keep essential work going."
   },
   "focusAreas": [
-    "Independent assurance",
-    "Human comprehension",
-    "Policy accountability",
-    "Robotics remedy evidence",
-    "Practical recourse",
-    "Evidence provenance"
+    "Safe degraded operation",
+    "Human oversight",
+    "Agent containment",
+    "Versioned robotics evidence",
+    "Correcting errors",
+    "Software provenance"
   ],
   "publicationManifest": {
-    "editionId": "DOP-AS-2026-11-19-E18",
-    "scheduledFor": "2026-11-19T06:00:00+10:30",
-    "preparedAt": "2026-11-19T08:36:15+10:30",
+    "editionId": "DOP-AIS-2026-11-23-E19",
+    "scheduledFor": "2026-11-23T06:00:00+10:30",
+    "preparedAt": "2026-11-24T11:40:35+10:30",
     "methodologyVersion": null,
     "publicRoute": "https://de-omega-point.com/ai-safety/",
     "mirror": "https://dop-ai-safety-observatory.sammielee.chatgpt.site/",
-    "previousEdition": "archive/edition-17/",
+    "previousEdition": "archive/edition-18/",
     "scoreStatus": "Unscored; historical values not reaffirmed",
-    "releasePreparedAt": "2026-11-19T08:36:15+10:30",
-    "editorialStatus": "PRIMARY SOURCE CHECKED; NEW SIGNALS AND WATCHPOINTS SEPARATED",
-    "publicationStatus": "RELEASE CANDIDATE; VERIFY BOTH LIVE DESTINATIONS",
+    "releasePreparedAt": "2026-11-24T11:40:35+10:30",
+    "editorialStatus": "Primary-source claims bounded; case distinctions and unknowns stated.",
+    "publicationStatus": "Publication receipts tracked independently.",
     "publicUrl": "https://de-omega-point.com/ai-safety/",
-    "mirrorStatus": "RELEASE CANDIDATE; VERIFY LIVE ROUTE",
-    "sourceLedgerVerifiedAt": "2026-11-19",
+    "mirrorStatus": "Publication receipt tracked independently.",
+    "sourceLedgerVerifiedAt": "2026-11-24",
     "sixTierDisplay": "PENDING VERIFICATION",
-    "officialLogo": "unchanged existing repository asset; no replacement",
-    "docs": "Website edition; companion package and receipts verified separately."
+    "officialLogo": "Founder-supplied parent brand mark used on both editorial graphics.",
+    "docs": "Website edition and companion package; no invented scores."
   }
 }

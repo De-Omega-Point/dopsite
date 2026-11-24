@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "edition": {
+    "number": 18,
+    "publishedAt": "2026-11-19T08:36:15+10:30",
+    "lastUpdatedAt": "2026-11-19T08:36:15+10:30",
+    "scheduledFor": "2026-11-19T06:00:00+10:30",
+    "displayDate": "Published 19 November 2026",
+    "deck": "AI safety · Robotics · Human agency",
+    "cadence": "Updated Monday + Thursday",
+    "nextUpdate": "Monday 23 November · 6:00 am ACDT",
+    "description": "DΩP AI Safety Edition 18: independently tested safeguards, oversight proposals, robotics evidence and practical human control."
+  },
+  "metrics": [
+    {
+      "label": "Overall Threat Index",
+      "value": "Not scored",
+      "trend": "METHODOLOGY UNVERIFIED",
+      "note": "The authoritative DΩP 0–100 method is not available; no new aggregate threat value."
+    },
+    {
+      "label": "Assurance Index",
+      "value": "Not scored",
+      "trend": "CONFIGURATION-SPECIFIC TESTING",
+      "note": "Developer testing advances do not establish general deployed assurance."
+    },
+    {
+      "label": "Control Debt",
+      "value": "Not calculated",
+      "trend": "SCALES NOT VALIDATED",
+      "note": "No defensible numeric subtraction without commensurable measurement constructs."
+    },
+    {
+      "label": "Human Authority",
+      "value": "Not scored",
+      "trend": "COMPREHENSION MATTERS",
+      "note": "Human sign-off does not establish understanding, intervention or effective recourse."
+    },
+    {
+      "label": "Evidence confidence",
+      "value": "Qualitative",
+      "trend": "CASE-SPECIFIC",
+      "note": "Survey: voluntary responses; Anvil: developer assessment; NHTSA: primary inquiry, not final cause."
+    }
+  ],
+  "lead": {
+    "headline": "Safety claims need independent proof",
+    "summary": "A newly released US audit and a UK parliamentary report make the case for independent testing. A US vehicle inquiry and an English and Welsh police-user survey show why oversight must be tested where systems are used."
+  },
+  "stories": [
+    {
+      "title": "Independent tests exposed historical safeguards gaps",
+      "summary": "US GAO tested four selected AI platforms in spring 2026 and found that each could yield harmful assistance under its assigned scenario. The agency released its audit publicly on 18 November. These observations do not establish a present-day failure rate, rank the platforms or document actual harm. Recheck safeguards after significant model updates."
+    },
+    {
+      "title": "A parliamentary recommendation is not a safeguard in force",
+      "summary": "On 18 November, a UK House of Commons committee recommended stronger frontier-AI oversight, including an independent regulator. Its report is advice to government, not enacted law. Track the government response, the powers eventually proposed and the evidence of their use."
+    },
+    {
+      "title": "Human review needs a comprehension check",
+      "summary": "A Home Office survey of facial-search users in England and Wales obtained 779 valid voluntary responses. The respondent findings cannot describe the whole population or the accuracy of the algorithm. Audit comprehension, how a suggested match is corroborated, and how a person can correct an error."
+    },
+    {
+      "title": "A deployed fix is not a verified outcome",
+      "summary": "In a 6 November filing, NHTSA opened a recall query into the effectiveness of a previous Waymo school-bus remedy. This is a continuing watchpoint, not a new incident, final causation finding or exposure-adjusted estimate. Ask for version-specific tests and evidence of the corrected behaviour."
+    },
+    {
+      "title": "Australia can ask for evidence before deployment",
+      "summary": "Australia’s 10 November policy announcement outlined proposed AI safety and security protections. That is not evidence of enacted protections or an effective remedy. A practical step now is to require a named decision-maker and to test the route for stopping, reversing or contesting a consequential decision."
+    }
+  ],
+  "threat": {
+    "currentTier": null,
+    "currentLabel": "Unscored",
+    "score": "Not scored",
+    "status": "methodology-unverified",
+    "disclaimer": "No current tier assigned. Target six labels are approved, numeric boundaries unverified. Preserve five-tier public display until renderer, archive and mobile compatibility tests pass. SIX-TIER DISPLAY PENDING VERIFICATION."
+  },
+  "outlook": {
+    "label": "Require a versioned record of human control",
+    "summary": "For an important deployment, record the system version, the person authorised to intervene, the observed result of their intervention and the correction or appeal route. Then retest after material changes.",
+    "quote": "Human agency is prime."
+  },
+  "report": {
+    "title": "What counts as proof that a safeguard works?",
+    "standfirst": "The evidence is strongest when an independent reviewer can test a particular safeguard and identify what it did not prove.",
+    "intro": "This edition separates the two newly published findings from continuing watchpoints. The evidence does not support aggregate safety scores, a platform ranking or a global trend.",
+    "sections": [
+      {
+        "kicker": "01 · Independent testing",
+        "heading": "Independent tests exposed historical safeguards gaps",
+        "body": "US GAO tested four selected AI platforms in spring 2026 and found that each could yield harmful assistance under its assigned scenario. The agency released its audit publicly on 18 November. These observations do not establish a present-day failure rate, rank the platforms or document actual harm. Recheck safeguards after significant model updates.",
+        "sourceIds": [
+          "S01"
+        ],
+        "quote": "DΩP assessment: Retest safeguards after material changes; a historical audit does not describe current performance."
+      },
+      {
+        "kicker": "02 · Policy accountability",
+        "heading": "A parliamentary recommendation is not a safeguard in force",
+        "body": "On 18 November, a UK House of Commons committee recommended stronger frontier-AI oversight, including an independent regulator. Its report is advice to government, not enacted law. Track the government response, the powers eventually proposed and the evidence of their use.",
+        "sourceIds": [
+          "S02"
+        ],
+        "stat": "18 November",
+        "statLabel": "Date of the UK committee report; recommendations are not law"
+      },
+      {
+        "kicker": "03 · Human agency",
+        "heading": "Human review needs a comprehension check",
+        "body": "A Home Office survey of facial-search users in England and Wales obtained 779 valid voluntary responses. The respondent findings cannot describe the whole population or the accuracy of the algorithm. Audit comprehension, how a suggested match is corroborated, and how a person can correct an error.",
+        "sourceIds": [
+          "S05"
+        ]
+      },
+      {
+        "kicker": "04 · Robotics watchpoint",
+        "heading": "A deployed fix is not a verified outcome",
+        "body": "In a 6 November filing, NHTSA opened a recall query into the effectiveness of a previous Waymo school-bus remedy. This is a continuing watchpoint, not a new incident, final causation finding or exposure-adjusted estimate. Ask for version-specific tests and evidence of the corrected behaviour.",
+        "sourceIds": [
+          "waymo"
+        ]
+      },
+      {
+        "kicker": "05 · Australian implications",
+        "heading": "Australia can ask for evidence before deployment",
+        "body": "Australia’s 10 November policy announcement outlined proposed AI safety and security protections. That is not evidence of enacted protections or an effective remedy. A practical step now is to require a named decision-maker and to test the route for stopping, reversing or contesting a consequential decision.",
+        "sourceIds": [
+          "australia"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "publisher": "US GAO",
+      "title": "Independent audit of safeguards on four generative AI platforms",
+      "date": "16 October report · released publicly 18 November 2026",
+      "url": "https://www.gao.gov/products/gao-27-108814"
+    },
+    {
+      "id": "S02",
+      "publisher": "UK Parliament",
+      "title": "Guardrails for growth: AI safety and security",
+      "date": "18 Nov 2026",
+      "url": "https://publications.parliament.uk/pa/cm5902/cmselect/cmbeis/689/report.html"
+    },
+    {
+      "id": "S05",
+      "publisher": "UK Home Office",
+      "title": "Police user insights on retrospective facial recognition",
+      "date": "12 Nov 2026",
+      "url": "https://www.gov.uk/government/publications/police-user-insights-on-retrospective-facial-recognition-2026/police-user-insights-on-retrospective-facial-recognition-2026"
+    },
+    {
+      "id": "waymo",
+      "publisher": "NHTSA",
+      "title": "Recall Query RQ26006: effectiveness of Waymo school-bus remedy",
+      "date": "6 Nov 2026 · primary regulatory filing",
+      "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
+    },
+    {
+      "id": "australia",
+      "publisher": "Prime Minister of Australia",
+      "title": "New Australian AI safety and security protections",
+      "date": "10 Nov 2026 · policy announcement",
+      "url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections"
+    }
+  ],
+  "voices": [],
+  "incidents": [
+    {
+      "name": "Waymo school-bus passing reports / recall-remedy query",
+      "date": "Recall remedy 17 Nov 2025; inquiry opened 6 Nov 2026",
+      "classification": "Confirmed open regulator inquiry; causes unresolved",
+      "severity": "NOT SCORED",
+      "known": "The inquiry covers 2,895 fifth-generation ADS vehicles and investigates post-remedy reports; final cause is not established.",
+      "unknown": "Number of all incidents, causal mechanism, exposure denominators, injury outcomes and effective updated remedy.",
+      "lesson": "A deployed fix is not independent evidence that the hazard has stopped in representative conditions.",
+      "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
+    }
+  ],
+  "investigativeSummary": "A controlled audit, a parliamentary recommendation, an open regulator inquiry and a volunteer survey answer different questions. We do not combine them into a safety score or infer that a policy proposal or installed fix is already effective. The common practical test is whether people can understand, stop and contest a consequential decision.",
+  "methodology": {
+    "status": "NOT SCORED THIS RUN; SIX-TIER DISPLAY PENDING VERIFICATION",
+    "version": "DΩP AI Safety Metrics Standard: authoritative version unavailable",
+    "note": "No scalar or incident severity values assigned without approved anchors; new six-tier taxonomy labels not mapped to numeric thresholds.",
+    "tierStatus": "SIX-TIER DISPLAY PENDING VERIFICATION",
+    "history": "Edition 17 remains an archived historical record, not a newly revalidated baseline."
+  },
+  "roboticsAssessment": {
+    "scope": "Waymo fifth-generation ADS school-bus recall-remedy query only",
+    "assessedAt": "2026-11-19",
+    "status": "CONTINUITY WATCHPOINT; NO NEW REMEDY OUTCOME VERIFIED",
+    "methodologyNote": "The 6 November filing remains the cited evidence; no incident grade or exposure-adjusted rate.",
+    "entries": [
+      {
+        "id": "ROB-RQ26006",
+        "title": "Post-remedy safety evidence",
+        "affectedGroup": "Schoolchildren, bus operators and road users",
+        "finding": "Regulator opened inquiry into remedy adequacy and causes.",
+        "evidenceStatus": "PRIMARY FILING; FINAL OUTCOME NOT VERIFIED",
+        "controlGap": "Representative safe-stop and intervention outcomes remain unverified.",
+        "nextVerification": "Final regulator findings and versioned remedy tests",
+        "sources": [
+          {
+            "title": "waymo",
+            "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  "humanAgencyTracker": {
+    "scope": "Three nonrepresentative cases: robotics remedy, proposed oversight and police facial-search understanding",
+    "assessedAt": "2026-11-19",
+    "status": "BASELINE NOT ESTABLISHED; CASE-SPECIFIC EVIDENCE ONLY",
+    "methodologyNote": "No global index or confidence-weighted average",
+    "entries": [
+      {
+        "id": "AG18-01",
+        "title": "Intervention and recourse around autonomous vehicles",
+        "affectedGroup": "Schoolchildren, bus operators and road users",
+        "finding": "NHTSA has opened a query into a prior remedy; the filing does not establish a practicable intervention or remedy for bystanders.",
+        "evidenceStatus": "PRIMARY FILING; FINAL OUTCOME NOT ESTABLISHED",
+        "controlGap": "Representative intervention evidence and practical recourse not verified",
+        "nextVerification": "Versioned test results and final regulator findings",
+        "sources": [
+          {
+            "title": "NHTSA filing",
+            "url": "https://static.nhtsa.gov/odi/inv/2026/INOA-RQ26006-19477.pdf"
+          }
+        ]
+      },
+      {
+        "id": "AG18-02",
+        "title": "UK independent AI oversight recommendation",
+        "affectedGroup": "Public and providers",
+        "finding": "Committee recommends evaluator access and independent intervention",
+        "evidenceStatus": "Primary parliamentary proposal; implementation not tested",
+        "controlGap": "No enacted framework or demonstrated practical remedy in these recommendations",
+        "nextVerification": "Government response and statute if introduced",
+        "sources": [
+          {
+            "title": "UK Parliament",
+            "url": "https://publications.parliament.uk/pa/cm5902/cmselect/cmbeis/689/report.html"
+          }
+        ]
+      },
+      {
+        "id": "AG18-03",
+        "title": "UK police face-search survey continuity",
+        "affectedGroup": "Investigators and searched people",
+        "finding": "The voluntary survey obtained 779 valid responses and examined understanding of safeguards. It did not measure real-world reversals or appeals.",
+        "evidenceStatus": "Primary Home Office voluntary survey, not population model error rate",
+        "controlGap": "Objective reversal/appeal outcomes not measured",
+        "nextVerification": "Independent operational case audit",
+        "sources": [
+          {
+            "title": "Home Office",
+            "url": "https://www.gov.uk/government/publications/police-user-insights-on-retrospective-facial-recognition-2026/police-user-insights-on-retrospective-facial-recognition-2026"
+          }
+        ]
+      }
+    ]
+  },
+  "reportRail": {
+    "direction": "No global trend assigned",
+    "highestSignal": "Independent evidence of historical safeguards gaps",
+    "positiveSignal": "Independent audit and proposed stronger oversight",
+    "bottomLine": "Retest safeguards, verify intervention and document recourse."
+  },
+  "focusAreas": [
+    "Independent assurance",
+    "Human comprehension",
+    "Policy accountability",
+    "Robotics remedy evidence",
+    "Practical recourse",
+    "Evidence provenance"
+  ],
+  "publicationManifest": {
+    "editionId": "DOP-AS-2026-11-19-E18",
+    "scheduledFor": "2026-11-19T06:00:00+10:30",
+    "preparedAt": "2026-11-19T08:36:15+10:30",
+    "methodologyVersion": null,
+    "publicRoute": "https://de-omega-point.com/ai-safety/",
+    "mirror": "https://dop-ai-safety-observatory.sammielee.chatgpt.site/",
+    "previousEdition": "archive/edition-17/",
+    "scoreStatus": "Unscored; historical values not reaffirmed",
+    "releasePreparedAt": "2026-11-19T08:36:15+10:30",
+    "editorialStatus": "PRIMARY SOURCE CHECKED; NEW SIGNALS AND WATCHPOINTS SEPARATED",
+    "publicationStatus": "RELEASE CANDIDATE; VERIFY BOTH LIVE DESTINATIONS",
+    "publicUrl": "https://de-omega-point.com/ai-safety/",
+    "mirrorStatus": "RELEASE CANDIDATE; VERIFY LIVE ROUTE",
+    "sourceLedgerVerifiedAt": "2026-11-19",
+    "sixTierDisplay": "PENDING VERIFICATION",
+    "officialLogo": "unchanged existing repository asset; no replacement",
+    "docs": "Website edition; companion package and receipts verified separately."
+  }
+}
